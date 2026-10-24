@@ -1,13 +1,14 @@
 import type { Tool } from "@/lib/types";
 
-function squarePage(size: number, uses: string[], extra: string): Tool {
+function squarePage(size: number, uses: string[], extra: string, metaUse: string): Tool {
   return {
     slug: `resize-image-${size}x${size}`,
     category: "image",
     name: `Resize Image to ${size}×${size}`,
     h1: `Resize Image to ${size}×${size} Pixels`,
     title: `Resize Image to ${size}x${size} Pixels Online – Free`,
-    metaDescription: `Resize any photo to exactly ${size}x${size} pixels for ${uses[0].toLowerCase()} and more. Free, keeps your image in the browser, JPG/PNG/WebP output.`,
+    metaDescription: `Resize any photo to exactly ${size}x${size} pixels for ${metaUse}. Free, private and runs in your browser. JPG, PNG or WebP output.`,
+    updated: "2026-10-24",
     short: `Make a ${size}×${size} square image in one step.`,
     intro: `Resize a photo to exactly ${size} × ${size} pixels. The width and height are already set; just add your image and download the result. ${extra}`,
     widget: { type: "image-resize", width: size, height: size, focus: "resize" },
@@ -279,15 +280,18 @@ export const resizeTools: Tool[] = [
       "Avatar images for email signatures",
     ],
     "300×300 is a common size for thumbnails and profile pictures.",
+    "profile pictures and thumbnails",
   ),
   squarePage(
     500,
     ["E-commerce product images", "Blog post thumbnails", "Marketplace listing photos", "Medium-size profile photos"],
     "500×500 gives a sharp square image while keeping file size small.",
+    "product photos and blog thumbnails",
   ),
   squarePage(
     1080,
     ["Instagram square posts (1080×1080 is the recommended size)", "Facebook and LinkedIn square images", "WhatsApp status images", "Square ads and carousel slides"],
     "1080×1080 is the recommended size for square Instagram posts.",
+    "Instagram posts, Facebook and WhatsApp",
   ),
 ];

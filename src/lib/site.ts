@@ -12,7 +12,7 @@ export const site = {
   /** Default sitemap lastmod for pages without their own `updated` date (YYYY-MM-DD). */
   launchDate: "2026-10-24",
   description:
-    "Free online tools to convert, resize and compress images, edit PDF files, convert audio and video, and calculate calories, BMI and more. No signup, files are processed in your browser.",
+    "Free online tools to convert, resize and compress images, edit PDFs, convert audio and video, and calculate calories and BMI. No signup, runs in your browser.",
 };
 
 export function absoluteUrl(path: string) {

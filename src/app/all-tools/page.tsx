@@ -5,7 +5,7 @@ import { categories, searchIndex, toolsIn } from "@/content";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "All Tools",
+  title: "All Free Online Tools",
   description: `Browse every free tool on ${site.name}: image converters, image compressor, PDF tools, audio and video converters and health calculators.`,
   alternates: { canonical: "/all-tools/" },
 };

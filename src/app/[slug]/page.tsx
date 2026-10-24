@@ -4,6 +4,7 @@ import { Breadcrumbs, FaqList, HealthDisclaimer, ToolGrid } from "@/components/B
 import { ToolPage } from "@/components/ToolPage";
 import { categories, getTool, tools, toolsIn } from "@/content";
 import { getCategoryBySlug } from "@/content/categories";
+import { site } from "@/lib/site";
 import type { Category } from "@/lib/types";
 
 // Only the slugs below exist; anything else is a real 404.
@@ -31,13 +32,18 @@ const categoryMeta: Record<string, { title: string; description: string }> = {
   },
 };
 
+/** Keeps the " | Daily Solutions" suffix only when the full title still fits in search results (~60 chars). */
+function pageTitle(title: string): Metadata["title"] {
+  return title.length + ` | ${site.name}`.length <= 60 ? title : { absolute: title };
+}
+
 export async function generateMetadata({ params }: PageProps<"/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const tool = getTool(slug);
   const path = `/${slug}/`;
   if (tool) {
     return {
-      title: tool.title,
+      title: pageTitle(tool.title),
       description: tool.metaDescription,
       alternates: { canonical: path },
       openGraph: { title: tool.title, description: tool.metaDescription, url: path },
@@ -46,7 +52,7 @@ export async function generateMetadata({ params }: PageProps<"/[slug]">): Promis
   const meta = categoryMeta[slug];
   if (meta && getCategoryBySlug(slug)) {
     return {
-      title: meta.title,
+      title: pageTitle(meta.title),
       description: meta.description,
       alternates: { canonical: path },
       openGraph: { title: meta.title, description: meta.description, url: path },
