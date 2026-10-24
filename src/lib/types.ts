@@ -89,6 +89,8 @@ export interface Tool {
   /** Main tool of its category (shown on homepage category cards). */
   primary?: boolean;
   disclaimer?: boolean;
+  /** Date of the last meaningful content change (YYYY-MM-DD); used as sitemap lastmod. */
+  updated?: string;
 }
 
 export interface Category {
