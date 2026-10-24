@@ -31,6 +31,9 @@ npm run dev
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL, e.g. `https://dailysolutions.vercel.app` |
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 measurement ID (optional) |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | Google Search Console verification token (optional) |
+| `NEXT_PUBLIC_CLARITY_ID` | Microsoft Clarity project ID (optional) |
+
+Defaults for the GA4, Clarity and Search Console IDs live in `src/lib/site.ts`.
 
 ## Adding tools
 

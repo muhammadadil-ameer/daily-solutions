@@ -42,20 +42,29 @@ export default function Privacy() {
         time according to its own policies.
       </p>
       <p>
-        If analytics is enabled, we use Google Analytics 4 to understand how the site is used: which pages are visited,
-        which tools are opened, and whether conversions, downloads or errors occur. These events never include the
-        content or names of your files. Google Analytics uses cookies and may process your IP address. You can opt out
-        with the{" "}
+        We use Google Analytics 4 to understand how the site is used: which pages are visited, which tools are opened,
+        and whether conversions, downloads or errors occur. These events never include the content or names of your
+        files. Google Analytics uses cookies and may process your IP address. You can opt out with the{" "}
         <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer" target="_blank">
           Google Analytics opt-out add-on
         </a>{" "}
         or by blocking cookies in your browser.
       </p>
+      <p>
+        We also use Microsoft Clarity to see how visitors use our pages, through heatmaps and session replays (mouse
+        movements, clicks and scrolling). The tool area of each page, where file names, previews and the values you enter
+        appear, is masked so it is not captured in replays. Your files themselves are never sent to Clarity. Clarity
+        uses cookies and processes data such as your IP address and device information. Learn more in the{" "}
+        <a href="https://privacy.microsoft.com/privacystatement" rel="noopener noreferrer" target="_blank">
+          Microsoft Privacy Statement
+        </a>
+        .
+      </p>
 
       <h2>Cookies</h2>
       <p>
-        We do not use cookies for advertising. Analytics cookies may be set as described above. See our{" "}
-        <Link href="/cookie-policy/">Cookie Policy</Link> for details.
+        We do not use cookies for advertising. Analytics cookies from Google Analytics and Microsoft Clarity are set as
+        described above. See our <Link href="/cookie-policy/">Cookie Policy</Link> for details.
       </p>
 
       <h2>Third-party services</h2>
@@ -69,7 +78,10 @@ export default function Privacy() {
           request data such as your IP address. Your media file is not sent to jsDelivr.
         </li>
         <li>
-          <strong>Google Analytics</strong>, if enabled, as described above.
+          <strong>Google Analytics</strong>, as described above.
+        </li>
+        <li>
+          <strong>Microsoft Clarity</strong>, as described above.
         </li>
       </ul>
 

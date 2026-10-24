@@ -27,7 +27,8 @@ export function ToolPage({ tool }: { tool: Tool }) {
       </div>
 
       <div className="container-page">
-        <section aria-label={`${tool.name} tool`} className="card -mt-4 p-4 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.35)] sm:p-6">
+        {/* data-clarity-mask hides file names, previews and entered values from Clarity session recordings. */}
+        <section aria-label={`${tool.name} tool`} data-clarity-mask="True" className="card -mt-4 p-4 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.35)] sm:p-6">
           <ToolWidget widget={tool.widget} />
         </section>
         {isBrowserTool(tool) && (

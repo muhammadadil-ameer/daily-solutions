@@ -21,8 +21,12 @@ export default function CookiePolicy() {
           <strong>Essential:</strong> the tools themselves do not need cookies to work.
         </li>
         <li>
-          <strong>Analytics (if enabled):</strong> Google Analytics 4 sets cookies such as <code>_ga</code> and{" "}
-          <code>_ga_*</code> to distinguish visitors and sessions. They expire after up to 2 years.
+          <strong>Analytics:</strong> Google Analytics 4 sets cookies such as <code>_ga</code> and <code>_ga_*</code> to
+          distinguish visitors and sessions. They expire after up to 2 years.
+        </li>
+        <li>
+          <strong>Usage insights:</strong> Microsoft Clarity sets cookies such as <code>_clck</code> (up to 1 year) and{" "}
+          <code>_clsk</code> (1 day) to group page views into sessions for heatmaps and session replays.
         </li>
         <li>
           <strong>Advertising:</strong> we do not use advertising cookies. If this changes, we will update this page and ask for consent where required.

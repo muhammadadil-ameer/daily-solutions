@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/Blocks";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const gaId = process.env.NEXT_PUBLIC_GA_ID;
+const { gaId, clarityId } = site;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -15,9 +15,7 @@ export const metadata: Metadata = {
   applicationName: site.name,
   openGraph: { type: "website", siteName: site.name, locale: "en_US" },
   twitter: { card: "summary_large_image" },
-  verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION
-    ? { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION }
-    : undefined,
+  verification: site.googleVerification ? { google: site.googleVerification } : undefined,
 };
 
 export const viewport: Viewport = {
@@ -61,6 +59,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');`}
             </Script>
           </>
+        )}
+        {clarityId && (
+          <Script id="clarity-init" strategy="lazyOnload">
+            {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${clarityId}");`}
+          </Script>
         )}
       </body>
     </html>
