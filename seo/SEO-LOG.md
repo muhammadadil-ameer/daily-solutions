@@ -17,6 +17,8 @@ It is the memory between runs: keep it short and factual.
 
 | URL | Requested | Status |
 | --- | --- | --- |
+| / | — | Indexed (checked 2026-10-24) |
+| /image-converter/ | Tried 2026-10-24 – quota exceeded | Discovered – currently not indexed |
 
 ## Waiting for approval
 
@@ -24,9 +26,23 @@ _None._
 
 ## Ideas backlog
 
+- Next run: request indexing first (quota was used up on 2026-10-24). Priority: /image-converter/, /image-resizer/, /pdf-tools/,
+  /media-converter/, /health-calculator/, /heic-to-jpg/, /compress-image/, /pdf-compressor/, /calorie-calculator/, /resize-image-1080x1080/.
+- Search Console showed "Referring page: None detected" for tool pages – check that the homepage/category pages link to every tool
+  in server-rendered HTML (they do in the audit) and consider a visible "Popular tools" block in the footer.
+- /terms/ and /cookie-policy/ meta descriptions are short (57–59 chars); low priority.
+- PageSpeed API was rate-limited (429) – retry next run.
+
 - Off-page (to do manually by the owner): submit the site to tool directories (e.g. Product Hunt, AlternativeTo,
   SaaSHub), answer related questions on Reddit/Quora with genuinely useful links.
 
 ## Runs
+
+- 2026-10-24 (run 1) — GSC: property new, Pages/Performance still "processing data"; sitemap read OK (60 URLs); no manual actions.
+  Audit: all 60 sitemap URLs 200, 404 works, one h1 each, canonicals OK, JSON-LD valid, no broken internal links, all images have alt.
+  Fixed (ce93e18): titles over 60 chars now drop the " | Daily Solutions" suffix (~40 pages); homepage description 184→159 chars;
+  square-resize descriptions rewritten (1080x1080 was 177 chars); "All Tools" → "All Free Online Tools".
+  IndexNow pinged: /, /all-tools/, /resize-image-300x300/, /resize-image-500x500/, /resize-image-1080x1080/.
+  Request indexing: quota exceeded, 0 URLs submitted. PageSpeed: 429, skipped.
 
 - 2026-10-24 — Setup: IndexNow key added, sitemap lastmod added, sitemap submitted in Search Console.
