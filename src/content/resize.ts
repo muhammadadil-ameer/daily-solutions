@@ -177,7 +177,7 @@ export const resizeTools: Tool[] = [
       { q: "Is the image compressor free and safe?", a: "Yes. It is free, needs no signup, and your images are compressed in your browser without being uploaded." },
       { q: "Is there a limit on file size?", a: "Images up to 50 MB can be processed." },
     ],
-    related: ["image-resizer", "reduce-image-size", "compress-jpg", "compress-png", "compress-webp", "pdf-compressor"],
+    related: ["compress-image-to-20kb", "compress-image-to-50kb", "compress-image-to-100kb", "compress-image-to-200kb", "image-resizer", "reduce-image-size"],
     keywords: ["compress", "compressor", "image", "photo", "reduce", "size", "kb", "20kb", "50kb", "100kb", "200kb", "optimize"],
   },
   {
@@ -316,7 +316,7 @@ export const resizeTools: Tool[] = [
       { q: "Which format gives the smallest size?", a: "AVIF and WebP are the smallest, but many forms only accept JPG. JPG is preselected for compatibility." },
       { q: "Does the form also require specific pixel dimensions?", a: "If so, set the width and height first, then the max size." },
     ],
-    related: ["compress-image", "compress-jpg", "image-resizer", "compress-pdf-to-100kb", "heic-to-jpg"],
+    related: ["compress-image-to-20kb", "compress-image-to-50kb", "compress-image-to-100kb", "compress-image", "image-resizer", "compress-pdf-to-100kb"],
     keywords: ["reduce", "reducer", "photo", "kb", "mb to kb", "20kb", "50kb", "100kb", "200kb", "size", "limit", "form", "signature"],
   },
   squarePage(

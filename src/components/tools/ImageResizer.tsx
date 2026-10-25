@@ -67,7 +67,8 @@ export default function ImageResizer({
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<Result | null>(null);
 
-  const [mode, setMode] = useState<ResizeMode>(presetW && presetH ? "both" : focus === "compress" ? "none" : "width");
+  // A width-only preset (e.g. KB landing pages) resizes by width; never upscale beyond the original.
+  const [mode, setMode] = useState<ResizeMode>(presetW && presetH ? "both" : presetW ? "width" : focus === "compress" ? "none" : "width");
   const [w, setW] = useState(presetW ?? 1200);
   const [h, setH] = useState(presetH ?? 800);
   const [percent, setPercent] = useState(50);
@@ -121,8 +122,9 @@ export default function ImageResizer({
       const url = URL.createObjectURL(file.type.startsWith("image/") && format !== "heic" && format !== "tiff" ? file : await encodeImage(canvas, "png"));
       setImg({ file, canvas, format, url });
       if (!(presetW && presetH)) {
-        setW(Math.min(canvas.width, 1200));
-        setH(Math.round(Math.min(canvas.width, 1200) / (canvas.width / canvas.height)));
+        const startW = Math.min(canvas.width, presetW ?? 1200);
+        setW(startW);
+        setH(Math.round(startW / (canvas.width / canvas.height)));
       }
       track("file_upload", { tool: "image-resizer", format: format ?? "" });
     } catch (e) {
