@@ -5,11 +5,12 @@ import { resizeTools } from "./resize";
 import { pdfTools } from "./pdf";
 import { mediaTools } from "./media";
 import { healthTools } from "./health";
+import { kbTools } from "./kb";
 
 export { categories, getCategory };
 
 /** Every tool page on the site. Adding a new category = new content file + entry in categories.ts. */
-export const tools: Tool[] = [...imageTools, ...resizeTools, ...pdfTools, ...mediaTools, ...healthTools];
+export const tools: Tool[] = [...imageTools, ...resizeTools, ...kbTools, ...pdfTools, ...mediaTools, ...healthTools];
 
 const bySlug = new Map(tools.map((t) => [t.slug, t]));
 
@@ -45,7 +46,7 @@ export function popularTools(): Tool[] {
 }
 
 /** Newest first. Prepend slugs here when launching a tool. */
-const recentOrder = ["ogg-to-mp3", "ideal-weight-calculator", "compress-pdf-to-1mb", "compress-pdf-to-500kb"];
+const recentOrder = ["compress-image-to-20kb", "compress-image-to-50kb", "jfif-to-jpg", "compress-image-to-100kb"];
 
 export function recentTools(): Tool[] {
   return recentOrder.map((s) => bySlug.get(s)!).filter(Boolean);

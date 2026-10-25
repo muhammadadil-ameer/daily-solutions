@@ -501,4 +501,51 @@ export const imageTools: Tool[] = [
     related: ["avif-to-jpg", "webp-to-png", "image-converter", "compress-png"],
     keywords: ["avif", "png"],
   },
+  {
+    slug: "jfif-to-jpg",
+    category: "image",
+    name: "JFIF to JPG",
+    h1: "JFIF to JPG Converter",
+    title: "JFIF to JPG Converter – Free Online, Bulk, No Quality Loss",
+    updated: "2026-10-25",
+    metaDescription:
+      "Convert JFIF to JPG online free. Change .jfif images saved from Chrome or WhatsApp into standard .jpg files that every app and form accepts. Bulk, no signup.",
+    short: "Turn .jfif images into standard .jpg files.",
+    intro:
+      "Saved an image and got a .jfif file that a website or app refuses? JFIF is simply a JPEG with a different extension. Convert it to a normal .jpg here – one file or many at once – right in your browser.",
+    widget: { type: "image-convert", from: "jpg", to: "jpg" },
+    howTo: [
+      "Add one or more .jfif files.",
+      "JPG is preselected. Keep the quality at 90–100% for no visible quality loss.",
+      "Press “Convert” and download the .jpg files, or “Download All” as a ZIP.",
+    ],
+    sections: [
+      {
+        heading: "What is a JFIF file?",
+        paragraphs: [
+          "JFIF (JPEG File Interchange Format) is the original container for JPEG images. Windows sometimes saves images from Chrome, Edge or WhatsApp Web with the .jfif extension. The picture inside is a normal JPEG, but many upload forms only check the extension and reject anything that is not .jpg or .jpeg.",
+        ],
+      },
+      {
+        heading: "Why convert instead of renaming?",
+        paragraphs: [
+          "Renaming .jfif to .jpg often works, but on phones the extension may be hidden, and some files carry unusual metadata. Converting creates a clean, standard JPG that opens everywhere and strips location metadata at the same time.",
+        ],
+      },
+      {
+        heading: "Stop Windows saving images as JFIF",
+        paragraphs: [
+          "Windows decides the extension using a registry setting for the image/jpeg type. The simplest fix is to convert files here when needed; changing the registry is possible but not necessary for most people.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Is JFIF the same as JPG?", a: "The image data is the same JPEG format; only the file extension and header label differ. Converting gives you a standard .jpg file." },
+      { q: "Will converting JFIF to JPG reduce quality?", a: "At 90–100% quality the difference is not visible. Keep the slider high if you want the closest match." },
+      { q: "Can I convert many JFIF files at once?", a: "Yes. Add them all and download a single ZIP file." },
+      { q: "Does it work on Android and iPhone?", a: "Yes. Open this page in your phone’s browser, choose the files and download the JPG versions." },
+    ],
+    related: ["image-converter", "webp-to-jpg", "png-to-jpg", "heic-to-jpg", "compress-jpg", "image-resizer"],
+    keywords: ["jfif", "jpg", "jpeg", "convert", "chrome", "whatsapp"],
+  },
 ];
