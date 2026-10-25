@@ -66,9 +66,12 @@ export default function HealthCalculator({ calc = "calorie", hub = false }: { ca
   );
 }
 
+/** kg+cm, kg with height in feet/inches (common in South Asia), or lb+feet. */
+type Units = "metric" | "kgft" | "imperial";
+
 function Calculator({ calc }: { calc: HealthCalc }) {
   const need = needs[calc];
-  const [units, setUnits] = useState<"metric" | "imperial">("metric");
+  const [units, setUnits] = useState<Units>("metric");
   const [age, setAge] = useState("30");
   const [sex, setSex] = useState<Sex>("female");
   const [cm, setCm] = useState("165");
@@ -83,25 +86,32 @@ function Calculator({ calc }: { calc: HealthCalc }) {
   const [error, setError] = useState("");
   const [result, setResult] = useState<ReactNode>(null);
 
-  const wUnit = units === "metric" ? "kg" : "lb";
+  const weightLb = units === "imperial";
+  const heightFt = units !== "metric";
+  const wUnit = weightLb ? "lb" : "kg";
 
-  function switchUnits(u: "metric" | "imperial") {
+  function switchUnits(u: Units) {
     if (u === units) return;
     const w = Number(weight);
     const gw = Number(goalWeight);
-    if (u === "imperial") {
-      if (w) setWeight(fmt(kgToLb(w)).replace(/,/g, ""));
-      if (gw) setGoalWeight(fmt(kgToLb(gw)).replace(/,/g, ""));
-      const totalIn = Number(cm) / 2.54;
-      if (totalIn) {
-        setFt(String(Math.floor(totalIn / 12)));
-        setInch(String(Math.round(totalIn % 12)));
+    const toLb = u === "imperial";
+    if (toLb !== weightLb) {
+      const conv = (v: number) => (toLb ? fmt(kgToLb(v)) : fmt(lbToKg(v), 1)).replace(/,/g, "");
+      if (w) setWeight(conv(w));
+      if (gw) setGoalWeight(conv(gw));
+    }
+    const toFt = u !== "metric";
+    if (toFt !== heightFt) {
+      if (toFt) {
+        const totalIn = Number(cm) / 2.54;
+        if (totalIn) {
+          setFt(String(Math.floor(totalIn / 12)));
+          setInch(String(Math.round(totalIn % 12)));
+        }
+      } else {
+        const c = ftInToCm(Number(ft), Number(inch));
+        if (c) setCm(String(Math.round(c)));
       }
-    } else {
-      if (w) setWeight(fmt(lbToKg(w), 1).replace(/,/g, ""));
-      if (gw) setGoalWeight(fmt(lbToKg(gw), 1).replace(/,/g, ""));
-      const c = ftInToCm(Number(ft), Number(inch));
-      if (c) setCm(String(Math.round(c)));
     }
     setUnits(u);
   }
@@ -110,13 +120,13 @@ function Calculator({ calc }: { calc: HealthCalc }) {
     e.preventDefault();
     setError("");
     const a = Number(age);
-    const h = units === "metric" ? Number(cm) : ftInToCm(Number(ft), Number(inch));
-    const w = units === "metric" ? Number(weight) : lbToKg(Number(weight));
+    const h = heightFt ? ftInToCm(Number(ft), Number(inch)) : Number(cm);
+    const w = weightLb ? lbToKg(Number(weight)) : Number(weight);
     if (need.age && !(a >= 18 && a <= 100)) return fail("Please enter an age between 18 and 100. These calculators are designed for adults.");
     if (need.height && !(h >= 120 && h <= 250)) return fail("Please enter a valid height.");
     if (need.weight && !(w >= 30 && w <= 350)) return fail("Please enter a valid weight.");
 
-    const toW = (kg: number) => (units === "metric" ? `${fmt(kg, 1)} kg` : `${fmt(kgToLb(kg))} lb`);
+    const toW = (kg: number) => (weightLb ? `${fmt(kgToLb(kg))} lb` : `${fmt(kg, 1)} kg`);
     const warnLow = (kcal: number) => kcal < minCalories(sex);
 
     switch (calc) {
@@ -257,7 +267,7 @@ function Calculator({ calc }: { calc: HealthCalc }) {
         break;
       }
       case "deficit": {
-        const gw = units === "metric" ? Number(goalWeight) : lbToKg(Number(goalWeight));
+        const gw = weightLb ? lbToKg(Number(goalWeight)) : Number(goalWeight);
         if (!(gw >= 30 && gw < w)) return fail("Your goal weight must be lower than your current weight.");
         const t = tdee(sex, w, h, a, activity);
         const perWeekKg = Number(rate);
@@ -320,8 +330,9 @@ function Calculator({ calc }: { calc: HealthCalc }) {
           value={units}
           onChange={switchUnits}
           options={[
-            { id: "metric", label: "Metric (kg, cm)" },
-            { id: "imperial", label: "Imperial (lb, ft)" },
+            { id: "metric", label: "kg + cm" },
+            { id: "kgft", label: "kg + feet" },
+            { id: "imperial", label: "lb + feet" },
           ]}
         />
       )}
@@ -334,7 +345,7 @@ function Calculator({ calc }: { calc: HealthCalc }) {
         )}
         {need.age && <Field id="age" label="Age (years)" value={age} onChange={setAge} />}
         {need.height &&
-          (units === "metric" ? (
+          (!heightFt ? (
             <Field id="cm" label="Height (cm)" value={cm} onChange={setCm} />
           ) : (
             <div className="grid grid-cols-2 gap-3">
@@ -382,10 +393,10 @@ function Calculator({ calc }: { calc: HealthCalc }) {
           <div className="sm:col-span-2">
             <p className="field-label">Weekly weight loss</p>
             <Segmented label="Weekly weight loss" value={rate} onChange={setRate} options={[
-              { id: "0.25", label: units === "metric" ? "0.25 kg" : "0.5 lb" },
-              { id: "0.5", label: units === "metric" ? "0.5 kg" : "1 lb" },
-              { id: "0.75", label: units === "metric" ? "0.75 kg" : "1.5 lb" },
-              { id: "1", label: units === "metric" ? "1 kg" : "2 lb" },
+              { id: "0.25", label: weightLb ? "0.5 lb" : "0.25 kg" },
+              { id: "0.5", label: weightLb ? "1 lb" : "0.5 kg" },
+              { id: "0.75", label: weightLb ? "1.5 lb" : "0.75 kg" },
+              { id: "1", label: weightLb ? "2 lb" : "1 kg" },
             ]} />
           </div>
         )}

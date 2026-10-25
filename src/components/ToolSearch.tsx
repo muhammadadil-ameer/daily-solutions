@@ -44,7 +44,7 @@ export function ToolSearch({ index, autoFocus = false }: { index: SearchEntry[];
         value={q}
         onChange={(e) => setQ(e.target.value)}
         className="input min-h-13 rounded-2xl pl-12 text-base shadow-sm"
-        aria-controls={listId}
+        aria-controls={q.trim() ? listId : undefined}
       />
       {q.trim() && (
         <div id={listId} className="card absolute inset-x-0 top-full z-30 mt-2 overflow-hidden shadow-lg" role="region" aria-live="polite">

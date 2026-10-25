@@ -134,7 +134,7 @@ export function ToolPage({ tool }: { tool: Tool }) {
         {next && (
           <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl bg-brand-600 p-6 text-white sm:flex-row sm:items-center">
             <div>
-              <p className="text-sm text-brand-100">Next step</p>
+              <p className="text-sm text-white">Next step</p>
               <p className="text-lg font-semibold">{next.short}</p>
             </div>
             <Link href={toolHref(next)} className="btn bg-white text-brand-700 hover:bg-brand-50">

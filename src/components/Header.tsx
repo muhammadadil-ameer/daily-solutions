@@ -14,8 +14,10 @@ export const navItems = [
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2 font-bold tracking-tight text-ink" aria-label={`${site.name} home`}>
-      <span className="grid size-8 place-items-center rounded-lg bg-brand-600 text-sm font-extrabold text-white">DS</span>
+    <Link href="/" className="flex items-center gap-2 font-bold tracking-tight text-ink">
+      <span aria-hidden="true" className="grid size-8 place-items-center rounded-lg bg-brand-600 text-sm font-extrabold text-white">
+        DS
+      </span>
       <span className="text-[17px]">{site.name}</span>
     </Link>
   );

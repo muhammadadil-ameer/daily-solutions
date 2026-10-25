@@ -103,7 +103,7 @@ export default function ImageConverter({ from, to = "jpg" }: { from?: ImageForma
           onFiles={addFiles}
           title={from ? `Drag & drop your ${formatLabel[from]} images here` : "Drag & drop your images here"}
           buttonLabel="Choose Images"
-          hint="JPG, PNG, WebP, HEIC, HEIF, AVIF, GIF, BMP, TIFF · up to 50 MB each · processed in your browser"
+          hint="JPG, JPEG, JFIF, PNG, WebP, HEIC, AVIF, GIF, BMP, TIFF · up to 50 MB each · processed in your browser"
         />
       ) : (
         <>

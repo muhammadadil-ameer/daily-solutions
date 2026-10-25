@@ -23,7 +23,7 @@ export const mimeOf: Record<OutputFormat, string> = {
 };
 
 export const ACCEPT_IMAGES =
-  "image/*,.heic,.heif,.avif,.tif,.tiff,.bmp,.webp,.jpg,.jpeg,.png,.gif";
+  "image/*,.heic,.heif,.avif,.tif,.tiff,.bmp,.webp,.jpg,.jpeg,.jfif,.png,.gif";
 
 export const formatLabel: Record<ImageFormat, string> = {
   jpg: "JPG",
@@ -54,7 +54,7 @@ export async function sniffFormat(file: File): Promise<ImageFormat | null> {
   }
   const ext = file.name.split(".").pop()?.toLowerCase();
   const byExt: Record<string, ImageFormat> = {
-    jpg: "jpg", jpeg: "jpg", png: "png", webp: "webp", gif: "gif", bmp: "bmp",
+    jpg: "jpg", jpeg: "jpg", jfif: "jpg", png: "png", webp: "webp", gif: "gif", bmp: "bmp",
     tif: "tiff", tiff: "tiff", heic: "heic", heif: "heic", avif: "avif",
   };
   return (ext && byExt[ext]) || null;

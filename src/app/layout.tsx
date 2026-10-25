@@ -54,7 +54,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
         {gaId && (
           <>
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
+            {/* The tiny init defines gtag() early so events queue in dataLayer; the heavy library loads when the page is idle. */}
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="lazyOnload" />
             <Script id="ga-init" strategy="afterInteractive">
               {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');`}
             </Script>

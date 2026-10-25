@@ -17,12 +17,13 @@ export const imageTools: Tool[] = [
     category: "image",
     name: "Image Converter",
     h1: "Image Converter",
-    title: "Free Image Converter – JPG, PNG, WebP, HEIC, AVIF Online",
+    title: "Image Converter – Convert Image to JPG, PNG, WebP Free",
+    updated: "2026-10-25",
     metaDescription:
-      "Convert images between JPG, PNG, WebP, AVIF, HEIC, GIF, BMP and TIFF for free. Works in your browser, no signup, no uploads to a server.",
+      "Free online image converter: convert images to JPG, PNG, WebP or AVIF, including HEIC, JFIF and JPEG files. Bulk convert without losing quality, no signup.",
     short: "Convert images between JPG, PNG, WebP, HEIC and more.",
     intro:
-      "Convert one or many images to JPG, PNG, WebP, AVIF, GIF, BMP or TIFF. HEIC and HEIF photos from iPhone are supported as input. Conversion runs in your browser, so your images stay on your device.",
+      "Convert any image to JPG, PNG, WebP, AVIF, GIF, BMP or TIFF online for free. Works with iPhone HEIC photos, JFIF and JPEG files, and you can convert many images at once. Everything runs in your browser, so your images stay on your device.",
     widget: { type: "image-convert" },
     primary: true,
     howTo: [
@@ -37,6 +38,33 @@ export const imageTools: Tool[] = [
         paragraphs: [
           "An image converter changes a picture from one file format to another, for example from HEIC to JPG or from PNG to WebP. The picture itself stays the same, but the way it is stored changes. That affects the file size, whether transparency is kept, and which apps and websites can open it.",
           "People usually need to convert images when a website rejects their upload, when a photo from an iPhone will not open on Windows, or when they want smaller images for a faster website.",
+        ],
+      },
+      {
+        heading: "Convert image to JPG, PNG or WebP",
+        list: [
+          "Image to JPG: the best choice for photos and for upload forms that only accept JPG or JPEG.",
+          "Image to PNG: keeps every pixel and transparent backgrounds – ideal for logos, screenshots and editing.",
+          "Image to WebP: much smaller files with similar quality, recommended for websites and blogs.",
+          "Image to AVIF: the smallest files of all, supported by modern browsers.",
+        ],
+      },
+      {
+        heading: "JFIF to JPG and JPEG to JPG",
+        paragraphs: [
+          "JFIF and JPEG are the same format as JPG with a different file extension. Some websites still reject .jfif or .jpeg files, so add them here and convert to JPG to get a standard .jpg file that every form accepts.",
+        ],
+      },
+      {
+        heading: "Bulk image converter",
+        paragraphs: [
+          "Add as many images as you need, choose one output format and convert them all in one go. Download each file separately or press “Download All” to get a single ZIP file – handy for converting a whole folder of iPhone photos.",
+        ],
+      },
+      {
+        heading: "Convert images without losing quality",
+        paragraphs: [
+          "Choose PNG for lossless output, or keep the quality slider at 90% or higher for JPG and WebP – at these settings the difference is not visible. Converting to a lossy format can never add detail that the original did not have, so always start from the best original you have.",
         ],
       },
       {
@@ -55,13 +83,16 @@ export const imageTools: Tool[] = [
     ],
     faqs: [
       { q: "Is the image converter free?", a: "Yes. The converter is free to use and does not require an account." },
+      { q: "How do I convert an image to JPG?", a: "Add your image, choose JPG in the “Convert to” list and press “Convert”. Then download the JPG file. It works for PNG, WebP, HEIC, JFIF, AVIF, GIF, BMP and TIFF images." },
+      { q: "Can I convert images on Android or iPhone?", a: "Yes. Open this page in Chrome or Safari on your phone, choose images from your gallery and download the converted files. No app is needed." },
+      { q: "Can I also reduce the image size in KB?", a: "Yes. After converting, use the Image Resizer & Compressor to compress the image to a specific size such as 50 KB or 200 KB." },
       { q: "Are my images uploaded to a server?", a: "No. Images are converted in your browser on your own device. They are not uploaded to our server." },
       { q: "Can I convert images to HEIC?", a: "HEIC and HEIF are supported as input formats only. You can convert HEIC to JPG, PNG, WebP and other formats, but browsers cannot create HEIC files." },
       { q: "Can I convert several images at once?", a: "Yes. Add multiple images, choose one output format and download them one by one or together as a ZIP file." },
       { q: "Is there a file size limit?", a: "Each image can be up to 50 MB. Very large images may be slow on phones with limited memory." },
     ],
     related: ["heic-to-jpg", "webp-to-jpg", "png-to-webp", "jpg-to-webp", "image-resizer", "compress-image"],
-    keywords: ["convert", "format", "jpg", "png", "webp", "heic", "avif", "gif", "bmp", "tiff"],
+    keywords: ["convert", "format", "jpg", "jpeg", "jfif", "png", "webp", "heic", "avif", "gif", "bmp", "tiff", "bulk"],
     popular: false,
   },
   {
@@ -69,9 +100,10 @@ export const imageTools: Tool[] = [
     category: "image",
     name: "HEIC to JPG",
     h1: "HEIC to JPG Converter",
-    title: "HEIC to JPG Converter – Convert iPhone Photos Free",
+    title: "HEIC to JPG Converter – Free, Bulk, No Quality Loss",
+    updated: "2026-10-25",
     metaDescription:
-      "Convert HEIC and HEIF photos from your iPhone to JPG in seconds. Free, works in your browser, supports multiple photos and ZIP download.",
+      "Free HEIC to JPG converter. Convert iPhone HEIC/HEIF photos to JPG in bulk without losing quality on Windows, Android or Mac. No app, no signup.",
     short: "Turn iPhone HEIC photos into JPG files that open everywhere.",
     intro:
       "iPhones save photos as HEIC by default, and many websites, Windows apps and printers cannot open them. Convert HEIC or HEIF photos to standard JPG here. Photos are converted in your browser, not on a server.",
@@ -92,9 +124,27 @@ export const imageTools: Tool[] = [
         ],
       },
       {
+        heading: "Bulk HEIC to JPG converter",
+        paragraphs: [
+          "Select dozens of HEIC photos at once – for example a whole album copied from your iPhone – and convert them in one batch. Download each JPG or press “Download All” to get them together in a ZIP file. There is no daily limit.",
+        ],
+      },
+      {
+        heading: "Open HEIC files on Windows and Android",
+        paragraphs: [
+          "Windows PCs and many Android phones cannot open HEIC without extra codecs or apps. Instead of installing software, open this page in Chrome or Edge, add the HEIC files and save them as JPG – they will then open in Photos, WhatsApp, Word and every website.",
+        ],
+      },
+      {
+        heading: "Convert HEIC to JPG and reduce size",
+        paragraphs: [
+          "JPG files are larger than HEIC. If you need a small file for an upload form, convert first and then use the Image Compressor to reduce the JPG to a size such as 100 KB or 200 KB.",
+        ],
+      },
+      {
         heading: "Tips for better results",
         list: [
-          "Quality 85–92% keeps photos visually identical to the original while keeping file sizes reasonable.",
+          "Quality 85–92% keeps photos visually identical to the original (no visible quality loss) while keeping file sizes reasonable.",
           "If you only need the photo for email or messaging, try the Image Resizer afterwards to reduce the dimensions.",
           "To stop your iPhone creating HEIC files, go to Settings → Camera → Formats and choose “Most Compatible”.",
         ],
@@ -106,13 +156,16 @@ export const imageTools: Tool[] = [
       "Send photos to an online printing service.",
     ],
     faqs: [
+      { q: "Is this HEIC to JPG converter free?", a: "Yes. It is free with no signup, no watermark and no limit on the number of photos." },
       { q: "Will converting HEIC to JPG reduce quality?", a: "JPG uses lossy compression, but at the default 90% quality the difference is not visible in normal viewing." },
+      { q: "How do I convert HEIC to JPG on Windows?", a: "Open this page in Chrome or Edge, drag your .heic files into the box, press “Convert” and download the JPG files. No software installation is needed." },
+      { q: "Can I convert many HEIC files at once?", a: "Yes. Add as many photos as you like and download them all as one ZIP file." },
       { q: "Can I convert Live Photos?", a: "The converter uses the still image stored in the HEIC file. The motion part of a Live Photo is a separate video and is not included." },
       { q: "Is photo location data (EXIF) kept?", a: "No. The converted JPG does not include EXIF metadata such as GPS location, which is useful if you share photos publicly." },
       { q: "Does it work on iPhone?", a: "Yes. Open this page in Safari or Chrome on your iPhone, choose photos from your library, and download the JPG files." },
     ],
     related: ["heic-to-png", "heic-to-webp", "image-converter", "compress-jpg", "image-resizer", "webp-to-jpg"],
-    keywords: ["heic", "heif", "iphone", "jpg", "jpeg", "apple", "photo"],
+    keywords: ["heic", "heif", "iphone", "jpg", "jpeg", "apple", "photo", "bulk", "batch", "windows", "android"],
   },
   {
     slug: "heic-to-png",
@@ -192,9 +245,10 @@ export const imageTools: Tool[] = [
     category: "image",
     name: "WebP to JPG",
     h1: "WebP to JPG Converter",
-    title: "WebP to JPG Converter – Free Online, No Signup",
+    title: "WebP to JPG Converter – Free Online, Bulk, High Quality",
+    updated: "2026-10-25",
     metaDescription:
-      "Convert WebP images to JPG so they open in any app or upload form. Free, fast, works in your browser and supports batch conversion.",
+      "Convert WebP to JPG online free. Batch convert WebP images to high-quality JPG that opens in any app or upload form. No extension, no app, no signup.",
     short: "Make WebP images compatible with any app or form.",
     intro:
       "Saved an image from a website and got a .webp file that will not open or upload? Convert WebP to JPG here. JPG works with almost every app, editor and upload form.",
@@ -213,6 +267,12 @@ export const imageTools: Tool[] = [
         ],
       },
       {
+        heading: "No browser extension or app needed",
+        paragraphs: [
+          "You don’t need a Chrome extension or a desktop app to change WebP to JPG. Drop the files here – even dozens at once – and download high-quality JPG files individually or as a ZIP. It works the same on Windows, Mac, Android and iPhone.",
+        ],
+      },
+      {
         heading: "Transparent WebP images",
         paragraphs: [
           "JPG cannot store transparency. If your WebP has a transparent background, the converter fills it with white. If you need to keep transparency, use WebP to PNG instead.",
@@ -220,6 +280,8 @@ export const imageTools: Tool[] = [
       },
     ],
     faqs: [
+      { q: "How do I convert WebP to JPG for free?", a: "Add your .webp files above, keep JPG selected, press “Convert” and download. It is free, with no signup and no watermark." },
+      { q: "Can I batch convert WebP to JPG?", a: "Yes. Add many WebP files at once and use “Download All” to get a ZIP of the JPG files." },
       { q: "Does converting WebP to JPG lower quality?", a: "Both formats are usually lossy, so a small amount of extra compression is added. At 90% quality the difference is hard to see." },
       { q: "Can I convert animated WebP?", a: "Only the first frame of an animated WebP is converted, because JPG cannot store animation." },
       { q: "Why is the JPG larger than the WebP?", a: "WebP compresses more efficiently than JPG, so the same image usually needs more bytes as a JPG." },
@@ -356,9 +418,10 @@ export const imageTools: Tool[] = [
     category: "image",
     name: "PNG to JPG",
     h1: "PNG to JPG Converter",
-    title: "PNG to JPG Converter – Reduce Image Size",
+    title: "PNG to JPG Converter – Free, No Quality Loss, Bulk",
+    updated: "2026-10-25",
     metaDescription:
-      "Convert PNG images to JPG to reduce file size and meet upload requirements. Free, in-browser, adjustable quality, batch download.",
+      "Convert PNG to JPG online free without losing quality. Bulk convert PNG images to JPG, reduce file size and meet upload limits. No signup, no watermark.",
     short: "Convert PNG to JPG for smaller files.",
     intro:
       "Convert PNG images to JPG when a form only accepts JPG or when you need a smaller file for email or upload. Transparent areas are filled with white.",
@@ -373,6 +436,8 @@ export const imageTools: Tool[] = [
       },
     ],
     faqs: [
+      { q: "How do I convert PNG to JPG without losing quality?", a: "Keep the quality slider at 90–100%. At these settings the JPG looks the same as the PNG while usually being much smaller." },
+      { q: "Can I convert multiple PNG files to JPG at once?", a: "Yes. Add several PNG images and download all JPG files together as a ZIP." },
       { q: "What happens to transparent backgrounds?", a: "JPG does not support transparency, so transparent areas become white." },
       { q: "Which quality setting is best?", a: "85–92% is a good default. Go lower if you must meet a strict upload size limit." },
     ],

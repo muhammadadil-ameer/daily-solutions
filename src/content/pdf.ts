@@ -101,9 +101,10 @@ export const pdfTools: Tool[] = [
     category: "pdf",
     name: "PDF Compressor",
     h1: "PDF Compressor",
-    title: "PDF Compressor – Reduce PDF File Size Online Free",
+    title: "PDF Compressor – Compress PDF to 100KB, 200KB, 1MB Free",
+    updated: "2026-10-25",
     metaDescription:
-      "Compress PDF files with low, medium or high compression, or to a target size like 100 KB or 1 MB. Free, private, runs in your browser.",
+      "Free online PDF compressor. Reduce PDF file size to 100KB, 200KB, 500KB, 1MB or below 2MB, or pick low/medium/high compression. No signup, files stay private.",
     short: "Reduce PDF file size for email and uploads.",
     intro:
       "Reduce the size of a PDF for email, WhatsApp or online applications. Choose a compression level or a target size, then compare the original and compressed size.",
@@ -116,7 +117,24 @@ export const pdfTools: Tool[] = [
       "Check the size reduction and download the compressed file.",
     ],
     sections: [
+      {
+        heading: "Compress PDF to a specific size",
+        paragraphs: [
+          "Choose “Target size” and pick under 100 KB, 200 KB, 500 KB, 1 MB or 2 MB – the usual limits on job, exam, university, bank and visa portals. The compressor tries progressively stronger settings and keeps the best-looking result that fits.",
+        ],
+        list: [
+          "Compress PDF to 100 KB or 200 KB: scanned certificates, CNIC/ID copies and forms.",
+          "Compress PDF below 500 KB or 1 MB: resumes, assignments and multi-page scans.",
+          "Compress PDF below 2 MB: email attachments and large reports.",
+        ],
+      },
       compressionNote,
+      {
+        heading: "Compress PDF without losing quality",
+        paragraphs: [
+          "“Low” compression first tries a lossless optimization that keeps text sharp and selectable. For scanned PDFs, “Medium” keeps documents easy to read while cutting the size substantially. Only very small targets need “High” compression.",
+        ],
+      },
       {
         heading: "Choosing a compression level",
         list: [
@@ -127,6 +145,9 @@ export const pdfTools: Tool[] = [
       },
     ],
     faqs: [
+      { q: "How do I compress a PDF to 200 KB?", a: "Add your PDF, choose “Target size”, select “Under 200 KB” and press “Compress PDF”. Download the result once the final size is shown." },
+      { q: "Is this PDF compressor free?", a: "Yes. It is free, has no daily limit and needs no account." },
+      { q: "Can I compress a PDF on my phone?", a: "Yes. The PDF compressor works in Chrome and Safari on Android and iPhone – no app is needed." },
       { q: "How much smaller will my PDF be?", a: "Scanned and image-heavy PDFs often shrink by 50–90%. Text-only PDFs are usually already small and may shrink less." },
       { q: "Why did my PDF get bigger?", a: "Some text-only PDFs are already optimized. If the result is larger, the tool tells you and you can keep the original." },
       { q: "Is my file safe?", a: "The file is processed entirely in your browser and is not uploaded." },
@@ -161,9 +182,10 @@ export const pdfTools: Tool[] = [
     category: "pdf",
     name: "Merge PDF",
     h1: "Merge PDF Files",
-    title: "Merge PDF – Combine PDF Files Into One Free",
+    title: "Merge PDF – Combine PDF Files into One Online Free",
+    updated: "2026-10-25",
     metaDescription:
-      "Combine multiple PDF files into one document in the order you choose. Free, no signup, files stay in your browser.",
+      "Merge PDF files online free. Combine multiple PDFs into one file in any order without losing quality. No signup, no watermark, files stay private.",
     short: "Combine several PDFs into one file.",
     intro:
       "Combine two or more PDF files into a single document. Arrange the files in the order you want, then merge and download.",
@@ -235,9 +257,10 @@ export const pdfTools: Tool[] = [
     category: "pdf",
     name: "JPG to PDF",
     h1: "JPG to PDF Converter",
-    title: "JPG to PDF – Convert Images to PDF Free",
+    title: "JPG to PDF Converter – Merge Images into One PDF Free",
+    updated: "2026-10-25",
     metaDescription:
-      "Convert JPG, PNG and other images into one PDF. Choose page size, orientation and margins. Free, no signup, runs in your browser.",
+      "Convert JPG to PDF online free. Combine multiple JPG, PNG or HEIC images into one high-quality PDF in A4 or Letter size. No signup, no watermark.",
     short: "Turn photos and scans into a single PDF.",
     intro:
       "Turn photos of documents, receipts or notes into a single PDF. Add images, arrange them, choose a page size and download.",
@@ -250,6 +273,12 @@ export const pdfTools: Tool[] = [
       "Press “Create PDF” and download.",
     ],
     sections: [
+      {
+        heading: "Combine multiple JPGs into one PDF",
+        paragraphs: [
+          "Select all your photos or scanned pages at once, put them in the right order with the arrows, and create a single PDF. This is the easiest way to send several pictures as one document or upload multi-page scans to a portal.",
+        ],
+      },
       {
         heading: "Page size options",
         list: [
@@ -265,6 +294,8 @@ export const pdfTools: Tool[] = [
       },
     ],
     faqs: [
+      { q: "How do I convert JPG to PDF in A4 size?", a: "Add your images, keep “A4” selected as the page size, choose a margin and press “Create PDF”. Each image is scaled to fit an A4 page." },
+      { q: "Will my images lose quality in the PDF?", a: "No. JPG files are placed into the PDF without recompression, so the PDF keeps the original image quality." },
       { q: "Can I add PNG or HEIC images?", a: "Yes. JPG, PNG, WebP, GIF, BMP, AVIF and HEIC images are accepted." },
       { q: "Is there a limit on the number of images?", a: "No fixed limit. Many large photos may take longer on phones." },
     ],
@@ -276,9 +307,10 @@ export const pdfTools: Tool[] = [
     category: "pdf",
     name: "PDF to JPG",
     h1: "PDF to JPG Converter",
-    title: "PDF to JPG – Convert PDF Pages to Images Free",
+    title: "PDF to JPG Converter – High Quality, All Pages, Free",
+    updated: "2026-10-25",
     metaDescription:
-      "Convert each page of a PDF to a high-quality JPG image. Choose resolution, download individually or as a ZIP. Free and private.",
+      "Convert PDF to JPG online free in high quality. Turn every PDF page into a JPG image at 100–220 DPI and download all pages as a ZIP. No signup.",
     short: "Save every PDF page as a JPG image.",
     intro: "Convert PDF pages to JPG images for sharing on social media, inserting into slides or uploading where PDFs are not accepted.",
     widget: { type: "pdf", action: "pdf-to-jpg" },
@@ -298,6 +330,8 @@ export const pdfTools: Tool[] = [
       },
     ],
     faqs: [
+      { q: "How do I convert a PDF to high-quality JPG?", a: "Choose “Very high (220 DPI)” before converting. Higher DPI gives sharper images for printing or zooming, at the cost of larger files." },
+      { q: "Can I convert PDF to JPG on my phone?", a: "Yes. Open this page on Android or iPhone, choose the PDF from your files and download the JPG images." },
       { q: "Can I convert only one page?", a: "All pages are converted, and you can download only the pages you need." },
       { q: "Should I use JPG or PNG?", a: "JPG gives smaller files for scanned and photo pages. Use PDF to PNG for crisp text and diagrams." },
     ],

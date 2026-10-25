@@ -36,7 +36,7 @@ export const healthTools: Tool[] = [
     disclaimer: true,
     howTo: [
       "Choose a calculator tab.",
-      "Pick metric or imperial units and enter your details.",
+      "Pick your units (kg + cm, kg + feet or lb + feet) and enter your details.",
       "Press “Calculate” to see your results and what they mean.",
     ],
     sections: [
@@ -59,7 +59,7 @@ export const healthTools: Tool[] = [
     faqs: [
       { q: "Are these calculators accurate?", a: "They use well-established formulas, but they give estimates. Individual results vary." },
       { q: "Is my data saved?", a: "No. Calculations run in your browser and nothing you enter is stored or sent to us." },
-      { q: "Can I use pounds and feet?", a: "Yes. Switch to imperial units to enter weight in pounds and height in feet and inches." },
+      { q: "Can I use kg with feet, or pounds?", a: "Yes. Choose “kg + feet” to enter kilograms with height in feet and inches, or “lb + feet” for pounds." },
     ],
     related: ["calorie-calculator", "bmi-calculator", "tdee-calculator", "macro-calculator", "protein-calculator"],
     keywords: ["health", "fitness", "calculator", "calories", "bmi", "bmr", "tdee", "macros", "weight"],
@@ -69,9 +69,10 @@ export const healthTools: Tool[] = [
     category: "health",
     name: "Calorie Calculator",
     h1: "Calorie Calculator",
-    title: "Calorie Calculator – How Many Calories Do I Need Per Day?",
+    title: "Calorie Calculator to Lose or Gain Weight – Free",
+    updated: "2026-10-25",
     metaDescription:
-      "Estimate how many calories you need per day to maintain, lose or gain weight, based on age, sex, height, weight and activity level.",
+      "Free calorie calculator for weight loss and weight gain. Find how many calories you need per day from your age, height, weight and activity, in kg or lbs.",
     short: "Find your daily calories to maintain, lose or gain weight.",
     intro:
       "Estimate your daily calorie needs from your age, sex, height, weight and activity level. You get your maintenance calories and targets for losing or gaining weight.",
@@ -107,6 +108,7 @@ export const healthTools: Tool[] = [
       "A 40-year-old man, 180 cm, 90 kg, lightly active: BMR ≈ 1,830 kcal, maintenance ≈ 2,520 kcal.",
     ],
     faqs: [
+      { q: "How many calories should I eat to gain weight?", a: "Eat about 250–500 kcal above your maintenance calories and combine it with strength training, so most of the gain is muscle rather than fat." },
       { q: "How many calories should I eat to lose weight?", a: "A common approach is about 500 kcal below your maintenance calories, which leads to roughly 0.5 kg (1 lb) of weight loss per week." },
       { q: "Which activity level should I choose?", a: "Be conservative. Most people with desk jobs who exercise 2–3 times a week fit “Lightly active”." },
       { q: "Why does my weight not change as predicted?", a: "Water, food volume and hormones cause day-to-day swings. Judge progress over 2–4 weeks and adjust by 100–200 kcal if needed." },
@@ -119,15 +121,16 @@ export const healthTools: Tool[] = [
     category: "health",
     name: "BMI Calculator",
     h1: "BMI Calculator",
-    title: "BMI Calculator – Check Your Body Mass Index",
+    title: "BMI Calculator in kg and Feet – For Men & Women",
+    updated: "2026-10-25",
     metaDescription:
-      "Calculate your Body Mass Index (BMI) in metric or imperial units and see your WHO weight category. Free and instant.",
+      "Free BMI calculator for men and women. Enter weight in kg or lbs and height in cm or feet/inches to get your body mass index, category and healthy weight.",
     short: "Calculate your Body Mass Index and category.",
     intro: "Calculate your Body Mass Index from your height and weight and see which adult weight category it falls into.",
     widget: { type: "health", calc: "bmi" },
     popular: true,
     disclaimer: true,
-    howTo: ["Choose metric or imperial units.", "Enter your height and weight.", "Press “Calculate” to see your BMI and category."],
+    howTo: ["Choose your units: kg + cm, kg + feet or lb + feet.", "Enter your height and weight.", "Press “Calculate” to see your BMI and category."],
     sections: [
       {
         heading: "BMI formula and categories",
@@ -140,6 +143,19 @@ export const healthTools: Tool[] = [
         ],
       },
       {
+        heading: "BMI in kg and feet",
+        paragraphs: [
+          "Many people know their weight in kilograms but their height in feet and inches. Choose “kg + feet” to enter exactly that, or use “kg + cm” or “lb + feet” – the calculator converts everything for you. For example, 5 ft 6 in is 167.6 cm; at 70 kg that gives a BMI of 24.9.",
+        ],
+      },
+      {
+        heading: "BMI for men, women and different ages",
+        paragraphs: [
+          "For adults aged 18 and over, the same BMI categories apply to men and women and do not change with age. Women naturally carry more body fat than men at the same BMI, and older adults may carry more fat for the same BMI, which is why BMI is a screening number, not a diagnosis.",
+          "For people of South Asian, Chinese and other Asian backgrounds, the WHO suggests extra cut-off points: 23 as increased risk and 27.5 as high risk.",
+        ],
+      },
+      {
         heading: "What BMI does not tell you",
         paragraphs: [
           "BMI does not distinguish muscle from fat, so muscular people can have a high BMI while being healthy. It also does not show where fat is stored. Some health bodies use lower thresholds for people of Asian descent (for example 23 for overweight). BMI categories do not apply to children and teens, who need age-specific charts.",
@@ -147,6 +163,8 @@ export const healthTools: Tool[] = [
       },
     ],
     faqs: [
+      { q: "How do I calculate BMI with weight in kg and height in feet?", a: "Select “kg + feet”, enter your weight in kilograms and your height in feet and inches, then press “Calculate”. You can also use kg + cm or lb + feet." },
+      { q: "Is BMI different for men and women?", a: "No. Adult BMI uses the same formula and categories for men and women, although body fat at the same BMI differs." },
       { q: "What is a healthy BMI?", a: "For most adults, a BMI between 18.5 and 24.9 is considered a healthy range." },
       { q: "Is BMI accurate for athletes?", a: "Not always. Muscle weighs more than fat, so athletes can have a high BMI without excess body fat." },
       { q: "Can children use this calculator?", a: "No. Children and teenagers need BMI-for-age percentile charts." },

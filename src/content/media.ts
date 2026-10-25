@@ -56,9 +56,10 @@ export const mediaTools: Tool[] = [
     category: "media",
     name: "M4A to MP3",
     h1: "M4A to MP3 Converter",
-    title: "M4A to MP3 Converter – Free Online, No Signup",
+    title: "M4A to MP3 Converter – Free Online, Best Quality",
+    updated: "2026-10-25",
     metaDescription:
-      "Convert M4A audio, such as iPhone voice memos and iTunes songs, to MP3. Choose bitrate, convert in your browser, no upload.",
+      "Convert M4A to MP3 online free. Turn iPhone voice memos, recordings and songs into MP3 at up to 320 kbps on PC, Android or iPhone. No app, no signup.",
     short: "Convert iPhone voice memos and M4A audio to MP3.",
     intro:
       "Convert M4A files, such as iPhone voice memos and recordings, to MP3 so they play on any device, car stereo or website.",
@@ -77,6 +78,7 @@ export const mediaTools: Tool[] = [
       engineNote,
     ],
     faqs: [
+      { q: "Is this M4A to MP3 converter free?", a: "Yes. It is free with no signup, and your audio is converted on your own device." },
       { q: "Will my voice memo lose quality?", a: "At 128 kbps or higher, speech sounds the same. Converting cannot add quality that the original did not have." },
       { q: "Can I convert songs bought on iTunes?", a: "Only DRM-free files can be converted. Most iTunes purchases since 2009 are DRM-free." },
     ],
@@ -116,9 +118,10 @@ export const mediaTools: Tool[] = [
     category: "media",
     name: "MOV to MP4",
     h1: "MOV to MP4 Converter",
-    title: "MOV to MP4 Converter – Convert iPhone Videos Free",
+    title: "MOV to MP4 Converter – Free, High Quality, No Upload",
+    updated: "2026-10-25",
     metaDescription:
-      "Convert MOV videos from iPhone or Mac to MP4 for Windows, Android and websites. Free, private, runs in your browser.",
+      "Convert MOV to MP4 online free without losing quality. Change iPhone and QuickTime MOV videos to MP4 for Windows, Android and WhatsApp. No signup, no upload.",
     short: "Make iPhone MOV videos play everywhere as MP4.",
     intro: "Convert MOV videos, such as iPhone recordings and QuickTime exports, to MP4 so they play on Windows, Android and every website.",
     widget: { type: "media", from: "mov", to: "mp4" },
@@ -139,6 +142,7 @@ export const mediaTools: Tool[] = [
       engineNote,
     ],
     faqs: [
+      { q: "How do I convert MOV to MP4 without losing quality?", a: "Choose “High” quality. It keeps the video visually the same as the original while producing a widely compatible MP4 (H.264 + AAC)." },
       { q: "How long does it take?", a: "Roughly as long as the video plays, or longer on phones. Shorter clips finish quickly." },
       { q: "Will the video lose quality?", a: "“High” keeps quality very close to the original. “Small file” reduces size more with some quality loss." },
     ],
@@ -178,9 +182,10 @@ export const mediaTools: Tool[] = [
     category: "media",
     name: "MP4 to MP3",
     h1: "MP4 to MP3 Converter",
-    title: "MP4 to MP3 Converter – Extract Audio from Video Free",
+    title: "MP4 to MP3 Converter – Free Online, High Quality 320kbps",
+    updated: "2026-10-25",
     metaDescription:
-      "Convert MP4 video to MP3 audio in your browser. Choose 128, 192 or 320 kbps. Free, private, no signup.",
+      "Convert MP4 to MP3 online free. Extract audio from video in high quality (128, 192 or 320 kbps) on PC, Android or iPhone. No app, no signup, no upload.",
     short: "Extract audio from MP4 videos as MP3.",
     intro: "Extract audio from an MP4 video and save it as MP3. Useful for recorded lectures, podcasts, meetings and your own videos.",
     widget: { type: "media", from: "mp4", to: "mp3" },
@@ -196,6 +201,8 @@ export const mediaTools: Tool[] = [
       engineNote,
     ],
     faqs: [
+      { q: "How do I convert MP4 to MP3 in the best quality?", a: "Choose 320 kbps before converting. That is the highest MP3 quality; 192 kbps is enough for most music and 128 kbps for speech." },
+      { q: "Can I convert MP4 to MP3 on Android or iPhone?", a: "Yes. Open this page in your phone’s browser, pick the video from your gallery and download the MP3. No app is needed." },
       { q: "Can I paste a YouTube link?", a: "No. The converter only works with files on your device." },
       { q: "How big will the MP3 be?", a: "About 1 MB per minute at 128 kbps, or 2.4 MB per minute at 320 kbps." },
     ],
