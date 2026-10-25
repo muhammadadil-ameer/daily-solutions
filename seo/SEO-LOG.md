@@ -18,7 +18,7 @@ It is the memory between runs: keep it short and factual.
 | URL | Requested | Status |
 | --- | --- | --- |
 | / | — | Indexed (checked 2026-10-24) |
-| /image-converter/ | Tried 2026-10-24 – quota exceeded | Discovered – currently not indexed |
+| /image-converter/ | Tried 2026-10-24 and 2026-10-25 – quota exceeded both times | URL is unknown to Google (2026-10-25) |
 
 ## Waiting for approval
 
@@ -26,17 +26,25 @@ _None._
 
 ## Ideas backlog
 
-- Next run: request indexing first (quota was used up on 2026-10-24). Priority: /image-converter/, /image-resizer/, /pdf-tools/,
+- Request indexing has returned "Quota exceeded" on the first URL two days running (new property). Keep trying 1 URL first each run;
+  rely on sitemap + IndexNow + internal links meanwhile.
+- Next run: request indexing first. Priority: /image-converter/, /image-resizer/, /pdf-tools/,
   /media-converter/, /health-calculator/, /heic-to-jpg/, /compress-image/, /pdf-compressor/, /calorie-calculator/, /resize-image-1080x1080/.
-- Search Console showed "Referring page: None detected" for tool pages – check that the homepage/category pages link to every tool
-  in server-rendered HTML (they do in the audit) and consider a visible "Popular tools" block in the footer.
-- /terms/ and /cookie-policy/ meta descriptions are short (57–59 chars); low priority.
+- Short titles (<30 chars) on /about/, /contact/, /disclaimer/ – low priority, they are brand pages.
 - PageSpeed API was rate-limited (429) – retry next run.
 
 - Off-page (to do manually by the owner): submit the site to tool directories (e.g. Product Hunt, AlternativeTo,
   SaaSHub), answer related questions on Reddit/Quora with genuinely useful links.
 
 ## Runs
+
+- 2026-10-25 (run 2) — GSC: Pages report still "processing data"; Performance 0 clicks / 0 impressions; sitemap Success, 60 discovered;
+  no manual actions. /image-converter/ inspection: "URL is unknown to Google".
+  Audit: 60 sitemap URLs 200, 404 OK, one h1 each, canonicals OK, JSON-LD valid, no broken internal links, all images have alt.
+  Fixed (9ff725d): footer "Popular tools" column (8 tool links on every page); /image-resizer/ and /health-calculator/ titles
+  shortened (62→54/53 chars); /terms/ and /cookie-policy/ descriptions expanded (57/59→~125 chars).
+  IndexNow pinged (HTTP 200): /, /image-resizer/, /health-calculator/, /terms/, /cookie-policy/.
+  Request indexing: quota exceeded on first URL, 0 submitted. PageSpeed: 429 again, skipped.
 
 - 2026-10-24 (run 1) — GSC: property new, Pages/Performance still "processing data"; sitemap read OK (60 URLs); no manual actions.
   Audit: all 60 sitemap URLs 200, 404 works, one h1 each, canonicals OK, JSON-LD valid, no broken internal links, all images have alt.
