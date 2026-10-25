@@ -22,8 +22,7 @@ It is the memory between runs: keep it short and factual.
 
 ## Waiting for approval
 
-- PR #1 `seo/kb-landing-pages` – new pages /compress-image-to-20kb/, /compress-image-to-50kb/, /compress-image-to-100kb/,
-  /compress-image-to-200kb/, /jfif-to-jpg/ (https://github.com/muhammadadil-ameer/daily-solutions/pull/1). Opened 2026-10-25.
+_None._
 
 ## Main goal (owner, 2026-10-25)
 
@@ -44,6 +43,8 @@ because head terms like "image resizer" are dominated by very strong sites.
 - /jpg-to-pdf/ – jpg to pdf converter, a4 size, combine multiple images
 - /bmi-calculator/ – bmi calculator in kg and feet, for women/men, asian bmi
 - /calorie-calculator/ – calorie calculator to lose weight / gain weight
+- /compress-image-to-20kb/, /-50kb/, /-100kb/, /-200kb/ – compress image to N kb, image resizer N kb, resize image to N kb
+- /jfif-to-jpg/ – jfif to jpg, jfif to jpg converter
 
 ## Ideas backlog
 
@@ -64,7 +65,8 @@ because head terms like "image resizer" are dominated by very strong sites.
   unit option in health calculators; lazy-loaded gtag.js; fixed 3 accessibility issues. Lighthouse mobile before:
   perf 66–72, a11y 94–96, best practices 79 (third-party cookies from GA/Clarity), SEO 100.
   IndexNow: 18 URLs (HTTP 200). Request indexing /image-resizer/: "Quota Exceeded" again (3rd day).
-  Opened PR #1 with 5 new landing pages (waiting for owner approval).
+  Opened PR #1 with 5 new landing pages; owner approved, merged the same day (74742de) – live, sitemap 65 URLs,
+  IndexNow pinged. Next runs: request indexing for these 5 pages once the GSC quota allows.
 
 - 2026-10-25 (run 2) — GSC: Pages report still "processing data"; Performance 0 clicks / 0 impressions; sitemap Success, 60 discovered;
   no manual actions. /image-converter/ inspection: "URL is unknown to Google".
