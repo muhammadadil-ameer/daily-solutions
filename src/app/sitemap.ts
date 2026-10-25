@@ -5,7 +5,8 @@ import { absoluteUrl, site } from "@/lib/site";
 /** Last content change of the static pages. Update when editing one of them. */
 const staticUpdated: Record<string, string> = {
   "/privacy/": "2026-10-24",
-  "/cookie-policy/": "2026-10-24",
+  "/cookie-policy/": "2026-10-25",
+  "/terms/": "2026-10-25",
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -48,7 +48,8 @@ export const resizeTools: Tool[] = [
     category: "image",
     name: "Image Resizer & Compressor",
     h1: "Image Resizer & Compressor",
-    title: "Image Resizer & Compressor – Resize and Reduce Image Size Free",
+    title: "Image Resizer & Compressor – Resize & Reduce Size Free",
+    updated: "2026-10-25",
     metaDescription:
       "Resize images by pixels or percentage and compress them to a target file size. JPG, PNG, WebP and AVIF output. Free, private, runs in your browser.",
     short: "Resize images and reduce file size in seconds.",

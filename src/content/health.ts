@@ -24,7 +24,8 @@ export const healthTools: Tool[] = [
     category: "health",
     name: "Health & Fitness Calculator",
     h1: "Health & Fitness Calculator",
-    title: "Health & Fitness Calculator – Calories, BMI, BMR, TDEE, Macros",
+    title: "Health Calculator – Calories, BMI, BMR, TDEE & Macros",
+    updated: "2026-10-25",
     metaDescription:
       "All-in-one health calculator: daily calories, BMI, BMR, TDEE, macros, protein, calorie deficit and ideal weight. Free, metric and imperial units.",
     short: "Calculate calories, BMI, BMR, TDEE and more.",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { primaryTools, toolHref } from "@/content";
+import { popularTools, primaryTools, toolHref } from "@/content";
 import { site } from "@/lib/site";
 import { Logo } from "./Header";
 
@@ -35,14 +35,18 @@ function Column({ title, links }: { title: string; links: { href: string; label:
 
 export function Footer() {
   const tools = primaryTools().map((t) => ({ href: toolHref(t), label: t.name }));
+  const popular = popularTools()
+    .slice(0, 8)
+    .map((t) => ({ href: toolHref(t), label: t.name }));
   return (
     <footer className="mt-20 border-t border-line bg-surface">
-      <div className="container-page grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container-page grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-5">
         <div>
           <Logo />
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">{site.tagline}</p>
         </div>
         <Column title="Tools" links={tools} />
+        <Column title="Popular tools" links={popular} />
         <Column title="Company" links={company} />
         <Column title="Legal" links={legal} />
       </div>
