@@ -22,7 +22,28 @@ It is the memory between runs: keep it short and factual.
 
 ## Waiting for approval
 
-_None._
+- PR #1 `seo/kb-landing-pages` – new pages /compress-image-to-20kb/, /compress-image-to-50kb/, /compress-image-to-100kb/,
+  /compress-image-to-200kb/, /jfif-to-jpg/ (https://github.com/muhammadadil-ameer/daily-solutions/pull/1). Opened 2026-10-25.
+
+## Main goal (owner, 2026-10-25)
+
+Get every page indexed and ranking on Google page 1. Each run: research real queries with
+`python scripts/keywords.py "<topic>"` (Google autocomplete) plus Search Console queries, then improve the page that
+best matches those queries (title, description, H2 sections, FAQs, internal links) – naturally, no stuffing.
+Target realistic long-tail queries first (e.g. "compress image to 50kb", "bmi calculator in kg and feet"),
+because head terms like "image resizer" are dominated by very strong sites.
+
+## Keyword map (page → main queries)
+
+- /image-resizer/ – image resizer, resize image online, image resizer in kb, resize image in pixels, whatsapp dp, instagram without cropping
+- /compress-image/ – image compressor, compress image to 20kb/50kb/100kb/200kb, compress image online free
+- /reduce-image-size/ – reduce photo size in kb, mb to kb, photo size reducer for forms
+- /image-converter/ – image converter, convert image to jpg/png/webp, jfif/jpeg to jpg, bulk
+- /heic-to-jpg/ – heic to jpg converter free, bulk, windows, without losing quality
+- /pdf-compressor/ – pdf compressor, compress pdf to 100kb/200kb/1mb, below 2mb
+- /jpg-to-pdf/ – jpg to pdf converter, a4 size, combine multiple images
+- /bmi-calculator/ – bmi calculator in kg and feet, for women/men, asian bmi
+- /calorie-calculator/ – calorie calculator to lose weight / gain weight
 
 ## Ideas backlog
 
@@ -37,6 +58,13 @@ _None._
   SaaSHub), answer related questions on Reddit/Quora with genuinely useful links.
 
 ## Runs
+
+- 2026-10-25 (manual, owner request) — Keyword research via Google autocomplete for 18 seed topics. Rewrote titles,
+  descriptions, sections and FAQs of 18 pages for real queries (commit 89cde28); added .jfif support and a "kg + feet"
+  unit option in health calculators; lazy-loaded gtag.js; fixed 3 accessibility issues. Lighthouse mobile before:
+  perf 66–72, a11y 94–96, best practices 79 (third-party cookies from GA/Clarity), SEO 100.
+  IndexNow: 18 URLs (HTTP 200). Request indexing /image-resizer/: "Quota Exceeded" again (3rd day).
+  Opened PR #1 with 5 new landing pages (waiting for owner approval).
 
 - 2026-10-25 (run 2) — GSC: Pages report still "processing data"; Performance 0 clicks / 0 impressions; sitemap Success, 60 discovered;
   no manual actions. /image-converter/ inspection: "URL is unknown to Google".
