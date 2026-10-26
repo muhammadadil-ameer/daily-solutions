@@ -17,8 +17,9 @@ It is the memory between runs: keep it short and factual.
 
 | URL | Requested | Status |
 | --- | --- | --- |
-| / | — | Indexed (checked 2026-10-24) |
-| /image-converter/ | Tried 2026-10-24 and 2026-10-25 – quota exceeded both times | URL is unknown to Google (2026-10-25) |
+| / | — | GSC Pages report (data 10/23): "Crawled – currently not indexed" |
+| /image-converter/ | 2026-10-26 – clicked twice; live test ran, "Submitting request" shown, then no result dialog (no quota error seen) – unconfirmed | URL is unknown to Google (2026-10-26) |
+| /image-resizer/ | 2026-10-26 – clicked; outcome unknown (Chrome tab group closed mid-request) | Discovered – currently not indexed (via sitemap) |
 
 ## Waiting for approval
 
@@ -39,6 +40,9 @@ because head terms like "image resizer" are dominated by very strong sites.
 - /reduce-image-size/ – reduce photo size in kb, mb to kb, photo size reducer for forms
 - /image-converter/ – image converter, convert image to jpg/png/webp, jfif/jpeg to jpg, bulk
 - /heic-to-jpg/ – heic to jpg converter free, bulk, windows, without losing quality
+- /pdf-to-jpg/ – pdf to jpg converter (free/online/high quality), pdf to jpg converter download (GSC pos 2.0!), below 100kb/200kb, iphone, aadhar card
+- /m4a-to-mp3/ – m4a to mp3 converter online free, iphone, windows, mac, m4a vs mp3, batch (not supported – one file at a time)
+- /m4a-to-wav/ – m4a to wav converter free, audacity, 16 bit, mac, iphone, m4a or wav better
 - /pdf-compressor/ – pdf compressor, compress pdf to 100kb/200kb/1mb, below 2mb
 - /jpg-to-pdf/ – jpg to pdf converter, a4 size, combine multiple images
 - /bmi-calculator/ – bmi calculator in kg and feet, for women/men, asian bmi
@@ -48,6 +52,12 @@ because head terms like "image resizer" are dominated by very strong sites.
 
 ## Ideas backlog
 
+- GSC "Crawled – currently not indexed" (12, data 10/23): /, /about/, /contact/, /disclaimer/, /cookie-policy/, /media-converter/,
+  /m4a-to-mp3/, /m4a-to-wav/, /jpg-to-webp/, /heic-to-webp/, /resize-image-300x300/, /resize-image-500x500/. Strengthen content of the
+  tool pages in this list next (m4a pages done 2026-10-26; next: /jpg-to-webp/, /heic-to-webp/, /media-converter/, /resize-image-300x300/, /-500x500/).
+- Next GSC requests (not done 2026-10-26, Chrome disconnected): /pdf-to-jpg/, /m4a-to-mp3/, /m4a-to-wav/, then the priority list below.
+- Lighthouse /pdf-to-jpg/ mobile 2026-10-26: perf 55 (LCP 4.5 s, TBT 1.36 s): main costs are framework chunk (~850 ms scripting),
+  gtag.js (~620 ms) and Clarity (~300 ms). Idea: load Clarity/GA only after first user interaction or on idle – needs a careful PR.
 - Request indexing has returned "Quota exceeded" on the first URL two days running (new property). Keep trying 1 URL first each run;
   rely on sitemap + IndexNow + internal links meanwhile.
 - Next run: request indexing first. Priority: /image-converter/, /image-resizer/, /pdf-tools/,
@@ -59,6 +69,18 @@ because head terms like "image resizer" are dominated by very strong sites.
   SaaSHub), answer related questions on Reddit/Quora with genuinely useful links.
 
 ## Runs
+
+- 2026-10-26 — GSC: Pages report (data 10/23) 0 indexed, 12 "Crawled – currently not indexed"; Performance (2 days): 0 clicks,
+  10 impressions, avg pos 91.5; queries: site:vercel.app (3), "pdf to jpg converter download" (1, pos 2.0). Sitemap Success
+  (last read 10/24, 60 URLs). Manual actions: none.
+  Keywords researched: pdf to jpg, pdf to jpg converter, m4a to mp3, m4a to wav.
+  Changed (4bb8f44): /pdf-to-jpg/ (new description, intro, H2s "PDF to JPG converter without downloading software" and
+  "PDF to JPG below 100 KB or 200 KB", 3 FAQs, link to /compress-image-to-100kb/); /m4a-to-mp3/ (H2 "How to convert M4A to MP3 on
+  iPhone, Windows and Mac", "M4A vs MP3", 2 FAQs); /m4a-to-wav/ (new title/description, Audacity/Mac/iPhone H2, 2 FAQs).
+  Audit: 65 sitemap URLs 200, 404 OK. IndexNow: 3 URLs HTTP 200.
+  Request indexing: /image-converter/ and /image-resizer/ attempted, result not confirmed; then the Chrome browser with Search Console
+  disconnected (other browser is signed in as a different account – not used). Lighthouse /pdf-to-jpg/ mobile: perf 55, a11y 100,
+  best practices 79, SEO 100.
 
 - 2026-10-25 (manual, owner request) — Keyword research via Google autocomplete for 18 seed topics. Rewrote titles,
   descriptions, sections and FAQs of 18 pages for real queries (commit 89cde28); added .jfif support and a "kg + feet"
