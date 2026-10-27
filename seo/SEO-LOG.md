@@ -17,7 +17,7 @@ It is the memory between runs: keep it short and factual.
 
 | URL | Requested | Status |
 | --- | --- | --- |
-| / | — | GSC Pages report (data 10/23): "Crawled – currently not indexed" |
+| / | 2026-10-27 – quota exceeded | **Indexed** (URL Inspection 2026-10-27) |
 | /image-converter/ | 2026-10-26 – clicked twice; live test ran, "Submitting request" shown, then no result dialog (no quota error seen) – unconfirmed | URL is unknown to Google (2026-10-26) |
 | /image-resizer/ | 2026-10-26 – clicked; outcome unknown (Chrome tab group closed mid-request) | Discovered – currently not indexed (via sitemap) |
 
@@ -52,6 +52,10 @@ because head terms like "image resizer" are dominated by very strong sites.
 - /calorie-calculator/ – calorie calculator to lose weight / gain weight
 - /compress-image-to-20kb/, /-50kb/, /-100kb/, /-200kb/ – compress image to N kb, image resizer N kb, resize image to N kb
 - /jfif-to-jpg/ – jfif to jpg, jfif to jpg converter
+- /compress-pdf-to-100kb/, /-200kb/, /-500kb/, /-1mb/ – compress pdf to N kb, below N kb, without losing quality, merge and compress
+- /split-pdf/ – split pdf pages, by page number, custom range, into multiple files
+- /compress-jpg/ – compress jpg, below 20/50/100/200 kb, compress and resize
+- /jpg-to-png/ – jpg to png converter, bulk, high quality (not "transparent": no background removal)
 
 ## Ideas backlog
 
@@ -74,6 +78,15 @@ because head terms like "image resizer" are dominated by very strong sites.
   SaaSHub), answer related questions on Reddit/Quora with genuinely useful links.
 
 ## Runs
+
+- 2026-10-27 (manual, owner request, after scheduled run) — GSC (Browser 1, muhammadadilameer5): homepage URL Inspection =
+  **"Page is indexed"** (first indexed page). /image-resizer/ = "URL is unknown to Google", last crawl N/A. Pages report (lagging):
+  0 indexed / 12 crawled-not-indexed. Request indexing: "Quota Exceeded" on the first URL → stopped (owner: skip GSC when quota is out).
+  Keywords researched: compress pdf to 100kb/200kb, split pdf, compress jpg, jpg to png.
+  Changed (see commit "SEO: target real queries on PDF-to-KB…"): compress-pdf-to-100kb/200kb/500kb/1mb template (title "Below N",
+  description, intro, 3 new H2s, 3 FAQs); /split-pdf/ (title, description, intro, 3 H2s, 3 FAQs); /compress-jpg/ (title, description,
+  intro, 2 H2s, FAQs, links to KB pages); /jpg-to-png/ (title, description, intro, transparent-background + batch H2s, FAQs).
+  Build OK (71 pages), all titles ≤ 54 chars, descriptions ≤ 156. IndexNow: 7 URLs HTTP 200.
 
 - 2026-10-27 — GSC (signed in as muhammadadilameer5, Browser 2): Pages report still 0 indexed, 12 "Crawled – currently not indexed".
   Performance (28 days, data to 10/25): 1 click, 24 impressions, CTR 4.2%, avg pos 51.8; queries: site:vercel.app (3, pos 56),
