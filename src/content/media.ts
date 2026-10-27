@@ -48,7 +48,7 @@ export const mediaTools: Tool[] = [
       { q: "Why is conversion slow?", a: "Video encoding is demanding and runs on your own device. Shorter clips and lower quality settings are faster." },
       { q: "What is the maximum file size?", a: "500 MB. On phones, files under 100 MB work best." },
     ],
-    related: ["mp4-to-mp3", "m4a-to-mp3", "mov-to-mp4", "wav-to-mp3", "mp4-to-gif"],
+    related: ["video-to-mp3", "mkv-to-mp4", "webm-to-mp4", "mp4-to-mp3", "m4a-to-mp3", "mov-to-mp4", "wav-to-mp3"],
     keywords: ["audio", "video", "convert", "mp3", "mp4", "wav", "mov", "m4a", "aac", "ogg", "flac", "webm", "mkv", "avi"],
   },
   {
@@ -172,7 +172,7 @@ export const mediaTools: Tool[] = [
       { q: "How long does it take?", a: "Roughly as long as the video plays, or longer on phones. Shorter clips finish quickly." },
       { q: "Will the video lose quality?", a: "“High” keeps quality very close to the original. “Small file” reduces size more with some quality loss." },
     ],
-    related: ["mov-to-mp3", "mp4-to-gif", "mp4-to-mp3", "media-converter"],
+    related: ["webm-to-mp4", "mkv-to-mp4", "mov-to-mp3", "mp4-to-gif", "mp4-to-mp3", "media-converter"],
     keywords: ["mov", "mp4", "iphone", "video", "quicktime"],
   },
   {
@@ -291,7 +291,7 @@ export const mediaTools: Tool[] = [
     faqs: [
       { q: "Will I hear a difference?", a: "At 192 kbps or 320 kbps most listeners cannot tell MP3 from WAV on normal speakers or headphones." },
     ],
-    related: ["m4a-to-mp3", "m4a-to-wav", "mp4-to-mp3", "media-converter"],
+    related: ["mp3-to-wav", "flac-to-mp3", "m4a-to-mp3", "m4a-to-wav", "mp4-to-mp3", "media-converter"],
     keywords: ["wav", "mp3", "audio", "compress"],
   },
   {

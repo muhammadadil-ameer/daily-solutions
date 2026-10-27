@@ -91,7 +91,7 @@ export const imageTools: Tool[] = [
       { q: "Can I convert several images at once?", a: "Yes. Add multiple images, choose one output format and download them one by one or together as a ZIP file." },
       { q: "Is there a file size limit?", a: "Each image can be up to 50 MB. Very large images may be slow on phones with limited memory." },
     ],
-    related: ["heic-to-jpg", "webp-to-jpg", "png-to-webp", "jpg-to-webp", "image-resizer", "compress-image"],
+    related: ["tiff-to-jpg", "gif-to-jpg", "heic-to-jpg", "webp-to-jpg", "png-to-webp", "jpg-to-webp", "image-resizer"],
     keywords: ["convert", "format", "jpg", "jpeg", "jfif", "png", "webp", "heic", "avif", "gif", "bmp", "tiff", "bulk"],
     popular: false,
   },
@@ -164,7 +164,7 @@ export const imageTools: Tool[] = [
       { q: "Is photo location data (EXIF) kept?", a: "No. The converted JPG does not include EXIF metadata such as GPS location, which is useful if you share photos publicly." },
       { q: "Does it work on iPhone?", a: "Yes. Open this page in Safari or Chrome on your iPhone, choose photos from your library, and download the JPG files." },
     ],
-    related: ["heic-to-png", "heic-to-webp", "image-converter", "compress-jpg", "image-resizer", "webp-to-jpg"],
+    related: ["heic-to-pdf", "heic-to-png", "heic-to-webp", "image-converter", "compress-jpg", "image-resizer", "webp-to-jpg"],
     keywords: ["heic", "heif", "iphone", "jpg", "jpeg", "apple", "photo", "bulk", "batch", "windows", "android"],
   },
   {
