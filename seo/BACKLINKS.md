@@ -7,6 +7,12 @@ Google treats those as link schemes and they can get a new site penalized.
 Accounts must be created by the owner. Claude can fill and submit forms in the owner's logged-in browser **only after the owner
 approves each submission**.
 
+## Important: custom domain
+
+Many good directories (SaaSHub, Uneed and most launch sites) reject `*.vercel.app` URLs. A custom domain (≈ $10/year,
+e.g. dailysolutions.com / .app / .io) unlocks them and also looks more trustworthy in Google results. After buying it:
+add it in Vercel, set `NEXT_PUBLIC_SITE_URL`, keep vercel.app redirecting, add the new property in Search Console.
+
 ## Ready-to-paste copy
 
 - **Name:** Daily Solutions
@@ -33,17 +39,17 @@ approves each submission**.
 | # | Site | Type | Link value | How | Status |
 | --- | --- | --- | --- | --- | --- |
 | 1 | GitHub – https://github.com/muhammadadil-ameer/daily-solutions | Developer | Discovery, trust | Repo public, website field, topics, README links | **Done 2026-10-27** |
-| 2 | Product Hunt – https://www.producthunt.com | Launch | High authority, traffic on launch day | Owner account → “Submit” (plan a launch day) | To do |
-| 3 | AlternativeTo – https://alternativeto.net | Directory | Strong, long-term traffic (“alternative to iLovePDF/TinyPNG”) | Owner account → “Suggest new app” | To do |
-| 4 | SaaSHub – https://www.saashub.com/services/submit | Directory | Good authority | Submit form (account) | To do |
-| 5 | Uneed – https://www.uneed.best | Launch directory | Dofollow listing | Account → submit tool | To do |
+| 2 | Product Hunt – https://www.producthunt.com | Launch | High authority, traffic on launch day | Owner account → “Submit” (plan a launch day) | **Draft ready 2026-10-27** – waiting for owner to pick a launch date |
+| 3 | AlternativeTo – https://alternativeto.net | Directory | Strong, long-term traffic (“alternative to iLovePDF/TinyPNG”) | Owner account → “Suggest new app” | **Skipped** – FAQ says converters, resizers, compressors, PDF tools, calculators and “a collection of simple online tools” are declined; links are nofollow |
+| 4 | SaaSHub – https://www.saashub.com/services/submit | Directory | Good authority | Submit form (account) | **Blocked** – rejects free subdomains like *.vercel.app; retry after a custom domain |
+| 5 | Uneed – https://www.uneed.best | Launch directory | Dofollow listing | Account → submit tool | **Blocked** – “Deploy URLs (vercel.app, netlify.app) are not allowed”; retry after a custom domain |
 | 6 | Fazier – https://fazier.com | Launch directory | Dofollow listing | Account → launch | To do |
 | 7 | MicroLaunch – https://microlaunch.net | Launch | Listing | Account → submit | To do |
 | 8 | TinyLaunch – https://tinylaunch.com | Launch | Listing | Account → submit | To do |
 | 9 | Launching Next – https://launchingnext.com | Directory | Listing | Submit form | To do |
 | 10 | StartupBase – https://www.startupbase.io | Directory | Listing | Account → add product | To do |
 | 11 | Toolfolio – https://www.toolfolio.io | Tool directory | Relevant | Submit | To do |
-| 12 | DEV Community – https://dev.to | Article | Strong, relevant (developers) | Owner account → publish article (draft below) | To do |
+| 12 | DEV Community – https://dev.to | Article | Strong, relevant (developers) | Owner account → publish article (draft below) | **Draft saved 2026-10-27** (AI disclosure: fully autonomous) – waiting for owner to publish |
 | 13 | Hashnode – https://hashnode.com | Article | Relevant | Cross-post the same article with canonical to dev.to | To do |
 | 14 | Hacker News – Show HN | Community | High traffic if it lands | Owner account → https://news.ycombinator.com/submit (draft below) | To do |
 | 15 | Reddit – r/SideProject, r/webdev, r/InternetIsBeautiful | Community | Traffic (nofollow) | Owner account, follow each sub’s rules, one post each, no spam | To do |
@@ -75,4 +81,7 @@ ask for feedback. Follow subreddit rules, reply to comments, don’t repost.
 
 | Date | Site | Result / link |
 | --- | --- | --- |
+| 2026-10-27 | Product Hunt | Draft created (tagline, description, tags Productivity/Privacy/Design Tools, category PDF Editor, Free, maker comment) – not launched |
+| 2026-10-27 | DEV.to | Article draft “I built browser-only image, PDF and video tools – nothing gets uploaded” saved, not published |
+| 2026-10-27 | AlternativeTo / SaaSHub / Uneed | Not submitted – rules (tool collections / vercel.app) |
 | 2026-10-27 | GitHub | Repo made public; homepage = site URL; 7 topics; README links to site + 11 popular tools |
