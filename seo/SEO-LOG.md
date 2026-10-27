@@ -23,7 +23,9 @@ It is the memory between runs: keep it short and factual.
 
 ## Waiting for approval
 
-_None._
+- PR #2 `seo/competitor-gap-pages` – 16 landing pages for competitor keywords (rotate/delete/extract/organize PDF, PDF↔PNG,
+  HEIC to PDF, WebM/MKV/AVI to MP4, MP3 to WAV, FLAC to MP3, video to MP3, GIF/TIFF/BMP to JPG).
+  https://github.com/muhammadadil-ameer/daily-solutions/pull/2 – opened 2026-10-27.
 
 ## Main goal (owner, 2026-10-25)
 
@@ -32,6 +34,25 @@ Get every page indexed and ranking on Google page 1. Each run: research real que
 best matches those queries (title, description, H2 sections, FAQs, internal links) – naturally, no stuffing.
 Target realistic long-tail queries first (e.g. "compress image to 50kb", "bmi calculator in kg and feet"),
 because head terms like "image resizer" are dominated by very strong sites.
+
+## Priority #1 (owner, 2026-10-27): worldwide competitor keyword gaps
+
+Find the keywords that similar tool websites rank for worldwide and cover them on our pages, so the site can get global
+organic traffic. Method: `python scripts/competitors.py` (sitemaps of iLoveIMG, iLovePDF, Smallpdf, TinyPNG, FreeConvert,
+imageresizer.com, calculator.net – their landing-page slugs = the queries they target) + `scripts/keywords.py` for intent
+modifiers. Work in this order: (1) keywords we can already serve with existing features but have no page for, (2) wording of
+existing pages, (3) new features that unlock big keyword groups (always as a PR).
+
+Gap backlog (from 2026-10-27 analysis; remove items once a page exists):
+- Existing features, no page yet: jpg-to-avif / png-to-avif / webp-to-avif / heic-to-avif, jpg-to-gif, png-to-avif, webp-to-avif,
+  resize-jpg / resize-png (iLoveIMG), compress-pdf-to-2mb, webp-to-pdf, gif-to-pdf, bmp-to-pdf, mp3-to-m4a?, wav-to-flac,
+  aac-to-mp3, mov-to-gif / video-to-gif, mp4-to-webm, mov-to-avi, m4a-to-ogg, audio-converter / video-converter hubs.
+- New features with big search volume (PR + owner approval): body-fat calculator, calories-burned, lean body mass,
+  carbohydrate / fat-intake calculators (calculator.net); crop image, rotate image, flip image (iLoveIMG); add page numbers
+  to PDF, PDF watermark (iLovePDF/Smallpdf); image to PDF with size limit.
+- Not feasible client-side / out of scope for now: PDF to Word/Excel/PPT, OCR, background remover, upscaler, RAW camera formats.
+- Worldwide: English pages first. Later consider localized versions (Spanish, Portuguese, Indonesian, Hindi, Arabic) as a
+  separate PR with hreflang – only with genuinely translated content.
 
 ## Keyword map (page → main queries)
 
@@ -78,6 +99,12 @@ because head terms like "image resizer" are dominated by very strong sites.
   SaaSHub), answer related questions on Reddit/Quora with genuinely useful links.
 
 ## Runs
+
+- 2026-10-27 (manual, owner request: competitor keywords) — Ran scripts/competitors.py on 11 competitor sitemaps
+  (iLoveIMG 63 pages, iLovePDF 53, Smallpdf 299, TinyPNG 95, FreeConvert 6,765, imageresizer.com 15,904, calculator.net 221).
+  Built 16 gap landing pages backed by existing features → PR #2 (waiting for owner). Autocomplete research for rotate pdf,
+  delete/extract pages, pdf↔png, webm/mkv to mp4, mp3 to wav. Tested Rotate PDF, GIF to JPG, WebM to MP4 in the browser.
+  Daily task updated: competitor gap analysis is now priority #1.
 
 - 2026-10-27 (manual, owner request, after scheduled run) — GSC (Browser 1, muhammadadilameer5): homepage URL Inspection =
   **"Page is indexed"** (first indexed page). /image-resizer/ = "URL is unknown to Google", last crawl N/A. Pages report (lagging):
