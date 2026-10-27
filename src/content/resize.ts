@@ -1,16 +1,20 @@
 import type { Tool } from "@/lib/types";
 
-function squarePage(size: number, uses: string[], extra: string, metaUse: string): Tool {
+function inches(px: number, dpi: number) {
+  return Number((px / dpi).toFixed(2)).toString();
+}
+
+function squarePage(size: number, uses: string[], extra: string, metaUse: string, kb: number): Tool {
   return {
     slug: `resize-image-${size}x${size}`,
     category: "image",
     name: `Resize Image to ${size}×${size}`,
     h1: `Resize Image to ${size}×${size} Pixels`,
     title: `Resize Image to ${size}x${size} Pixels Online – Free`,
-    metaDescription: `Resize any photo to exactly ${size}x${size} pixels for ${metaUse}. Free, private and runs in your browser. JPG, PNG or WebP output.`,
-    updated: "2026-10-24",
+    metaDescription: `Resize any photo to exactly ${size}x${size} pixels for ${metaUse}, under ${kb} KB if needed. Free ${size}x${size} image converter, no signup.`,
+    updated: "2026-10-27",
     short: `Make a ${size}×${size} square image in one step.`,
-    intro: `Resize a photo to exactly ${size} × ${size} pixels. The width and height are already set; just add your image and download the result. ${extra}`,
+    intro: `Resize a photo to exactly ${size} × ${size} pixels. The width and height are already set; just add your image and download the result. ${extra} Need a file size limit too? This ${size}x${size} image converter can also keep the JPG under ${kb} KB.`,
     widget: { type: "image-resize", width: size, height: size, focus: "resize" },
     howTo: [
       "Add your image.",
@@ -29,8 +33,24 @@ function squarePage(size: number, uses: string[], extra: string, metaUse: string
           "If the original photo is not square, forcing it into a square shape would stretch it. Turn off “Lock aspect ratio” only if you really want that. Otherwise use “Crop to fill”, which trims the edges so the center of the photo fills the square, or “Fit inside”, which keeps the whole image and adds a white or transparent border.",
         ],
       },
+      {
+        heading: `Resize image to ${size}x${size} and under ${kb} KB`,
+        paragraphs: [
+          `Some forms and websites ask for a ${size}x${size} JPG that is also below a file size such as ${kb} KB. Add your photo, keep the size at ${size} × ${size}, switch compression to “Max file size” and type ${kb}. Press “Apply”: the tool picks the highest JPG quality that stays under the limit and shows the final size in KB before you download.`,
+          `A ${size}×${size} photo saved as JPG is usually far smaller than the original, so most limits are easy to reach without visible quality loss. PNG files are larger; choose JPG when you have a KB limit.`,
+        ],
+      },
+      {
+        heading: `${size}x${size} pixels in inches and aspect ratio`,
+        paragraphs: [
+          `${size} × ${size} pixels is a 1:1 (square) aspect ratio. Its size in inches depends on the DPI: at 300 DPI (print) it is ${inches(size, 300)} × ${inches(size, 300)} inches, and at 96 DPI (a typical screen) it is about ${inches(size, 96)} × ${inches(size, 96)} inches. Websites and apps only look at the pixel size, so ${size}x${size} px is what matters online.`,
+        ],
+      },
     ],
     faqs: [
+      { q: `How do I make a photo ${size}x${size} pixels for free?`, a: `Add the photo above – the size is already set to ${size} × ${size}. Choose “Crop to fill” if the photo is not square, press “Apply” and download. It is free, with no signup or watermark.` },
+      { q: `How do I get a ${size}x${size} image under ${kb} KB?`, a: `Keep the size at ${size} × ${size}, choose “Max file size”, enter ${kb} and pick JPG as the format. Press “Apply” and the new size in KB is shown before you download.` },
+      { q: `What is ${size}x${size} pixels in inches?`, a: `At 300 DPI it is ${inches(size, 300)} × ${inches(size, 300)} inches; at 96 DPI it is about ${inches(size, 96)} × ${inches(size, 96)} inches.` },
       { q: "Will my image be stretched?", a: "Not if you use “Crop to fill” or “Fit inside”. Both keep the original proportions." },
       { q: "Which format should I download?", a: "JPG for photos, PNG for logos or images with transparency, WebP for websites." },
       { q: "Is my image uploaded?", a: "No. Resizing happens in your browser and the image stays on your device." },
@@ -38,7 +58,7 @@ function squarePage(size: number, uses: string[], extra: string, metaUse: string
     related: ["image-resizer", "resize-image-300x300", "resize-image-500x500", "resize-image-1080x1080", "compress-image", "image-converter"].filter(
       (s) => s !== `resize-image-${size}x${size}`,
     ),
-    keywords: ["resize", "square", `${size}x${size}`, "pixels", "dimensions"],
+    keywords: ["resize", "square", `${size}x${size}`, "pixels", "dimensions", `${size}x${size} image converter`, `${kb} kb`],
   };
 }
 
@@ -329,17 +349,20 @@ export const resizeTools: Tool[] = [
     ],
     "300×300 is a common size for thumbnails and profile pictures.",
     "profile pictures and thumbnails",
+    100,
   ),
   squarePage(
     500,
     ["E-commerce product images", "Blog post thumbnails", "Marketplace listing photos", "Medium-size profile photos"],
     "500×500 gives a sharp square image while keeping file size small.",
     "product photos and blog thumbnails",
+    100,
   ),
   squarePage(
     1080,
     ["Instagram square posts (1080×1080 is the recommended size)", "Facebook and LinkedIn square images", "WhatsApp status images", "Square ads and carousel slides"],
     "1080×1080 is the recommended size for square Instagram posts.",
     "Instagram posts, Facebook and WhatsApp",
+    200,
   ),
 ];

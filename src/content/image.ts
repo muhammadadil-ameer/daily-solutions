@@ -358,16 +358,35 @@ export const imageTools: Tool[] = [
     category: "image",
     name: "JPG to WebP",
     h1: "JPG to WebP Converter",
-    title: "JPG to WebP Converter – Faster Loading Photos",
+    title: "JPG to WebP Converter – Free, Bulk & Online",
+    updated: "2026-10-27",
     metaDescription:
-      "Convert JPG photos to WebP and reduce file size for your website or online store. Free, runs in your browser, adjustable quality.",
+      "Convert JPG to WebP online for free. Bulk convert many photos at once, set the quality and download all as ZIP. Smaller images for your website, no upload.",
     short: "Convert JPG photos to lighter WebP files.",
     intro:
-      "Convert JPG or JPEG photos to WebP for a website, blog or online store. WebP photos are typically 25–35% smaller than JPG at similar visual quality.",
+      "Convert JPG or JPEG photos to WebP for a website, blog or online store – one photo or a whole folder in bulk. WebP photos are typically 25–35% smaller than JPG at similar visual quality. This JPG to WebP converter is free, needs no signup and runs in your browser, so your photos are never uploaded.",
     widget: { type: "image-convert", from: "jpg", to: "webp" },
     popular: true,
-    howTo: ["Add your JPG files.", "WebP is preselected; 80% quality works well for photos.", "Press “Convert” and download."],
+    howTo: [
+      "Add your JPG files – select many at once to convert in bulk.",
+      "WebP is preselected. The quality starts at 90%; lower it to about 80% for smaller website photos.",
+      "Press “Convert”, then download each file or “Download All (ZIP)”.",
+    ],
     sections: [
+      {
+        heading: "Bulk JPG to WebP converter",
+        paragraphs: [
+          "Select or drop several JPG files at once and they are all converted with the same settings. When the batch is done, download every WebP in a single ZIP file instead of saving them one by one. You can add more images to the list before converting.",
+          "There is no signup and no daily limit. Because the conversion runs on your own device, a large batch simply takes a little longer on an older phone or laptop.",
+        ],
+      },
+      {
+        heading: "JPG to WebP and compress: which quality to choose",
+        paragraphs: [
+          "The quality slider controls how much the WebP is compressed. 80% is a good default for photos on websites. Use 85–90% for photos where fine detail matters, and 60–75% for thumbnails or when the smallest file size is the goal.",
+          "If the WebP has to fit a size limit or exact dimensions, use the Image Resizer & Compressor instead: it can resize, compress to a size in KB and save as WebP in one step.",
+        ],
+      },
       {
         heading: "Why websites use WebP",
         paragraphs: [
@@ -377,12 +396,15 @@ export const imageTools: Tool[] = [
       },
     ],
     faqs: [
+      { q: "How do I convert JPG to WebP in bulk?", a: "Select all your JPG files at once (or drag a group of them onto the page), press “Convert” and click “Download All (ZIP)”." },
+      { q: "Is this JPG to WebP converter free?", a: "Yes. It is free, with no signup, no watermark and no daily limit. Files are converted in your browser and are not uploaded." },
+      { q: "Does it work on Android and iPhone?", a: "Yes. It runs in the browser on Android, iPhone, Windows and Mac. On browsers that cannot save WebP natively, a built-in encoder is used automatically." },
       { q: "Is WebP supported by all browsers?", a: "Yes. All current versions of Chrome, Safari, Firefox and Edge support WebP." },
       { q: "Will my photo lose quality?", a: "At 80% quality or higher, most people cannot see a difference from the original JPG." },
       { q: "Can I also resize the photo?", a: "Use the Image Resizer & Compressor to set exact dimensions and output WebP in one step." },
     ],
-    related: ["png-to-webp", "webp-to-jpg", "compress-jpg", "image-resizer", "image-converter"],
-    keywords: ["jpg", "jpeg", "webp", "website"],
+    related: ["png-to-webp", "webp-to-jpg", "compress-jpg", "compress-webp", "image-resizer", "image-converter"],
+    keywords: ["jpg", "jpeg", "webp", "website", "bulk", "jpg to webp converter"],
   },
   {
     slug: "jpg-to-png",
