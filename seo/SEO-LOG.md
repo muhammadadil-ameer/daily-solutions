@@ -45,6 +45,9 @@ because head terms like "image resizer" are dominated by very strong sites.
 - /m4a-to-wav/ – m4a to wav converter free, audacity, 16 bit, mac, iphone, m4a or wav better
 - /pdf-compressor/ – pdf compressor, compress pdf to 100kb/200kb/1mb, below 2mb
 - /jpg-to-pdf/ – jpg to pdf converter, a4 size, combine multiple images
+- /resize-image-300x300/ – resize image to 300x300 (pixels/online/free), 300x300 image converter 100 kb jpg, 300x300 in inches (GSC "300x300" pos 61)
+- /resize-image-500x500/ – resize image to 500x500, 500x500 image resizer/converter, 500x500 aspect ratio (GSC "500*300" pos 7)
+- /jpg-to-webp/ – jpg to webp converter free, jpg to webp bulk, jpg to webp and compress, android/iphone
 - /bmi-calculator/ – bmi calculator in kg and feet, for women/men, asian bmi
 - /calorie-calculator/ – calorie calculator to lose weight / gain weight
 - /compress-image-to-20kb/, /-50kb/, /-100kb/, /-200kb/ – compress image to N kb, image resizer N kb, resize image to N kb
@@ -54,8 +57,10 @@ because head terms like "image resizer" are dominated by very strong sites.
 
 - GSC "Crawled – currently not indexed" (12, data 10/23): /, /about/, /contact/, /disclaimer/, /cookie-policy/, /media-converter/,
   /m4a-to-mp3/, /m4a-to-wav/, /jpg-to-webp/, /heic-to-webp/, /resize-image-300x300/, /resize-image-500x500/. Strengthen content of the
-  tool pages in this list next (m4a pages done 2026-10-26; next: /jpg-to-webp/, /heic-to-webp/, /media-converter/, /resize-image-300x300/, /-500x500/).
-- Next GSC requests (not done 2026-10-26, Chrome disconnected): /pdf-to-jpg/, /m4a-to-mp3/, /m4a-to-wav/, then the priority list below.
+  tool pages in this list next (m4a done 10-26; jpg-to-webp + square resize done 10-27; next: /heic-to-webp/, /media-converter/).
+- Next GSC requests (not done 10-26 and 10-27): /pdf-to-jpg/, /resize-image-300x300/, /resize-image-500x500/, /jpg-to-webp/,
+  /m4a-to-mp3/, /m4a-to-wav/, then the priority list below. Note: the URL /search-console/inspect?id=… gives a Google 404 – open
+  Inspection via the top search bar of the property overview instead.
 - Lighthouse /pdf-to-jpg/ mobile 2026-10-26: perf 55 (LCP 4.5 s, TBT 1.36 s): main costs are framework chunk (~850 ms scripting),
   gtag.js (~620 ms) and Clarity (~300 ms). Idea: load Clarity/GA only after first user interaction or on idle – needs a careful PR.
 - Request indexing has returned "Quota exceeded" on the first URL two days running (new property). Keep trying 1 URL first each run;
@@ -69,6 +74,20 @@ because head terms like "image resizer" are dominated by very strong sites.
   SaaSHub), answer related questions on Reddit/Quora with genuinely useful links.
 
 ## Runs
+
+- 2026-10-27 — GSC (signed in as muhammadadilameer5, Browser 2): Pages report still 0 indexed, 12 "Crawled – currently not indexed".
+  Performance (28 days, data to 10/25): 1 click, 24 impressions, CTR 4.2%, avg pos 51.8; queries: site:vercel.app (3, pos 56),
+  "pdf to jpg converter download" (1, pos 2), "500*300" (1, pos 7), "300x300" (pos 61), "300x300 image" (pos 66).
+  Keywords researched: 300x300, resize image to 300x300, 300x300 photo, 500x500, resize image to 500x500, jpg to webp.
+  Strong intents: "300x300 image converter 100 kb jpg", "resize image 300x300 100kb", "300x300 in inches", "500x500 image resizer",
+  "how to resize an image to 500x500", "jpg to webp bulk", "jpg to webp converter free", "jpg to webp and compress".
+  Changed: square resize pages /resize-image-300x300/, /-500x500/, /-1080x1080/ (new description with "under N KB", intro, H2s
+  "Resize image to NxN and under N KB" and "NxN pixels in inches and aspect ratio", 3 FAQs); /jpg-to-webp/ (new title/description,
+  H2s "Bulk JPG to WebP converter" and "JPG to WebP and compress: which quality to choose", 3 FAQs, fixed wrong "80% default" –
+  the converter starts at 90%, link to /compress-webp/). Commit c7d0627.
+  Audit: 65 sitemap URLs 200, unknown URL 404, one h1 per changed page. IndexNow: 4 URLs HTTP 200.
+  Request indexing: not done – after reading the reports, the browser/tool safety check kept failing (navigation blocked), so
+  URL Inspection could not be opened. Lighthouse skipped for the same reason (local server start was declined).
 
 - 2026-10-26 — GSC: Pages report (data 10/23) 0 indexed, 12 "Crawled – currently not indexed"; Performance (2 days): 0 clicks,
   10 impressions, avg pos 91.5; queries: site:vercel.app (3), "pdf to jpg converter download" (1, pos 2.0). Sitemap Success
