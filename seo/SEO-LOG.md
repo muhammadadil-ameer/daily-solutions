@@ -44,7 +44,7 @@ modifiers. Work in this order: (1) keywords we can already serve with existing f
 existing pages, (3) new features that unlock big keyword groups (always as a PR).
 
 Gap backlog (from 2026-10-27 analysis; remove items once a page exists):
-- Existing features, no page yet: jpg-to-avif / png-to-avif / webp-to-avif / heic-to-avif, jpg-to-gif, png-to-avif, webp-to-avif,
+- Existing features, no page yet: jpg-to-avif / png-to-avif / webp-to-avif / heic-to-avif, jpg-to-gif,
   resize-jpg / resize-png (iLoveIMG), compress-pdf-to-2mb, webp-to-pdf, gif-to-pdf, bmp-to-pdf, mp3-to-m4a?, wav-to-flac,
   aac-to-mp3, mov-to-gif / video-to-gif, mp4-to-webm, mov-to-avi, m4a-to-ogg, audio-converter / video-converter hubs.
 - New features with big search volume (PR + owner approval): body-fat calculator, calories-burned, lean body mass,
