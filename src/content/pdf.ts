@@ -15,10 +15,11 @@ function targetSizePage(kb: number, uses: string[]): Tool {
     category: "pdf",
     name: `Compress PDF to ${label}`,
     h1: `Compress PDF to ${label}`,
-    title: `Compress PDF to ${label} Online – Free, No Signup`,
-    metaDescription: `Reduce a PDF to ${label} or less for online applications and email. Free, private PDF compressor that runs in your browser.`,
+    title: `Compress PDF to ${label} Online Free – Below ${label}`,
+    updated: "2026-10-27",
+    metaDescription: `Compress a PDF to ${label} or below online for free, with the clearest quality that fits. For job, exam and visa forms – no signup, no upload, works on mobile.`,
     short: `Shrink a PDF to under ${label} for upload limits.`,
-    intro: `Many online forms only accept PDFs up to ${label}. Add your file and the tool tries progressively stronger compression until it fits under ${label}, then shows the final size.`,
+    intro: `Many online forms only accept PDFs up to ${label}. Add your file and the tool tries progressively stronger compression, keeps the clearest version that is ${label} or below, and shows the final size. It is free, needs no signup and your PDF never leaves your device.`,
     widget: { type: "pdf", action: "compress", targetKB: kb },
     howTo: [
       "Add your PDF.",
@@ -28,20 +29,35 @@ function targetSizePage(kb: number, uses: string[]): Tool {
     ],
     sections: [
       { heading: `Where a ${label} limit is common`, list: uses },
+      {
+        heading: `Compress PDF below ${label} with clear quality`,
+        paragraphs: [
+          `The tool always tries the gentlest compression first and only goes stronger when needed, so you get the clearest PDF that still fits below ${label}. For scanned certificates and ID cards, scanning in good light on a white background makes a big difference: clean scans compress much better and stay readable.`,
+        ],
+      },
       compressionNote,
       {
-        heading: "If the PDF is still too large",
+        heading: `Merge and compress PDF to ${label}`,
         paragraphs: [
-          `A PDF with many pages may not fit into ${label} even at the strongest setting. Split the PDF and upload only the pages you need, or remove blank and duplicate pages first with the Delete Pages tool.`,
+          `If a portal wants several documents in one file, first combine them with Merge PDF, then compress the merged file here. If you only have photos of the documents, turn them into a PDF with JPG to PDF first.`,
+        ],
+      },
+      {
+        heading: "Already compressed PDF still too large?",
+        paragraphs: [
+          `A PDF with many pages may not fit into ${label} even at the strongest setting. Split the PDF and upload only the pages you need, or remove blank and duplicate pages first with the Delete Pages tool in the PDF Toolkit.`,
         ],
       },
     ],
     faqs: [
+      { q: `How do I compress a PDF to ${label} for free?`, a: `Add your PDF above – the target is already set to ${label} – and press “Compress PDF”. When the final size is shown, download the file. No signup or payment is needed.` },
       { q: `Can every PDF be compressed to ${label}?`, a: "Most short documents can. Long documents with many full-page images may need to be split first." },
+      { q: `Can I compress a PDF to ${label} without losing quality?`, a: `Text-only PDFs often fit with lossless optimization and stay sharp. Scanned and photo-heavy PDFs need some image compression to reach ${label}; the tool picks the highest quality that fits, which is usually easy to read on screen.` },
       { q: "Will my text still be readable?", a: "Yes, but at strong compression levels the text becomes part of an image and cannot be selected or searched." },
+      { q: "Does it work on mobile and offline?", a: "It works in Chrome and Safari on Android and iPhone. The page must load once with internet, but the compression itself runs on your device." },
       { q: "Is my PDF uploaded to a server?", a: "No. Compression runs in your browser and the file stays on your device." },
     ],
-    related: ["pdf-compressor", "compress-pdf-to-100kb", "compress-pdf-to-200kb", "split-pdf", "jpg-to-pdf", "reduce-image-size"].filter(
+    related: ["pdf-compressor", "compress-pdf-to-100kb", "compress-pdf-to-200kb", "compress-pdf-to-500kb", "merge-pdf", "split-pdf", "jpg-to-pdf"].filter(
       (s) => s !== `compress-pdf-to-${label.toLowerCase()}`,
     ),
     keywords: ["compress", "pdf", "kb", label.toLowerCase(), "reduce", "size"],
@@ -225,11 +241,12 @@ export const pdfTools: Tool[] = [
     category: "pdf",
     name: "Split PDF",
     h1: "Split PDF",
-    title: "Split PDF – Separate PDF Pages Online Free",
+    title: "Split PDF Pages Online Free – By Page Number or Range",
+    updated: "2026-10-27",
     metaDescription:
-      "Split a PDF into separate pages or custom page ranges. Download each part or a ZIP. Free and processed in your browser.",
+      "Split PDF online free: separate every page into its own file or split by page numbers and custom ranges into multiple PDFs. No limit, no signup, no upload.",
     short: "Separate a PDF into single pages or ranges.",
-    intro: "Split a PDF into one file per page, or into custom ranges such as 1-3, 4-6. Download parts individually or as a ZIP.",
+    intro: "Split a PDF into one file per page, or into multiple PDFs by page number and custom ranges such as 1-3, 4-6. Download the parts individually or all together as a ZIP – free, with no page limit and no upload.",
     widget: { type: "pdf", action: "split" },
     popular: false,
     howTo: [
@@ -239,18 +256,34 @@ export const pdfTools: Tool[] = [
     ],
     sections: [
       {
-        heading: "Split by ranges",
+        heading: "Split all pages into separate PDFs",
         paragraphs: [
-          "Each range becomes its own PDF. For example, “1-2, 3-5” creates two files: one with pages 1 and 2, another with pages 3 to 5. To keep only some pages in a single file, use Extract Pages in the PDF Toolkit.",
+          "Choose “Every page” to turn a 20-page PDF into 20 single-page PDFs in one click, then use “Download All (ZIP)”. Useful when a portal asks for each certificate or document as a separate file.",
+        ],
+      },
+      {
+        heading: "Split PDF by page number or custom range",
+        paragraphs: [
+          "Choose “Custom ranges” and type the page numbers. Each range becomes its own PDF. For example, “1-2, 3-5, 9” creates three files: pages 1–2, pages 3–5, and page 9. Ranges can be split chapter-wise, by section, or however you need.",
+          "To keep only some pages in one single file instead, use Extract Pages in the PDF Toolkit.",
+        ],
+      },
+      {
+        heading: "Split, then compress or convert",
+        paragraphs: [
+          "Splitting is also the easiest way to get a large PDF under an upload limit: split it, then compress the part you need with the PDF Compressor. Need images instead? Convert the pages with PDF to JPG.",
         ],
       },
     ],
     faqs: [
+      { q: "How do I split PDF pages for free?", a: "Add your PDF, choose “Every page” or enter custom ranges like 1-3, 5, and press “Split PDF”. Download each file or all of them as a ZIP." },
+      { q: "Is there a page or file limit?", a: "There is no page limit and no daily limit. PDFs up to 100 MB can be opened." },
       { q: "Does splitting reduce quality?", a: "No. Pages are copied exactly, with no recompression." },
       { q: "Can I split a scanned PDF?", a: "Yes. Any unencrypted PDF can be split." },
+      { q: "Can I split a PDF on my phone?", a: "Yes. The tool works in Chrome and Safari on Android and iPhone." },
     ],
-    related: ["merge-pdf", "pdf-compressor", "pdf-to-jpg", "pdf-tools"],
-    keywords: ["split", "separate", "pages", "pdf", "extract"],
+    related: ["merge-pdf", "pdf-compressor", "pdf-to-jpg", "compress-pdf-to-200kb", "pdf-tools"],
+    keywords: ["split", "separate", "pages", "pdf", "extract", "range", "page number", "multiple files"],
   },
   {
     slug: "jpg-to-pdf",

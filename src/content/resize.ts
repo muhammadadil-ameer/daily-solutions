@@ -205,12 +205,13 @@ export const resizeTools: Tool[] = [
     category: "image",
     name: "Compress JPG",
     h1: "Compress JPG",
-    title: "Compress JPG – Reduce JPEG File Size Online",
+    title: "Compress JPG Online Free – Below 50KB, 100KB, 200KB",
+    updated: "2026-10-27",
     metaDescription:
-      "Compress JPG and JPEG photos to a smaller file size. Pick quality or a target size in KB. Free, no signup, processed in your browser.",
+      "Compress JPG and JPEG images online free: reduce JPG file size below 20KB, 50KB, 100KB or 200KB, or by quality, and resize in the same step. No signup.",
     short: "Shrink JPG and JPEG photos for upload or email.",
     intro:
-      "Reduce the size of JPG or JPEG photos for email attachments, online forms and websites. Output stays as JPG so it works everywhere.",
+      "Reduce the file size of a JPG or JPEG photo for email, online forms and websites. Set a quality level or a maximum size in KB – for example below 100 KB – and change the dimensions in the same step if you want. The output stays JPG so it works everywhere.",
     widget: { type: "image-resize", focus: "compress", format: "jpg" },
     howTo: [
       "Add your JPG photo.",
@@ -226,13 +227,33 @@ export const resizeTools: Tool[] = [
           "60–70%: small files for strict upload limits; slight artifacts may appear.",
         ],
       },
+      {
+        heading: "Compress JPG below a size in KB",
+        paragraphs: [
+          "Choose “Max file size” and type the limit from your form. The tool picks the highest quality that stays below it. Typical limits and the width that works well:",
+        ],
+        list: [
+          "Below 20–30 KB: signatures and tiny photos – about 300–400 px wide.",
+          "Below 50 KB: passport-size photos – about 400–600 px wide.",
+          "Below 100 KB: ID cards and profile photos – about 800–1000 px wide.",
+          "Below 200–500 KB: full photos and documents – up to 1600 px wide.",
+        ],
+      },
+      {
+        heading: "Compress and resize JPG together",
+        paragraphs: [
+          "Reducing the dimensions is the most effective way to shrink a JPG. Pick “Width” or “Width + Height” in the Resize section and set a size in KB at the same time; one click applies both.",
+        ],
+      },
     ],
     faqs: [
+      { q: "How do I compress a JPG to 100 KB?", a: "Add the JPG, choose “Max file size”, type 100 and press “Apply”. Download the result once it shows 100 KB or less." },
+      { q: "Can I compress a JPG without losing quality?", a: "At 80–90% quality most photos look identical to the original while becoming much smaller. Very small targets like 20 KB need lower quality and smaller dimensions." },
       { q: "Does compressing a JPG twice reduce quality?", a: "Yes, each lossy save loses a little detail. Compress from the original file when possible." },
-      { q: "Can I compress a JPG to exactly 100 KB?", a: "Set “Max file size” to 100. The tool finds the best quality that stays under that limit." },
+      { q: "Is it free and does it work on mobile?", a: "Yes. It is free, needs no signup, and works in Chrome and Safari on Android and iPhone." },
     ],
-    related: ["compress-image", "compress-png", "compress-webp", "reduce-image-size", "jpg-to-webp"],
-    keywords: ["jpg", "jpeg", "compress", "reduce"],
+    related: ["compress-image-to-50kb", "compress-image-to-100kb", "compress-image", "reduce-image-size", "compress-png", "jpg-to-webp"],
+    keywords: ["jpg", "jpeg", "compress", "reduce", "kb", "below", "size", "resize"],
   },
   {
     slug: "compress-png",

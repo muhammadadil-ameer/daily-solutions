@@ -411,12 +411,13 @@ export const imageTools: Tool[] = [
     category: "image",
     name: "JPG to PNG",
     h1: "JPG to PNG Converter",
-    title: "JPG to PNG Converter – Free and Instant",
+    title: "JPG to PNG Converter – Free Online, Bulk, High Quality",
+    updated: "2026-10-27",
     metaDescription:
-      "Convert JPG images to PNG for free. Lossless output, works in your browser, supports multiple files and ZIP download.",
+      "Convert JPG to PNG online free in high quality. Batch convert JPG or JPEG images to lossless PNG and download all as a ZIP. No signup, no watermark.",
     short: "Convert JPG images to lossless PNG.",
     intro:
-      "Convert JPG or JPEG files to PNG when a website or app asks for PNG, or when you want to edit an image without adding more compression each time you save.",
+      "Convert JPG or JPEG files to PNG online for free – one image or a whole batch at once. Use it when a website or app asks for PNG, or when you want to edit an image without adding more compression each time you save.",
     widget: { type: "image-convert", from: "jpg", to: "png" },
     howTo: ["Add your JPG images.", "PNG is preselected.", "Press “Convert” and download the PNG files."],
     sections: [
@@ -424,16 +425,29 @@ export const imageTools: Tool[] = [
         heading: "Will converting to PNG improve quality?",
         paragraphs: [
           "No. Converting a JPG to PNG does not restore detail that JPG compression already removed. What PNG does is prevent further loss: you can edit and re-save the PNG many times without it getting worse.",
-          "Note that a JPG has no transparency, so the PNG will not have a transparent background either.",
+        ],
+      },
+      {
+        heading: "JPG to PNG with a transparent background?",
+        paragraphs: [
+          "A JPG has no transparency, so converting it to PNG keeps the same background – white stays white. Making the background transparent is a different job (background removal) that this converter does not do. If you already have a transparent image saved as WebP or AVIF, convert it with WebP to PNG or AVIF to PNG and the transparency is kept.",
+        ],
+      },
+      {
+        heading: "Batch convert JPG to PNG",
+        paragraphs: [
+          "Add as many JPG files as you need, convert them in one go and download all PNG files as a single ZIP. It works the same on Windows, Mac, Android and iPhone.",
         ],
       },
     ],
     faqs: [
-      { q: "Why is the PNG bigger than the JPG?", a: "PNG is lossless and stores more data. That is expected." },
-      { q: "Can I make the background transparent?", a: "Not with a format converter. Background removal requires a separate editing tool." },
+      { q: "How do I convert JPG to PNG for free?", a: "Add your JPG images, keep PNG selected, press “Convert” and download. It is free, with no signup and no watermark." },
+      { q: "Can I convert JPG to PNG with a transparent background?", a: "No. A JPG has no transparency, so the PNG keeps the original background. Background removal needs a separate editing tool." },
+      { q: "Why is the PNG bigger than the JPG?", a: "PNG is lossless and stores more data. That is expected. Use Compress PNG if you need a smaller file." },
+      { q: "Can I convert many JPG files at once?", a: "Yes. Add multiple files and download them together as a ZIP." },
     ],
-    related: ["png-to-jpg", "jpg-to-webp", "image-converter", "compress-png"],
-    keywords: ["jpg", "jpeg", "png"],
+    related: ["png-to-jpg", "webp-to-png", "jpg-to-webp", "image-converter", "compress-png"],
+    keywords: ["jpg", "jpeg", "png", "batch", "bulk", "high quality"],
   },
   {
     slug: "png-to-jpg",
