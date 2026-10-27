@@ -1,7 +1,23 @@
 # Daily Solutions
 
+**🌐 Live site: [dailysolutions.vercel.app](https://dailysolutions.vercel.app)**
+
 Simple online tools that solve everyday problems: image converter, image resizer & compressor, PDF toolkit,
 audio & video converter and health & fitness calculators.
+
+Popular tools:
+[Image Resizer](https://dailysolutions.vercel.app/image-resizer/) ·
+[Compress Image to 50KB](https://dailysolutions.vercel.app/compress-image-to-50kb/) ·
+[HEIC to JPG](https://dailysolutions.vercel.app/heic-to-jpg/) ·
+[Image Converter](https://dailysolutions.vercel.app/image-converter/) ·
+[PDF Compressor](https://dailysolutions.vercel.app/pdf-compressor/) ·
+[Merge PDF](https://dailysolutions.vercel.app/merge-pdf/) ·
+[JPG to PDF](https://dailysolutions.vercel.app/jpg-to-pdf/) ·
+[MP4 to MP3](https://dailysolutions.vercel.app/mp4-to-mp3/) ·
+[MOV to MP4](https://dailysolutions.vercel.app/mov-to-mp4/) ·
+[BMI Calculator](https://dailysolutions.vercel.app/bmi-calculator/) ·
+[Calorie Calculator](https://dailysolutions.vercel.app/calorie-calculator/) ·
+[All tools](https://dailysolutions.vercel.app/all-tools/)
 
 All file processing happens **in the browser** (canvas, WebAssembly, pdf-lib, PDF.js, ffmpeg.wasm). No files are
 uploaded to a server.
