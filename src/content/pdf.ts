@@ -109,7 +109,7 @@ export const pdfTools: Tool[] = [
       { q: "What is the maximum file size?", a: "PDFs up to 100 MB can be opened. Very large files may be slow on phones." },
       { q: "Will PDF to Word be added?", a: "PDF to Word, Word to PDF and PDF to Excel are planned for a future update." },
     ],
-    related: ["pdf-compressor", "merge-pdf", "split-pdf", "pdf-to-jpg", "jpg-to-pdf", "compress-pdf-to-200kb"],
+    related: ["pdf-to-png", "organize-pdf", "rotate-pdf", "pdf-compressor", "merge-pdf", "split-pdf", "pdf-to-jpg"],
     keywords: ["pdf", "toolkit", "rotate", "extract", "delete", "reorder", "pages", "png"],
   },
   {
@@ -233,7 +233,7 @@ export const pdfTools: Tool[] = [
       { q: "Can I merge images and PDFs together?", a: "Convert images with JPG to PDF first, then merge the resulting PDF with your other files." },
       { q: "Will links and bookmarks be kept?", a: "Page content is copied exactly. Document-level bookmarks are not combined." },
     ],
-    related: ["split-pdf", "jpg-to-pdf", "pdf-compressor", "pdf-tools"],
+    related: ["rotate-pdf", "organize-pdf", "split-pdf", "jpg-to-pdf", "pdf-compressor", "pdf-tools"],
     keywords: ["merge", "combine", "join", "pdf"],
   },
   {
@@ -282,7 +282,7 @@ export const pdfTools: Tool[] = [
       { q: "Can I split a scanned PDF?", a: "Yes. Any unencrypted PDF can be split." },
       { q: "Can I split a PDF on my phone?", a: "Yes. The tool works in Chrome and Safari on Android and iPhone." },
     ],
-    related: ["merge-pdf", "pdf-compressor", "pdf-to-jpg", "compress-pdf-to-200kb", "pdf-tools"],
+    related: ["delete-pdf-pages", "extract-pdf-pages", "merge-pdf", "pdf-compressor", "pdf-to-jpg", "compress-pdf-to-200kb", "pdf-tools"],
     keywords: ["split", "separate", "pages", "pdf", "extract", "range", "page number", "multiple files"],
   },
   {
@@ -332,7 +332,7 @@ export const pdfTools: Tool[] = [
       { q: "Can I add PNG or HEIC images?", a: "Yes. JPG, PNG, WebP, GIF, BMP, AVIF and HEIC images are accepted." },
       { q: "Is there a limit on the number of images?", a: "No fixed limit. Many large photos may take longer on phones." },
     ],
-    related: ["pdf-to-jpg", "merge-pdf", "pdf-compressor", "compress-image", "heic-to-jpg"],
+    related: ["heic-to-pdf", "png-to-pdf", "pdf-to-jpg", "merge-pdf", "pdf-compressor", "compress-image", "heic-to-jpg"],
     keywords: ["jpg", "image", "photo", "pdf", "convert", "png", "scan"],
   },
   {
@@ -383,7 +383,7 @@ export const pdfTools: Tool[] = [
       { q: "How do I convert a PDF to JPG below 100 KB?", a: "Convert with “Standard (100 DPI)”, then check the file size. If it is above 100 KB, use Compress Image to 100 KB on that JPG." },
       { q: "Is it safe to convert an Aadhaar card or ID PDF to JPG here?", a: "The PDF is opened and converted on your own device and is not uploaded to a server. If the PDF is password protected, remove the password first using the app that created it." },
     ],
-    related: ["jpg-to-pdf", "pdf-compressor", "compress-image-to-100kb", "split-pdf", "pdf-tools", "compress-jpg"],
+    related: ["pdf-to-png", "jpg-to-pdf", "pdf-compressor", "compress-image-to-100kb", "split-pdf", "pdf-tools", "compress-jpg"],
     keywords: ["pdf", "jpg", "image", "convert", "png", "pages"],
   },
 ];
