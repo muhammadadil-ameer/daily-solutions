@@ -211,12 +211,13 @@ export const imageTools: Tool[] = [
     category: "image",
     name: "HEIC to WebP",
     h1: "HEIC to WebP Converter",
-    title: "HEIC to WebP Converter – Small Images for the Web",
+    title: "HEIC to WebP Converter – Free, Bulk, Compress",
+    updated: "2026-10-27",
     metaDescription:
-      "Convert iPhone HEIC photos to WebP for fast-loading websites. Free browser-based converter with adjustable quality and batch download.",
+      "Convert HEIC to WebP online free. Bulk convert and compress iPhone photos into small WebP images for websites on Windows, Mac or Android. No upload, no limit.",
     short: "Convert HEIC photos to WebP for fast websites.",
     intro:
-      "Turn HEIC photos straight into WebP, the compact image format recommended for websites. You keep small file sizes like HEIC, but with support in every modern browser.",
+      "Turn iPhone HEIC photos straight into WebP, the compact image format recommended for websites. Convert many photos at once, set the quality to compress them, and download a ZIP – free, with no upload and no daily limit.",
     widget: { type: "image-convert", from: "heic", to: "webp" },
     howTo: [
       "Add your HEIC photos.",
@@ -231,14 +232,34 @@ export const imageTools: Tool[] = [
           "This is useful for bloggers, online shop owners and anyone uploading phone photos to a website builder that supports WebP.",
         ],
       },
+      {
+        heading: "Bulk HEIC to WebP: convert a whole album",
+        paragraphs: [
+          "Select or drag in all your HEIC files at once. Every photo is converted with the same quality setting, and “Download All” gives you one ZIP file. Because the conversion runs in your browser, there is no upload queue and no limit on the number of files – only your device’s speed matters.",
+        ],
+      },
+      {
+        heading: "HEIC to WebP and compress in one step",
+        paragraphs: [
+          "The quality slider controls compression. 80% is a good default for website photos; 60–70% makes files much smaller for thumbnails and galleries. If the photos are also too large in pixels (iPhone photos are about 4032 × 3024), resize them afterwards with the Image Resizer for even smaller files.",
+        ],
+      },
+      {
+        heading: "HEIC vs WebP",
+        paragraphs: [
+          "Both formats compress photos much better than JPG. HEIC is Apple’s camera format and is not shown by most web browsers; WebP is designed for the web and works in Chrome, Safari, Edge and Firefox. Use HEIC on your phone and WebP on your website.",
+        ],
+      },
     ],
     faqs: [
+      { q: "How do I convert HEIC to WebP on Windows or Mac?", a: "Open this page in any modern browser, add your HEIC photos, keep WebP selected and press “Convert”. No software is needed." },
+      { q: "Is there a limit on how many files I can convert?", a: "No. You can convert as many HEIC photos as you like, free." },
       { q: "Can WordPress use WebP images?", a: "Yes. WordPress has supported WebP uploads since version 5.8." },
       { q: "What quality should I use?", a: "For website photos, 75–85% usually gives a good balance between quality and size." },
       { q: "Will WebP open on my computer?", a: "Windows 10/11 and macOS can open WebP files in their default photo apps and in any modern browser." },
     ],
-    related: ["heic-to-jpg", "jpg-to-webp", "png-to-webp", "compress-webp", "image-converter"],
-    keywords: ["heic", "webp", "iphone", "web"],
+    related: ["heic-to-jpg", "jpg-to-webp", "png-to-webp", "compress-webp", "image-resizer", "image-converter"],
+    keywords: ["heic", "webp", "iphone", "web", "bulk", "compress"],
   },
   {
     slug: "webp-to-jpg",

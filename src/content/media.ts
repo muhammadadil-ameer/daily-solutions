@@ -13,13 +13,14 @@ export const mediaTools: Tool[] = [
     slug: "media-converter",
     category: "media",
     name: "Audio & Video Converter",
-    h1: "Audio & Video Converter",
-    title: "Audio & Video Converter – MP3, MP4, WAV, MOV, M4A Online",
+    h1: "Online Video & Audio Converter",
+    title: "Online Video & Audio Converter – MP4, MP3, MOV Free",
+    updated: "2026-10-27",
     metaDescription:
-      "Convert audio and video between MP3, WAV, M4A, AAC, OGG, FLAC, MP4, MOV, AVI, WebM, MKV and GIF. Free, no signup, runs in your browser.",
+      "Free online video converter and audio converter. Convert to MP4, MP3, WAV, MOV, WebM or GIF, or extract audio from video. No signup, no watermark, no upload.",
     short: "Convert popular audio and video formats quickly.",
     intro:
-      "Convert audio and video files between common formats, extract audio from video, or make a GIF from a short clip. The conversion runs in your browser.",
+      "A free online video converter and audio converter in one: convert any video to MP4, extract the audio from a video as MP3, change audio between MP3, WAV, M4A, FLAC and OGG, or make a GIF from a short clip. Everything runs in your browser on Windows, Mac, Android or iPhone – no software download and no watermark.",
     widget: { type: "media" },
     primary: true,
     howTo: [
@@ -28,7 +29,29 @@ export const mediaTools: Tool[] = [
       "Optionally choose a quality setting.",
       "Press “Convert”, wait for the progress bar, then download.",
     ],
-    sections: [engineNote],
+    sections: [
+      {
+        heading: "Convert any video to MP4",
+        paragraphs: [
+          "MP4 with H.264 video is the format that plays on almost every phone, TV, laptop, WhatsApp, YouTube and video editor. The converter opens MOV, AVI, WebM, MKV, WMV, FLV, 3GP, MPEG and TS files and turns them into MP4. Choose High for the best quality, Balanced for sharing, or Small file when you need to send a video in a chat app or by email.",
+        ],
+      },
+      {
+        heading: "Audio converter: MP3, WAV, M4A, FLAC, OGG and AAC",
+        paragraphs: [
+          "Use it as an audio converter for songs, voice memos, podcasts and recordings. MP3 plays everywhere, WAV is best for editing, FLAC keeps full quality in a smaller file, and M4A/AAC suits Apple devices. You can also extract audio from any video: choose MP3 as the output format and only the sound is saved.",
+        ],
+      },
+      {
+        heading: "What this converter does not do",
+        list: [
+          "It converts files from your device – it does not download videos from links or websites.",
+          "One file at a time; there is no batch mode for audio and video.",
+          "It converts the whole file; trim long videos in another app first if you only need a short part (for GIFs especially).",
+        ],
+      },
+      engineNote,
+    ],
     formats: [
       { name: "MP3", desc: "Universal compressed audio. Plays on every device." },
       { name: "WAV", desc: "Uncompressed audio. Large files, best for editing." },
@@ -47,6 +70,8 @@ export const mediaTools: Tool[] = [
       { q: "Are my files uploaded?", a: "No. Your file is processed in your browser. Only the FFmpeg engine itself is downloaded from a CDN the first time." },
       { q: "Why is conversion slow?", a: "Video encoding is demanding and runs on your own device. Shorter clips and lower quality settings are faster." },
       { q: "What is the maximum file size?", a: "500 MB. On phones, files under 100 MB work best." },
+      { q: "Does the video converter add a watermark?", a: "No. There is no watermark and no time limit on the converted video." },
+      { q: "Can I convert a video for WhatsApp?", a: "Yes. Convert it to MP4 and choose “Small file” – that gives a widely compatible H.264 video that is easier to send." },
     ],
     related: ["video-to-mp3", "mkv-to-mp4", "webm-to-mp4", "mp4-to-mp3", "m4a-to-mp3", "mov-to-mp4", "wav-to-mp3"],
     keywords: ["audio", "video", "convert", "mp3", "mp4", "wav", "mov", "m4a", "aac", "ogg", "flac", "webm", "mkv", "avi"],
