@@ -49,7 +49,7 @@ add it in Vercel, set `NEXT_PUBLIC_SITE_URL`, keep vercel.app redirecting, add t
 | 9 | Launching Next – https://launchingnext.com | Directory | Listing | Submit form | To do |
 | 10 | StartupBase – https://www.startupbase.io | Directory | Listing | Account → add product | To do |
 | 11 | Toolfolio – https://www.toolfolio.io | Tool directory | Relevant | Submit | To do |
-| 12 | DEV Community – https://dev.to | Article | Strong, relevant (developers) | Owner account → publish article (draft below) | **Published 2026-10-27** – https://dev.to/daily-solution/i-built-browser-only-image-pdf-and-video-tools-nothing-gets-uploaded-8a (7 dofollow links, indexable) |
+| 12 | DEV Community – https://dev.to | Article | Strong, relevant (developers) | Owner account → publish article (draft below) | **Published 2026-10-27** – https://dev.to/daily-solution/i-built-browser-only-image-pdf-and-video-tools-nothing-gets-uploaded-8a (6 dofollow links to the site, indexable) |
 | 13 | Hashnode – https://hashnode.com | Article | Relevant | Cross-post the same article with canonical to dev.to | To do |
 | 14 | Hacker News – Show HN | Community | High traffic if it lands | Owner account → https://news.ycombinator.com/submit (draft below) | To do |
 | 15 | Reddit – r/SideProject, r/webdev, r/InternetIsBeautiful | Community | Traffic (nofollow) | Owner account, follow each sub’s rules, one post each, no spam | To do |
