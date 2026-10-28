@@ -208,4 +208,125 @@ export const gapMediaTools: Tool[] = [
     related: ["mp4-to-mp3", "mov-to-mp3", "m4a-to-mp3", "media-converter"],
     keywords: ["video", "mp3", "audio", "extract", "convert"],
   },
+  {
+    slug: "aac-to-mp3",
+    category: "media",
+    name: "AAC to MP3",
+    h1: "AAC to MP3 Converter",
+    title: "AAC to MP3 Converter – Free Online, Up to 320 kbps",
+    updated: "2026-10-27",
+    metaDescription:
+      "Convert AAC to MP3 online free at 128, 192 or 320 kbps. Make AAC recordings and songs play in any car stereo, player or app. No signup, no upload, no app.",
+    short: "Convert AAC audio to universal MP3.",
+    intro:
+      "AAC audio from phones, recorders and video downloads doesn’t play on every car stereo, MP3 player or editing app. Convert AAC to MP3 in your browser on Windows, Mac, Android or iPhone – no software, no account.",
+    widget: { type: "media", from: "aac", to: "mp3" },
+    howTo: ["Add your .aac file.", "MP3 is preselected. Choose 128, 192 or 320 kbps.", "Press “Convert” and download the MP3."],
+    sections: [
+      {
+        heading: "AAC vs MP3: bitrate and quality",
+        paragraphs: [
+          "AAC is more efficient than MP3, so a 128 kbps AAC sounds roughly like a 160–192 kbps MP3. When converting, pick an MP3 bitrate at least as high as the AAC source – 192 kbps for most music, 320 kbps if you want to lose as little as possible, 128 kbps for speech.",
+        ],
+      },
+      {
+        heading: "Convert AAC to MP3 without iTunes or Audacity",
+        paragraphs: [
+          "Instead of installing iTunes, Apple Music settings or Audacity with extra plugins, open this page, add the file and convert. Files with the .m4a extension are usually AAC too – use the M4A to MP3 converter for those.",
+        ],
+      },
+      { heading: "How the converter works", paragraphs: [engine] },
+    ],
+    faqs: [
+      { q: "Does converting AAC to MP3 lose quality?", a: "A little, because both formats are lossy. At 192–320 kbps the difference is very hard to hear." },
+      { q: "Can I convert AAC files in bulk?", a: "Not yet – the converter handles one file at a time." },
+      { q: "Can I convert AAC to WAV instead?", a: "Yes. Choose WAV as the output format for an uncompressed file for editing." },
+    ],
+    related: ["m4a-to-mp3", "wav-to-mp3", "flac-to-mp3", "ogg-to-mp3", "media-converter"],
+    keywords: ["aac", "mp3", "audio", "convert", "320 kbps"],
+  },
+  {
+    slug: "mov-to-gif",
+    category: "media",
+    name: "MOV to GIF",
+    h1: "MOV to GIF Converter",
+    title: "MOV to GIF Converter – iPhone & Mac Videos to GIF",
+    updated: "2026-10-27",
+    metaDescription:
+      "Convert MOV to GIF online free. Turn short iPhone or Mac screen recordings into high-quality looping GIFs. Choose width and frame rate. No watermark, no upload.",
+    short: "Turn short MOV clips into looping GIFs.",
+    intro:
+      "iPhone videos and Mac screen recordings are saved as MOV. Convert a short MOV clip into an animated GIF for chats, Discord, documentation or bug reports – choose the width and frame rate, and download a looping GIF without a watermark.",
+    widget: { type: "media", from: "mov", to: "gif" },
+    howTo: [
+      "Add a short .mov clip (a few seconds is ideal).",
+      "GIF is preselected. Choose width (320, 480 or 640 px) and 10 or 15 fps.",
+      "Press “Convert” and download the GIF.",
+    ],
+    sections: [
+      {
+        heading: "High-quality GIF from MOV",
+        paragraphs: [
+          "The converter builds an optimized 256-color palette for each GIF, which keeps colors much more accurate than a generic palette. For the sharpest result choose 640 px and 15 fps; for a smaller file choose 320–480 px and 10 fps.",
+        ],
+      },
+      {
+        heading: "Mac screen recording to GIF",
+        paragraphs: [
+          "Screen recordings made with Shift-Command-5 on a Mac are MOV files. Convert them here to share a quick demo in a README, chat or support ticket. GIFs have no sound, and the whole clip is converted – trim long recordings first (QuickTime: Edit → Trim) to keep the GIF small.",
+        ],
+      },
+      { heading: "How the converter works", paragraphs: [engine] },
+    ],
+    faqs: [
+      { q: "Can I convert MOV to GIF on iPhone?", a: "Yes, in Safari. Short clips work best on a phone." },
+      { q: "Does the GIF keep a transparent background?", a: "Transparency from MOV files is not guaranteed to be kept; expect a solid background." },
+      { q: "Why is my GIF so big?", a: "GIF is an old, inefficient format. Use a shorter clip, a smaller width and 10 fps to reduce the size." },
+    ],
+    related: ["mp4-to-gif", "mov-to-mp4", "mov-to-mp3", "media-converter"],
+    keywords: ["mov", "gif", "iphone", "mac", "screen recording", "animation"],
+  },
+  {
+    slug: "wav-to-flac",
+    category: "media",
+    name: "WAV to FLAC",
+    h1: "WAV to FLAC Converter",
+    title: "WAV to FLAC Converter – Free Online, Lossless",
+    updated: "2026-10-27",
+    metaDescription:
+      "Convert WAV to FLAC online free with no quality loss. Shrink WAV recordings and CD rips by about 40–60% while keeping every detail. No signup, no upload.",
+    short: "Shrink WAV files losslessly as FLAC.",
+    intro:
+      "FLAC stores exactly the same audio as WAV in a much smaller file. Convert WAV to FLAC to save space on music, CD rips and recordings without losing any quality – right in your browser.",
+    widget: { type: "media", from: "wav", to: "flac" },
+    howTo: ["Add your .wav file.", "FLAC is preselected.", "Press “Convert” and download the FLAC file."],
+    sections: [
+      {
+        heading: "Is WAV to FLAC lossless?",
+        paragraphs: [
+          "Yes. FLAC is lossless compression: when the FLAC is played or converted back to WAV, the audio is bit-for-bit identical. Files are typically 40–60% smaller than WAV, depending on the music.",
+        ],
+      },
+      {
+        heading: "Sample rate and bit depth",
+        paragraphs: [
+          "The converter keeps the sample rate and channels of your WAV, so a 44.1 kHz CD-quality file stays 44.1 kHz. 16-bit and 24-bit sources are stored losslessly; some 32-bit float WAVs may be saved at 24-bit, which FLAC supports at most.",
+        ],
+      },
+      {
+        heading: "WAV or FLAC: which is better?",
+        paragraphs: [
+          "The sound is the same. WAV is simpler and preferred by some editing software; FLAC is smaller and supports tags like artist and album. Use FLAC for your library and WAV while you are editing.",
+        ],
+      },
+      { heading: "How the converter works", paragraphs: [engine] },
+    ],
+    faqs: [
+      { q: "Will WAV to FLAC reduce quality?", a: "No. FLAC is lossless, so quality stays exactly the same." },
+      { q: "How much smaller will the file be?", a: "Usually 40–60% smaller than the WAV." },
+      { q: "Can I convert FLAC back to WAV?", a: "Yes. Add the FLAC file and choose WAV as the output." },
+    ],
+    related: ["flac-to-mp3", "wav-to-mp3", "mp3-to-wav", "m4a-to-wav", "media-converter"],
+    keywords: ["wav", "flac", "lossless", "audio", "convert"],
+  },
 ];

@@ -59,7 +59,7 @@ export function popularTools(): Tool[] {
 }
 
 /** Newest first. Prepend slugs here when launching a tool. */
-const recentOrder = ["rotate-pdf", "pdf-to-png", "webm-to-mp4", "mkv-to-mp4"];
+const recentOrder = ["jpg-to-avif", "webp-to-pdf", "mov-to-gif", "aac-to-mp3"];
 
 export function recentTools(): Tool[] {
   return recentOrder.map((s) => bySlug.get(s)!).filter(Boolean);

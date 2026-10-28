@@ -297,4 +297,51 @@ export const gapPdfTools: Tool[] = [
     related: ["heic-to-jpg", "jpg-to-pdf", "png-to-pdf", "pdf-compressor", "compress-pdf-to-200kb"],
     keywords: ["heic", "heif", "pdf", "iphone", "photos", "convert"],
   },
+  {
+    slug: "webp-to-pdf",
+    category: "pdf",
+    name: "WebP to PDF",
+    h1: "WebP to PDF Converter",
+    title: "WebP to PDF Converter – Free, Merge into One PDF",
+    updated: "2026-10-27",
+    metaDescription:
+      "Convert WebP to PDF online free. Combine multiple WebP images into one PDF in A4 or Letter size, in the order you choose. No signup, no upload, no watermark.",
+    short: "Combine WebP images into one PDF.",
+    intro:
+      "Saved images from the web as WebP and need a PDF? Convert WebP to PDF directly – add one or many WebP files, put them in order, choose A4, Letter or fit-to-image pages, and download a single PDF. Everything happens in your browser.",
+    widget: { type: "pdf", action: "images-to-pdf" },
+    howTo: [
+      "Add your .webp images (JPG, PNG and HEIC can be mixed in).",
+      "Arrange them in the right order.",
+      "Choose page size and margin, then press “Create PDF”.",
+      "Download the PDF.",
+    ],
+    sections: [
+      {
+        heading: "Multiple WebP files to one PDF",
+        paragraphs: [
+          "Each image becomes one page, so you can merge screenshots, product pictures or scanned notes saved as WebP into a single document for printing, emailing or uploading to a form.",
+        ],
+      },
+      {
+        heading: "Page size and quality",
+        paragraphs: [
+          "A4 and Letter place each image centered on a standard page, rotated to landscape when the image is wide. “Fit” makes each page exactly the size of the image. WebP images are embedded as high-quality JPG inside the PDF, because PDF files can’t store WebP directly; transparent areas become white.",
+        ],
+      },
+      {
+        heading: "Make the PDF smaller",
+        paragraphs: [
+          "If a form needs the PDF under a size such as 200 KB or 1 MB, run it through the PDF Compressor afterwards.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Can I convert animated WebP to PDF?", a: "Only the first frame is used, because a PDF page is a still image." },
+      { q: "Is there a watermark?", a: "No. The PDF contains only your images." },
+      { q: "Are my images uploaded?", a: "No. The PDF is created in your browser on your own device." },
+    ],
+    related: ["jpg-to-pdf", "png-to-pdf", "heic-to-pdf", "webp-to-jpg", "pdf-compressor"],
+    keywords: ["webp", "pdf", "convert", "merge", "images", "a4"],
+  },
 ];
