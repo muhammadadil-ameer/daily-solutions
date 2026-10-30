@@ -90,6 +90,16 @@ Gap backlog (from 2026-10-27 analysis; remove items once a page exists):
 
 ## Runs
 
+- 2026-10-30 (manual, owner request) — **Moved to custom domain https://dailysolution.org** (Hostinger domain; note: no “s”).
+  Vercel: added dailysolution.org (production) + www.dailysolution.org (308 → apex). Hostinger DNS for dailysolution.org only:
+  CNAME www → 3270d8c6e190f9cb.vercel-dns-017.com (was www.dailysolution.org.cdn.hstgr.net); ALIAS @ → dailysolution.org.cdn.hstgr.net
+  deleted and A @ 216.198.79.1 added; A ftp 145.79.31.24 unchanged; no MX existed. The previous Hostinger WordPress site
+  “Daily Solutions” is no longer served on this domain (still in Hostinger; restore by reverting those two records).
+  Code: site URL → dailysolution.org (canonical, sitemap, robots, OG, JSON-LD); single-hop 308 from dailysolutions.vercel.app/*.
+  GSC: new URL-prefix property https://dailysolution.org/ verified via HTML file (public/google3dc3ca748dbe79c9.html – keep it),
+  sitemap submitted, Change of Address from dailysolutions.vercel.app confirmed (“site is moving”). IndexNow: 81 URLs (202).
+  GitHub homepage updated. GA4 stream / Clarity project still show the old URL label (data collection unaffected).
+
 - 2026-10-27 (manual, owner request: competitor keywords) — Ran scripts/competitors.py on 11 competitor sitemaps
   (iLoveIMG 63 pages, iLovePDF 53, Smallpdf 299, TinyPNG 95, FreeConvert 6,765, imageresizer.com 15,904, calculator.net 221).
   Built 16 gap landing pages backed by existing features → PR #2 (waiting for owner). Autocomplete research for rotate pdf,
