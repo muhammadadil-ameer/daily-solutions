@@ -1,23 +1,23 @@
 # Daily Solutions
 
-**🌐 Live site: [dailysolutions.vercel.app](https://dailysolutions.vercel.app)**
+**🌐 Live site: [dailysolution.org](https://dailysolution.org)**
 
 Simple online tools that solve everyday problems: image converter, image resizer & compressor, PDF toolkit,
 audio & video converter and health & fitness calculators.
 
 Popular tools:
-[Image Resizer](https://dailysolutions.vercel.app/image-resizer/) ·
-[Compress Image to 50KB](https://dailysolutions.vercel.app/compress-image-to-50kb/) ·
-[HEIC to JPG](https://dailysolutions.vercel.app/heic-to-jpg/) ·
-[Image Converter](https://dailysolutions.vercel.app/image-converter/) ·
-[PDF Compressor](https://dailysolutions.vercel.app/pdf-compressor/) ·
-[Merge PDF](https://dailysolutions.vercel.app/merge-pdf/) ·
-[JPG to PDF](https://dailysolutions.vercel.app/jpg-to-pdf/) ·
-[MP4 to MP3](https://dailysolutions.vercel.app/mp4-to-mp3/) ·
-[MOV to MP4](https://dailysolutions.vercel.app/mov-to-mp4/) ·
-[BMI Calculator](https://dailysolutions.vercel.app/bmi-calculator/) ·
-[Calorie Calculator](https://dailysolutions.vercel.app/calorie-calculator/) ·
-[All tools](https://dailysolutions.vercel.app/all-tools/)
+[Image Resizer](https://dailysolution.org/image-resizer/) ·
+[Compress Image to 50KB](https://dailysolution.org/compress-image-to-50kb/) ·
+[HEIC to JPG](https://dailysolution.org/heic-to-jpg/) ·
+[Image Converter](https://dailysolution.org/image-converter/) ·
+[PDF Compressor](https://dailysolution.org/pdf-compressor/) ·
+[Merge PDF](https://dailysolution.org/merge-pdf/) ·
+[JPG to PDF](https://dailysolution.org/jpg-to-pdf/) ·
+[MP4 to MP3](https://dailysolution.org/mp4-to-mp3/) ·
+[MOV to MP4](https://dailysolution.org/mov-to-mp4/) ·
+[BMI Calculator](https://dailysolution.org/bmi-calculator/) ·
+[Calorie Calculator](https://dailysolution.org/calorie-calculator/) ·
+[All tools](https://dailysolution.org/all-tools/)
 
 All file processing happens **in the browser** (canvas, WebAssembly, pdf-lib, PDF.js, ffmpeg.wasm). No files are
 uploaded to a server.
@@ -44,7 +44,7 @@ npm run dev
 
 | Name | Purpose |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical site URL, e.g. `https://dailysolutions.vercel.app` |
+| `NEXT_PUBLIC_SITE_URL` | Canonical site URL, e.g. `https://dailysolution.org` |
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 measurement ID (optional) |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | Google Search Console verification token (optional) |
 | `NEXT_PUBLIC_CLARITY_ID` | Microsoft Clarity project ID (optional) |

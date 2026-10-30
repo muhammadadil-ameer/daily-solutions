@@ -16,7 +16,7 @@ add it in Vercel, set `NEXT_PUBLIC_SITE_URL`, keep vercel.app redirecting, add t
 ## Ready-to-paste copy
 
 - **Name:** Daily Solutions
-- **URL:** https://dailysolutions.vercel.app
+- **URL:** https://dailysolution.org
 - **Tagline (≤60):** Free online tools for images, PDFs, media and health
 - **Short description (≤260):** Free, private online tools that run in your browser: convert and compress images (HEIC, WebP, PNG, JPG),
   compress to an exact size in KB, merge/split/rotate/compress PDFs, convert MP4/MOV/MKV to MP3 or MP4, and calculate BMI and
@@ -31,7 +31,7 @@ add it in Vercel, set `NEXT_PUBLIC_SITE_URL`, keep vercel.app redirecting, add t
   Free, no account, no watermark, works on mobile.
 - **Categories / tags:** Productivity, Image tools, PDF tools, File converter, Developer tools, Privacy, Free, Web app
 - **Pricing:** Free
-- **Logo:** https://dailysolutions.vercel.app/logo.svg · **Screenshot/OG image:** https://dailysolutions.vercel.app/opengraph-image/
+- **Logo:** https://dailysolution.org/logo.svg · **Screenshot/OG image:** https://dailysolution.org/opengraph-image/
 - **Maker / contact:** muhammadadilameer5@gmail.com
 
 ## Where to list (priority order)

@@ -1,6 +1,6 @@
 // Notifies IndexNow (Bing, Yandex, Seznam, Naver…) about changed URLs.
 // Usage: node scripts/indexnow.mjs <url-or-path> [...]   or   node scripts/indexnow.mjs --all
-const HOST = "dailysolutions.vercel.app";
+const HOST = "dailysolution.org";
 const KEY = "96e96a9bc1eb96ef8b02f8d4392b2f71";
 const origin = `https://${HOST}`;
 

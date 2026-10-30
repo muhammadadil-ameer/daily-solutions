@@ -25,6 +25,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // The old Vercel address moves permanently to the custom domain, keeping the path.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "dailysolutions.vercel.app" }],
+        destination: "https://dailysolution.org/:path*",
+        permanent: true,
+      },
       { source: "/image-resizer-compressor/", destination: "/image-resizer/", permanent: true },
       { source: "/pdf-toolkit/", destination: "/pdf-tools/", permanent: true },
       { source: "/audio-video-converter/", destination: "/media-converter/", permanent: true },

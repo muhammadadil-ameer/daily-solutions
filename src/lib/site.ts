@@ -1,7 +1,7 @@
 export const site = {
   name: "Daily Solutions",
   tagline: "Simple online tools that solve everyday problems.",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://dailysolutions.vercel.app").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://dailysolution.org").replace(/\/$/, ""),
   email: "muhammadadilameer5@gmail.com",
   // Public identifiers (they appear in page HTML anyway); env vars override them per environment.
   gaId: process.env.NEXT_PUBLIC_GA_ID || "G-Y04G5F4VT0",
