@@ -7,6 +7,8 @@ const securityHeaders = [
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
 ];
 
+const oldHost = { type: "host" as const, value: "dailysolutions.vercel.app" };
+
 const nextConfig: NextConfig = {
   trailingSlash: true,
   poweredByHeader: false,
@@ -25,13 +27,16 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // The old Vercel address moves permanently to the custom domain, keeping the path.
+      // The old Vercel address moves permanently to the custom domain in a single hop:
+      // pages keep their trailing slash, files (sitemap.xml, robots.txt, …) don't get one.
+      { source: "/", has: [oldHost], destination: "https://dailysolution.org/", permanent: true },
       {
-        source: "/:path*",
-        has: [{ type: "host", value: "dailysolutions.vercel.app" }],
-        destination: "https://dailysolution.org/:path*",
+        source: "/:file(.+\\.[A-Za-z0-9]+)",
+        has: [oldHost],
+        destination: "https://dailysolution.org/:file",
         permanent: true,
       },
+      { source: "/:path+", has: [oldHost], destination: "https://dailysolution.org/:path+/", permanent: true },
       { source: "/image-resizer-compressor/", destination: "/image-resizer/", permanent: true },
       { source: "/pdf-toolkit/", destination: "/pdf-tools/", permanent: true },
       { source: "/audio-video-converter/", destination: "/media-converter/", permanent: true },
