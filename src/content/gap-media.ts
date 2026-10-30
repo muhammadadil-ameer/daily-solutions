@@ -253,7 +253,7 @@ export const gapMediaTools: Tool[] = [
     title: "MOV to GIF Converter – iPhone & Mac Videos to GIF",
     updated: "2026-10-27",
     metaDescription:
-      "Convert MOV to GIF online free. Turn short iPhone or Mac screen recordings into high-quality looping GIFs. Choose width and frame rate. No watermark, no upload.",
+      "Convert MOV to GIF online free. Turn short iPhone or Mac screen recordings into high-quality looping GIFs. Pick width and frame rate. No watermark, no upload.",
     short: "Turn short MOV clips into looping GIFs.",
     intro:
       "iPhone videos and Mac screen recordings are saved as MOV. Convert a short MOV clip into an animated GIF for chats, Discord, documentation or bug reports – choose the width and frame rate, and download a looping GIF without a watermark.",
