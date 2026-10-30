@@ -176,7 +176,7 @@ export const gapImageTools: Tool[] = [
       {
         heading: "Lossless or lossy?",
         paragraphs: [
-          "This converter creates lossy AVIF files, which is what makes them so small. At 85–95% quality the difference is hard to see. For screenshots with small text or pixel art where every pixel must stay exact, keep the PNG or use the quality slider near 100%.",
+          "This converter creates lossy AVIF files, which is what makes them so small. At high quality settings the difference is hard to see for photos and graphics. For screenshots with small text or pixel art where every pixel must stay exact, keep the original PNG.",
         ],
       },
     ],
