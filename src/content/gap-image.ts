@@ -102,4 +102,90 @@ export const gapImageTools: Tool[] = [
     related: ["image-converter", "png-to-jpg", "tiff-to-jpg", "compress-jpg"],
     keywords: ["bmp", "bitmap", "jpg", "jpeg", "convert"],
   },
+  {
+    slug: "jpg-to-avif",
+    category: "image",
+    name: "JPG to AVIF",
+    h1: "JPG to AVIF Converter",
+    title: "JPG to AVIF Converter – Free Online, Bulk",
+    updated: "2026-10-27",
+    metaDescription:
+      "Convert JPG to AVIF online free. Bulk convert and compress photos into AVIF, the next-gen format that is often half the size of JPG. No signup, no upload.",
+    short: "Make JPG photos much smaller as AVIF.",
+    intro:
+      "AVIF is a modern image format that usually makes photos far smaller than JPG at the same visible quality – ideal for faster websites and online shops. Convert one or many JPG files to AVIF in your browser and download them as a ZIP.",
+    widget: { type: "image-convert", from: "jpg", to: "avif" },
+    howTo: [
+      "Add your .jpg or .jpeg files.",
+      "AVIF is preselected. Adjust the quality slider to compress more or less.",
+      "Press “Convert” and download, or “Download All” as ZIP.",
+    ],
+    sections: [
+      {
+        heading: "How much smaller is AVIF than JPG?",
+        paragraphs: [
+          "For typical photos, an AVIF file is often 30–50% smaller than a JPG that looks the same. The exact saving depends on the picture: smooth areas such as sky and skin compress best, very detailed or noisy photos save less.",
+        ],
+      },
+      {
+        heading: "Bulk JPG to AVIF and compress",
+        paragraphs: [
+          "Add a whole folder of JPGs at once; every image uses the same quality setting. 70–80% suits most website photos, lower values give even smaller files. AVIF encoding is heavier than JPG, so large photos can take a few seconds each – the work happens on your own device, not on a server.",
+        ],
+      },
+      {
+        heading: "Where can AVIF be used?",
+        paragraphs: [
+          "Current versions of Chrome, Edge, Firefox and Safari display AVIF, and many website builders and CDNs accept it. Some older apps, email clients and upload forms still only take JPG or PNG – keep your originals, or use WebP when you need wider support.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Is AVIF better than WebP?", a: "AVIF usually compresses photos a bit better than WebP, while WebP encodes faster and works in slightly more older software. Both are much smaller than JPG." },
+      { q: "Can I convert many JPGs to AVIF at once?", a: "Yes. Add as many files as you like and download them together as a ZIP." },
+      { q: "Will converting JPG to AVIF improve quality?", a: "No. Converting can’t add detail that the JPG already lost; it only makes the file smaller." },
+    ],
+    related: ["png-to-avif", "avif-to-jpg", "jpg-to-webp", "compress-jpg", "image-converter"],
+    keywords: ["jpg", "jpeg", "avif", "convert", "compress", "next-gen"],
+  },
+  {
+    slug: "png-to-avif",
+    category: "image",
+    name: "PNG to AVIF",
+    h1: "PNG to AVIF Converter",
+    title: "PNG to AVIF Converter – Free, Keeps Transparency",
+    updated: "2026-10-27",
+    metaDescription:
+      "Convert PNG to AVIF online free and keep transparent backgrounds. Shrink large PNG graphics and screenshots for faster websites. Bulk convert, no upload.",
+    short: "Shrink PNGs into AVIF and keep transparency.",
+    intro:
+      "PNG files are lossless but often very large. Convert PNG to AVIF to cut the file size dramatically while keeping transparent backgrounds – useful for logos, product photos and website graphics. Convert many files at once in your browser.",
+    widget: { type: "image-convert", from: "png", to: "avif" },
+    howTo: [
+      "Add your .png files.",
+      "AVIF is preselected. Choose the quality (higher keeps more detail).",
+      "Press “Convert” and download the AVIF files or a ZIP.",
+    ],
+    sections: [
+      {
+        heading: "PNG to AVIF with a transparent background",
+        paragraphs: [
+          "AVIF supports an alpha channel, so transparent areas of your PNG stay transparent in the AVIF file. That makes it a good replacement for PNG cut-outs and logos on modern websites.",
+        ],
+      },
+      {
+        heading: "Lossless or lossy?",
+        paragraphs: [
+          "This converter creates lossy AVIF files, which is what makes them so small. At high quality settings the difference is hard to see for photos and graphics. For screenshots with small text or pixel art where every pixel must stay exact, keep the original PNG.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Does PNG to AVIF keep transparency?", a: "Yes. Transparent pixels stay transparent." },
+      { q: "PNG to AVIF or WebP?", a: "AVIF usually gives smaller files; WebP encodes faster and is supported by a few more older apps. Both keep transparency." },
+      { q: "Can I convert PNG to AVIF in bulk?", a: "Yes. Add many PNGs at once and download them as a ZIP." },
+    ],
+    related: ["jpg-to-avif", "avif-to-png", "png-to-webp", "compress-png", "image-converter"],
+    keywords: ["png", "avif", "transparent", "convert", "compress"],
+  },
 ];
