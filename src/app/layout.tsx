@@ -8,6 +8,9 @@ import "./globals.css";
 
 const { gaId, clarityId } = site;
 
+// Google AdSense publisher ID (dailysolution.org)
+const adsenseClient = "ca-pub-2235440105254747";
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `Free Online Tools – ${site.name}`, template: `%s | ${site.name}` },
@@ -16,6 +19,7 @@ export const metadata: Metadata = {
   openGraph: { type: "website", siteName: site.name, locale: "en_US" },
   twitter: { card: "summary_large_image" },
   verification: site.googleVerification ? { google: site.googleVerification } : undefined,
+  other: { "google-adsense-account": adsenseClient },
 };
 
 export const viewport: Viewport = {
@@ -27,6 +31,14 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="antialiased">
+      <head>
+        {/* Google AdSense (Auto ads) */}
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="flex min-h-dvh flex-col">
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-lg focus:bg-white focus:px-3 focus:py-2">
           Skip to content
