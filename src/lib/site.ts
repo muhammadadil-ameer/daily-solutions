@@ -15,6 +15,9 @@ export const site = {
     "Free online tools to convert, resize and compress images, edit PDFs, convert audio and video, and calculate calories and BMI. No signup, runs in your browser.",
 };
 
+/** "Hire an SEO expert" page, linked from every tool page and the footer. */
+export const seoPath = "/seo-services/";
+
 export function absoluteUrl(path: string) {
   return `${site.url}${path.startsWith("/") ? path : `/${path}`}`;
 }
