@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
-  description: `Health calculators on ${site.name} provide estimates for general information and are not medical advice.`,
+  description: `Disclaimer for ${site.name}: our health calculators give estimates for general information only and are not medical advice. Read the limits of the tools.`,
   alternates: { canonical: "/disclaimer/" },
 };
 
