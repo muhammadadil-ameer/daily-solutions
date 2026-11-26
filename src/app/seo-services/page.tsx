@@ -240,7 +240,7 @@ export default function SeoServices() {
                 I’m Muhammad Adil, an SEO specialist and the person behind Daily Solutions. I help websites get indexed,
                 rank higher on Google, show up in Google Maps and get found in AI search.
               </p>
-              <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
+              <ul className="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-1 lg:gap-3">
                 {[
                   "Fix pages that Google won’t index",
                   "Rank for the searches that bring customers",
