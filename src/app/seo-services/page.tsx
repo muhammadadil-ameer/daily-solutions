@@ -5,7 +5,7 @@ import { LeadForm } from "@/components/LeadForm";
 import { StaticPage } from "@/components/StaticPage";
 import { absoluteUrl, seoPath as SEO_PATH, site } from "@/lib/site";
 
-const PORTFOLIO = "https://muhammad-adil-seo.vercel.app/";
+const LINKEDIN = "https://www.linkedin.com/in/muhammad-adil-seo/";
 
 export const metadata: Metadata = {
   title: { absolute: "Hire an SEO Expert – SEO Services by Muhammad Adil" },
@@ -79,10 +79,9 @@ export default function SeoServices() {
       intro="I’m Muhammad Adil, an SEO specialist and the person behind Daily Solutions. I help websites get indexed, rank higher on Google and get found in AI search."
     >
       <p>
-        <a href="#seo-form">Send your website</a> and tell me what you need – I’ll reply personally. You can also see my
-        work on my{" "}
-        <a href={PORTFOLIO} target="_blank" rel="noopener">
-          SEO portfolio
+        <a href="#seo-form">Send your website</a> and tell me what you need – I’ll reply personally. You can also visit my{" "}
+        <a href={LINKEDIN} target="_blank" rel="noopener">
+          LinkedIn
         </a>
         .
       </p>
@@ -138,7 +137,7 @@ export default function SeoServices() {
           description: "Technical SEO, indexing fixes, on-page SEO, keyword research, local SEO and AI search visibility.",
           email: site.email,
           areaServed: "Worldwide",
-          founder: { "@type": "Person", name: "Muhammad Adil", jobTitle: "SEO Specialist", url: PORTFOLIO },
+          founder: { "@type": "Person", name: "Muhammad Adil", jobTitle: "SEO Specialist", sameAs: LINKEDIN },
         }}
       />
     </StaticPage>
