@@ -347,13 +347,19 @@ export default function ImageResizer({
               Could not reach {targetKB} KB at {result.width} × {result.height} px. The smallest result is shown. Try a smaller width.
             </ErrorMessage>
           )}
+          {result.blob.size >= img.file.size && (
+            <Notice>
+              This image is already well compressed, so the new file is not smaller than your original. Keep the original,
+              lower the quality, reduce the width or try WebP output.
+            </Notice>
+          )}
           <dl className="grid grid-cols-2 gap-3 lg:grid-cols-4">
             <Stat label="Original" value={`${ow} × ${oh}`} />
             <Stat label="New dimensions" value={`${result.width} × ${result.height}`} />
             <Stat label="Size" value={`${formatBytes(img.file.size)} → ${formatBytes(result.blob.size)}`} />
             <Stat
               label="Reduction"
-              value={`${reductionPercent(img.file.size, result.blob.size)}%`}
+              value={`${Math.max(0, reductionPercent(img.file.size, result.blob.size))}%`}
               tone={result.blob.size < img.file.size ? "good" : undefined}
             />
           </dl>

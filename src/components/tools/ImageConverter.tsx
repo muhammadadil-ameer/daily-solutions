@@ -30,7 +30,7 @@ interface Item {
 
 const outName = (file: File, fmt: OutputFormat) => `${sanitizeBaseName(file.name)}.${fmt === "jpg" ? "jpg" : fmt}`;
 
-export default function ImageConverter({ from, to = "jpg" }: { from?: ImageFormat; to?: ImageFormat }) {
+export default function ImageConverter({ from, to = "jpg", fromLabel }: { from?: ImageFormat; to?: ImageFormat; fromLabel?: string }) {
   const initialTarget: OutputFormat = to === "heic" ? "jpg" : to;
   const [items, setItems] = useState<Item[]>([]);
   const [target, setTarget] = useState<OutputFormat>(initialTarget);
@@ -101,7 +101,7 @@ export default function ImageConverter({ from, to = "jpg" }: { from?: ImageForma
           accept={ACCEPT_IMAGES}
           multiple
           onFiles={addFiles}
-          title={from ? `Drag & drop your ${formatLabel[from]} images here` : "Drag & drop your images here"}
+          title={from ? `Drag & drop your ${fromLabel ?? formatLabel[from]} images here` : "Drag & drop your images here"}
           buttonLabel="Choose Images"
           hint="JPG, JPEG, JFIF, PNG, WebP, HEIC, AVIF, GIF, BMP, TIFF · up to 50 MB each · processed in your browser"
         />
