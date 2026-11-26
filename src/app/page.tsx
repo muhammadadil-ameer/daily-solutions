@@ -16,7 +16,7 @@ import {
   ArrowRight,
 } from "@/components/Icons";
 import { ToolSearch } from "@/components/ToolSearch";
-import { categories, categoryHref, popularTools, primaryTools, recentTools, searchIndex } from "@/content";
+import { categories, categoryHref, popularTools, primaryTools, recentTools, searchIndex, toolHref, toolsIn } from "@/content";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -153,6 +153,30 @@ export default function Home() {
               </div>
             </li>
           </ul>
+        </section>
+
+        <section aria-labelledby="every-tool">
+          <SectionHeading id="every-tool" title="Every Tool, by Category" sub="All free tools on Daily Solutions in one place." />
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map((c) => (
+              <div key={c.id}>
+                <h3 className="mb-3 font-semibold text-ink">
+                  <Link href={categoryHref(c.id)} className="hover:text-brand-700">
+                    {c.name}
+                  </Link>
+                </h3>
+                <ul className="space-y-1.5">
+                  {toolsIn(c.id).map((t) => (
+                    <li key={t.slug}>
+                      <Link href={toolHref(t)} className="text-sm text-muted hover:text-brand-700">
+                        {t.h1}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section aria-labelledby="recent">

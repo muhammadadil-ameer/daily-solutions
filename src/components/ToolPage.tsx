@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCategory, relatedTools, toolHref, toolsIn } from "@/content";
+import { categoryHref, getCategory, relatedTools, similarTools, toolHref, toolsIn } from "@/content";
 import { absoluteUrl, site } from "@/lib/site";
 import type { Tool } from "@/lib/types";
 import { Breadcrumbs, categoryCrumb, FaqList, HealthDisclaimer, JsonLd, ToolGrid } from "./Blocks";
@@ -15,6 +15,11 @@ export function ToolPage({ tool }: { tool: Tool }) {
   if (tool.slug !== category.hostTool) crumbs.push({ name: tool.name, href: toolHref(tool) });
   const siblings = category.hostTool === tool.slug ? toolsIn(tool.category).filter((t) => t.slug !== tool.slug) : [];
   const next = related[0];
+  // 8 closely related tools linked inside the article, 8 more in the sidebar: every tool page links to 16
+  // others, chosen per page, so no tool depends on being among the first items of its category.
+  const similar = similarTools(tool, 16);
+  const inArticle = similar.slice(0, 8);
+  const inSidebar = similar.slice(8);
 
   return (
     <>
@@ -92,6 +97,27 @@ export function ToolPage({ tool }: { tool: Tool }) {
               </section>
             )}
 
+            {inArticle.length > 0 && (
+              <section>
+                <h2>Related {category.name.toLowerCase()}</h2>
+                <p>
+                  Need something slightly different? These free tools work the same way – in your browser, without
+                  signup:
+                </p>
+                <ul>
+                  {inArticle.map((t) => (
+                    <li key={t.slug}>
+                      <Link href={toolHref(t)}>{t.h1}</Link> – {t.short}
+                    </li>
+                  ))}
+                </ul>
+                <p>
+                  Or browse <Link href={categoryHref(tool.category)}>all {category.name.toLowerCase()}</Link> and the
+                  complete <Link href="/all-tools/">list of free online tools</Link>.
+                </p>
+              </section>
+            )}
+
             <section>
               <h2>Frequently asked questions</h2>
               <FaqList faqs={tool.faqs} />
@@ -102,9 +128,7 @@ export function ToolPage({ tool }: { tool: Tool }) {
             <div className="card p-5">
               <h2 className="mb-3 font-semibold text-ink">More {category.name}</h2>
               <ul className="space-y-1">
-                {toolsIn(tool.category)
-                  .filter((t) => t.slug !== tool.slug)
-                  .slice(0, 8)
+                {(inSidebar.length > 0 ? inSidebar : toolsIn(tool.category).filter((t) => t.slug !== tool.slug).slice(0, 8))
                   .map((t) => (
                     <li key={t.slug}>
                       <Link href={toolHref(t)} className="block rounded-lg px-2 py-1.5 text-sm text-muted hover:bg-surface hover:text-brand-700">
