@@ -9,11 +9,12 @@ import { kbTools } from "./kb";
 import { gapImageTools } from "./gap-image";
 import { gapPdfTools } from "./gap-pdf";
 import { gapMediaTools } from "./gap-media";
+import { extrasUpdated, toolExtras } from "./extras";
 
 export { categories, getCategory };
 
 /** Every tool page on the site. Adding a new category = new content file + entry in categories.ts. */
-export const tools: Tool[] = [
+const baseTools: Tool[] = [
   ...imageTools,
   ...gapImageTools,
   ...resizeTools,
@@ -24,6 +25,19 @@ export const tools: Tool[] = [
   ...gapMediaTools,
   ...healthTools,
 ];
+
+/** Applies content/extras.ts (extra sections, FAQs, better meta descriptions) on top of the base content. */
+export const tools: Tool[] = baseTools.map((t) => {
+  const x = toolExtras[t.slug];
+  if (!x) return t;
+  return {
+    ...t,
+    metaDescription: x.metaDescription ?? t.metaDescription,
+    sections: [...t.sections, ...(x.sections ?? [])],
+    faqs: [...t.faqs, ...(x.faqs ?? [])],
+    updated: extrasUpdated,
+  };
+});
 
 const bySlug = new Map(tools.map((t) => [t.slug, t]));
 
@@ -95,4 +109,56 @@ export function searchIndex(): SearchEntry[] {
     category: getCategory(t.category).name,
     terms: [t.name, t.h1, t.short, ...(t.keywords ?? [])].join(" ").toLowerCase(),
   }));
+}
+
+/** Format / topic words in a slug, used to find closely related tools ("heic-to-jpg" → heic, jpg). */
+const STOP = new Set(["to", "image", "images", "online", "free"]);
+const ALIAS: Record<string, string> = { jpeg: "jpg", tif: "tiff" };
+function slugTokens(slug: string): string[] {
+  return slug
+    .split("-")
+    .filter((w) => !STOP.has(w))
+    .map((w) => ALIAS[w] ?? w)
+    .map((w) => (/^\d+(kb|mb)$/.test(w) ? "size" : /^\d+x\d+$/.test(w) ? "dimensions" : w));
+}
+
+const tokenFreq = new Map<string, number>();
+for (const t of tools) for (const w of new Set(slugTokens(t.slug))) tokenFreq.set(w, (tokenFreq.get(w) ?? 0) + 1);
+
+/**
+ * Tools to link from a tool page so that every page gets internal links, not only the first few of a category.
+ * Order: hand-picked `related`, then tools sharing a format/topic word, then the tool's neighbours in the
+ * category list (wrapping around), so tools at the end of a category are linked as often as those at the start.
+ */
+export function similarTools(tool: Tool, count: number): Tool[] {
+  const picked: Tool[] = [];
+  const seen = new Set([tool.slug]);
+  const add = (t: Tool | undefined) => {
+    if (t && !seen.has(t.slug) && picked.length < count) {
+      seen.add(t.slug);
+      picked.push(t);
+    }
+  };
+  tool.related.forEach((s) => add(bySlug.get(s)));
+  const mine = new Set(slugTokens(tool.slug));
+  const peers = toolsIn(tool.category);
+  const i = peers.findIndex((t) => t.slug === tool.slug);
+  // Rare words (heic, webp, kb sizes) count more than words most tools share (pdf, mp3), and ties go to the
+  // nearest neighbour in the list, so the links spread over the whole category instead of its first items.
+  tools
+    .map((t, idx) => {
+      const shared = slugTokens(t.slug).filter((w) => mine.has(w));
+      const score = shared.reduce((sum, w) => sum + 1 / (tokenFreq.get(w) ?? 1), 0) + (t.category === tool.category ? 0.05 : 0);
+      const pi = peers.indexOf(t);
+      const dist = pi < 0 ? 999 + idx : Math.min(Math.abs(pi - i), peers.length - Math.abs(pi - i));
+      return { t, score, dist, shared: shared.length };
+    })
+    .filter((x) => x.shared > 0)
+    .sort((a, b) => b.score - a.score || a.dist - b.dist)
+    .forEach((x) => add(x.t));
+  for (let step = 1; step < peers.length && picked.length < count; step++) {
+    add(peers[(i + step) % peers.length]);
+    add(peers[(i - step + peers.length) % peers.length]);
+  }
+  return picked;
 }
