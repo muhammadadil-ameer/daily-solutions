@@ -246,6 +246,7 @@ export default function SeoServices() {
                   "Rank for the searches that bring customers",
                   "Get found in Google Maps (GMB)",
                   "Be cited in AI answers (AEO & GEO)",
+                  "Recover traffic after a Google update",
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-ink">
                     <CheckIcon width={20} height={20} className="mt-0.5 shrink-0 text-brand-600" />
@@ -255,7 +256,8 @@ export default function SeoServices() {
               </ul>
               <p className="mt-6 rounded-xl border border-line bg-white/70 px-4 py-3 text-sm text-muted">
                 <span className="font-semibold text-ink">The free review covers:</span> indexing and technical health,
-                your on-page setup, the keywords you could realistically win, and the quick wins I would fix first.
+                your on-page setup, the keywords you could realistically win, and the quick wins I would fix first. It’s
+                free, with no obligation, and I reply within 1–2 working days.
               </p>
               <p className="mt-4 text-sm text-muted">
                 Prefer to talk first? Email{" "}
