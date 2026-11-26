@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { categoryHref, getCategory, relatedTools, similarTools, toolHref, toolsIn } from "@/content";
-import { absoluteUrl, site } from "@/lib/site";
+import { absoluteUrl, seoPath, site } from "@/lib/site";
 import type { Tool } from "@/lib/types";
 import { Breadcrumbs, categoryCrumb, FaqList, HealthDisclaimer, JsonLd, ToolGrid } from "./Blocks";
 import { ArrowRight } from "./Icons";
@@ -20,6 +20,8 @@ export function ToolPage({ tool }: { tool: Tool }) {
   const similar = similarTools(tool, 16);
   const inArticle = similar.slice(0, 8);
   const inSidebar = similar.slice(8);
+  // "Image Tools" → "image tools", "PDF Tools" → "PDF tools" for use inside sentences.
+  const catLower = category.name.replace(/^(\w+) Tools$/, (_, w: string) => `${w === "PDF" ? w : w.toLowerCase()} tools`);
 
   return (
     <>
@@ -99,7 +101,7 @@ export function ToolPage({ tool }: { tool: Tool }) {
 
             {inArticle.length > 0 && (
               <section>
-                <h2>Related {category.name.toLowerCase()}</h2>
+                <h2>Related {catLower}</h2>
                 <p>
                   Need something slightly different? These free tools work the same way – in your browser, without
                   signup:
@@ -112,7 +114,7 @@ export function ToolPage({ tool }: { tool: Tool }) {
                   ))}
                 </ul>
                 <p>
-                  Or browse <Link href={categoryHref(tool.category)}>all {category.name.toLowerCase()}</Link> and the
+                  Or browse <Link href={categoryHref(tool.category)}>all {catLower}</Link> and the
                   complete <Link href="/all-tools/">list of free online tools</Link>.
                 </p>
               </section>
@@ -166,6 +168,13 @@ export function ToolPage({ tool }: { tool: Tool }) {
             </Link>
           </div>
         )}
+
+        <p className="mt-10 rounded-2xl border border-line bg-surface px-5 py-4 text-center text-sm text-muted">
+          Need an SEO specialist or SEO expert for your website?{" "}
+          <Link href={seoPath} className="font-semibold text-brand-700 hover:underline">
+            Get help from Muhammad Adil
+          </Link>
+        </p>
       </div>
 
       <JsonLd

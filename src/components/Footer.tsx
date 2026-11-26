@@ -7,6 +7,7 @@ const company = [
   { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" },
   { href: "/all-tools/", label: "All Tools" },
+  { href: "/seo-services/", label: "Hire an SEO Expert" },
 ];
 
 const legal = [
