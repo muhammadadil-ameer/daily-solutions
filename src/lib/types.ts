@@ -40,7 +40,7 @@ export type HealthCalc =
 
 /** Which interactive widget a tool page renders, plus its preset options. */
 export type ToolWidget =
-  | { type: "image-convert"; from?: ImageFormat; to?: ImageFormat }
+  | { type: "image-convert"; from?: ImageFormat; to?: ImageFormat; fromLabel?: string }
   | {
       type: "image-resize";
       width?: number;

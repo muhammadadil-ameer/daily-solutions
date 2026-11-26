@@ -37,7 +37,9 @@ export function bmiCategory(v: number): { label: string; tone: "warn" | "good" |
 
 export function healthyWeightRange(heightCm: number) {
   const m = heightCm / 100;
-  return { min: 18.5 * m * m, max: 24.9 * m * m };
+  // BMI is shown with one decimal, so the healthy range is every weight whose rounded BMI is 18.5–24.9
+  // (BMI ≥ 18.45 and < 24.95). Callers round min up and max down, so the edges match the category shown.
+  return { min: 18.45 * m * m, max: 24.95 * m * m };
 }
 
 export type Goal = "lose" | "maintain" | "gain";

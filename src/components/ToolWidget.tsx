@@ -19,7 +19,7 @@ const MediaConverter = dynamic(() => import("./tools/MediaConverter"), { ssr: fa
 export function ToolWidget({ widget }: { widget: Widget }) {
   switch (widget.type) {
     case "image-convert":
-      return <ImageConverter from={widget.from} to={widget.to} />;
+      return <ImageConverter from={widget.from} to={widget.to} fromLabel={widget.fromLabel} />;
     case "image-resize":
       return <ImageResizer width={widget.width} height={widget.height} focus={widget.focus} format={widget.format} maxKB={widget.maxKB} />;
     case "pdf":

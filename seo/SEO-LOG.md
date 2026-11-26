@@ -90,6 +90,16 @@ Gap backlog (from 2026-10-27 analysis; remove items once a page exists):
 
 ## Runs
 
+- 2026-11-26 (manual, owner request, run 2) — Tested every tool on the live site in Chrome with real files (outputs checked by
+  file signature, page counts via pdf-lib): 18 image converters (+ all 7 output formats), 12 resize/compress pages (sizes and
+  dimensions hit their targets), 19 PDF pages, 18 media pages (all 12 output formats), 9 health calculators (math checked).
+  Fixed: contact form only opened a mailto: link and had no email field → now sends through FormSubmit (lib/forms.ts) with
+  mailto fallback (owner must click FormSubmit's one-time "Activate Form" email); compress result larger than original now
+  explains why (was "-9%"); JFIF page dropzone said "JPG"; BMI healthy-range edges disagreed with the rounded category
+  (150 lb at 5'5" showed "Overweight" but range "111–150 lb"); deficit calculator said "goal must be lower" for goal 0;
+  "all pdf tools" casing. New: /seo-services/ (Hire an SEO Expert, LeadForm), CTA line at the end of every tool page,
+  footer link, sitemap, privacy policy section on forms.
+
 - 2026-11-26 (manual, owner request) — GSC: 8 indexed / 80 not indexed (35 Discovered, 24 "Duplicate, Google chose different
   canonical" → Google picked dailysolutions.vercel.app/…, last crawl 3 Nov, before the redirect; 21 Crawled-not-indexed).
   Validate Fix started for the duplicate-canonical issue; Request indexing for 10 URLs (image-resizer, compress-image,

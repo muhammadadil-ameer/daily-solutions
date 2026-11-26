@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { LAST_UPDATED, StaticPage } from "@/components/StaticPage";
+import { StaticPage } from "@/components/StaticPage";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <StaticPage title="Privacy Policy" path="/privacy/" intro={`Last updated: ${LAST_UPDATED}`}>
+    <StaticPage title="Privacy Policy" path="/privacy/" intro="Last updated: November 26, 2026">
       <p>
         This policy explains what information {site.name} (“we”, “us”) collects when you use {site.url.replace(/^https?:\/\//, "")} and
         how it is used. The short version: your files are processed in your browser and are never uploaded to our server.
@@ -85,11 +85,12 @@ export default function Privacy() {
         </li>
       </ul>
 
-      <h2>Contact form</h2>
+      <h2>Contact and SEO enquiry forms</h2>
       <p>
-        The contact form opens your own email app with your message prefilled. Nothing you type in the form is stored on
-        our website. If you email us, we use your email address and message only to reply and keep correspondence as long
-        as needed to handle your request.
+        When you send the contact form or the SEO services form, the details you enter (such as your name, email address,
+        website, phone number and message) are delivered to our inbox by the email form service FormSubmit
+        (formsubmit.co). They are not stored in a database on our website. We use them only to reply to you and keep the
+        correspondence as long as needed to handle your request. If you email us directly, the same applies.
       </p>
 
       <h2>Children</h2>
@@ -98,7 +99,7 @@ export default function Privacy() {
       <h2>Your rights</h2>
       <p>
         Depending on where you live, you may have rights to access, correct or delete personal data we hold about you.
-        Because we do not store your files or calculator inputs, the only personal data we may hold is email correspondence.
+        Because we do not store your files or calculator inputs, the only personal data we may hold is email correspondence and messages sent through our forms.
         Contact us at <a href={`mailto:${site.email}`}>{site.email}</a> to make a request.
       </p>
 

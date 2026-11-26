@@ -127,6 +127,14 @@ function Calculator({ calc }: { calc: HealthCalc }) {
     if (need.weight && !(w >= 30 && w <= 350)) return fail("Please enter a valid weight.");
 
     const toW = (kg: number) => (weightLb ? `${fmt(kgToLb(kg))} lb` : `${fmt(kg, 1)} kg`);
+    // Range edges: round the lower bound up and the upper bound down, so a weight shown inside the range
+    // always gets the "Healthy weight" category.
+    const toWEdge = (kg: number, edge: "min" | "max") => {
+      const step = weightLb ? 1 : 10;
+      const v = weightLb ? kgToLb(kg) : kg;
+      const r = edge === "min" ? Math.ceil(v * step) / step : (Math.ceil(v * step) - 1) / step;
+      return weightLb ? `${fmt(r)} lb` : `${fmt(r, 1)} kg`;
+    };
     const warnLow = (kcal: number) => kcal < minCalories(sex);
 
     switch (calc) {
@@ -143,7 +151,7 @@ function Calculator({ calc }: { calc: HealthCalc }) {
             </dl>
             <BmiScale value={v} />
             <p className="text-sm text-muted">
-              Healthy weight range for your height (BMI 18.5–24.9): <strong className="text-ink">{toW(r.min)} – {toW(r.max)}</strong>.
+              Healthy weight range for your height (BMI 18.5–24.9): <strong className="text-ink">{toWEdge(r.min, "min")} – {toWEdge(r.max, "max")}</strong>.
             </p>
           </>,
         );
@@ -268,7 +276,8 @@ function Calculator({ calc }: { calc: HealthCalc }) {
       }
       case "deficit": {
         const gw = weightLb ? lbToKg(Number(goalWeight)) : Number(goalWeight);
-        if (!(gw >= 30 && gw < w)) return fail("Your goal weight must be lower than your current weight.");
+        if (!(gw >= 30)) return fail("Please enter a valid goal weight.");
+        if (!(gw < w)) return fail("Your goal weight must be lower than your current weight.");
         const t = tdee(sex, w, h, a, activity);
         const perWeekKg = Number(rate);
         const daily = (perWeekKg * KCAL_PER_KG) / 7;
@@ -305,7 +314,7 @@ function Calculator({ calc }: { calc: HealthCalc }) {
               ))}
             </dl>
             <p className="text-sm text-muted">
-              Healthy BMI range for your height: <strong className="text-ink">{toW(r.min)} – {toW(r.max)}</strong>.
+              Healthy BMI range for your height: <strong className="text-ink">{toWEdge(r.min, "min")} – {toWEdge(r.max, "max")}</strong>.
             </p>
             {h < 152.4 && <Notice>These formulas are designed for heights above 152 cm (5 ft). Use the BMI range instead.</Notice>}
           </>,

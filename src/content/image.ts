@@ -570,7 +570,7 @@ export const imageTools: Tool[] = [
     short: "Turn .jfif images into standard .jpg files.",
     intro:
       "Saved an image and got a .jfif file that a website or app refuses? JFIF is simply a JPEG with a different extension. Convert it to a normal .jpg here – one file or many at once – right in your browser.",
-    widget: { type: "image-convert", from: "jpg", to: "jpg" },
+    widget: { type: "image-convert", from: "jpg", to: "jpg", fromLabel: "JFIF" },
     howTo: [
       "Add one or more .jfif files.",
       "JPG is preselected. Keep the quality at 90–100% for no visible quality loss.",

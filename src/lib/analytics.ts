@@ -10,7 +10,11 @@ export type ToolEvent =
   | "conversion_complete"
   | "download"
   | "calculator_complete"
-  | "tool_error";
+  | "tool_error"
+  | "contact_sent"
+  | "contact_failed"
+  | "lead_sent"
+  | "lead_failed";
 
 /** Sends a GA4 event when GA is configured (NEXT_PUBLIC_GA_ID); otherwise does nothing. */
 export function track(event: ToolEvent, params: Record<string, string | number | undefined> = {}) {
