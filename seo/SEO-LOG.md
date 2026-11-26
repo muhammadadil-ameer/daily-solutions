@@ -90,6 +90,16 @@ Gap backlog (from 2026-10-27 analysis; remove items once a page exists):
 
 ## Runs
 
+- 2026-11-26 (manual, owner request) — GSC: 8 indexed / 80 not indexed (35 Discovered, 24 "Duplicate, Google chose different
+  canonical" → Google picked dailysolutions.vercel.app/…, last crawl 3 Nov, before the redirect; 21 Crawled-not-indexed).
+  Validate Fix started for the duplicate-canonical issue; Request indexing for 10 URLs (image-resizer, compress-image,
+  pdf-compressor, image-converter, heic-to-jpg, bmi-calculator, calorie-calculator, media-converter, image-tools, pdf-tools).
+  Changed (owner asked for everything in one go, straight to main): every *.vercel.app host → 308 to dailysolution.org
+  (was only dailysolutions.vercel.app), noindex on preview deployments; tool pages link 16 related tools chosen per page
+  (similarTools: rare format words weigh more) instead of the first 8 of the category – min inbound links per page 2 → 8;
+  homepage "Every Tool, by Category" list (all tools 1 click from home); footer Categories column; content/extras.ts adds
+  sections/FAQs to the 25 thinnest pages and fixes 13 short meta descriptions; contact/disclaimer descriptions.
+
 - 2026-10-30 (manual, owner request) — **Moved to custom domain https://dailysolution.org** (Hostinger domain; note: no “s”).
   Vercel: added dailysolution.org (production) + www.dailysolution.org (308 → apex). Hostinger DNS for dailysolution.org only:
   CNAME www → 3270d8c6e190f9cb.vercel-dns-017.com (was www.dailysolution.org.cdn.hstgr.net); ALIAS @ → dailysolution.org.cdn.hstgr.net
