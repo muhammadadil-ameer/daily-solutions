@@ -77,7 +77,6 @@ export function LeadForm() {
   return (
     <form id="seo-form" onSubmit={submit} className="card p-5 shadow-sm" noValidate>
       <h2 className="text-base font-bold text-ink">Request a free SEO review</h2>
-      <p className="mt-1 text-xs text-muted">No cost, no obligation. I reply within 1–2 working days.</p>
 
       <div className="mt-4 space-y-3">
         <div className="grid grid-cols-2 gap-3">
