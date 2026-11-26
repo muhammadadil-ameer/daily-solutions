@@ -230,7 +230,7 @@ export default function SeoServices() {
       <div className="border-b border-line bg-gradient-to-b from-brand-50/60 to-white">
         <div className="container-page pt-6 pb-10 sm:pb-12">
           <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "SEO Services", href: SEO_PATH }]} />
-          <div className="mt-5 grid items-start gap-8 lg:grid-cols-[1fr_380px] lg:gap-12">
+          <div className="mt-5 grid items-start gap-8 lg:grid-cols-[1fr_400px] lg:gap-12">
             <div>
               <p className="text-sm font-semibold tracking-wide text-brand-700 uppercase">SEO · AEO · GEO · Local SEO</p>
               <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
@@ -240,12 +240,13 @@ export default function SeoServices() {
                 I’m Muhammad Adil, an SEO specialist and the person behind Daily Solutions. I help websites get indexed,
                 rank higher on Google, show up in Google Maps and get found in AI search.
               </p>
-              <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
+              <ul className="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-1 lg:gap-3">
                 {[
                   "Fix pages that Google won’t index",
                   "Rank for the searches that bring customers",
                   "Get found in Google Maps (GMB)",
                   "Be cited in AI answers (AEO & GEO)",
+                  "Recover traffic after a Google update",
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-ink">
                     <CheckIcon width={20} height={20} className="mt-0.5 shrink-0 text-brand-600" />
@@ -253,7 +254,12 @@ export default function SeoServices() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-sm text-muted">
+              <p className="mt-6 rounded-xl border border-line bg-white/70 px-4 py-3 text-sm text-muted">
+                <span className="font-semibold text-ink">The free review covers:</span> indexing and technical health,
+                your on-page setup, the keywords you could realistically win, and the quick wins I would fix first. It’s
+                free, with no obligation, and I reply within 1–2 working days.
+              </p>
+              <p className="mt-4 text-sm text-muted">
                 Prefer to talk first? Email{" "}
                 <a href={`mailto:${site.email}`} className="font-medium text-brand-700 hover:underline">
                   {site.email}
@@ -266,7 +272,7 @@ export default function SeoServices() {
               </p>
             </div>
             <div className="lg:sticky lg:top-6">
-              <LeadForm stacked />
+              <LeadForm />
             </div>
           </div>
         </div>
