@@ -8,22 +8,26 @@ import { site } from "@/lib/site";
 export const seoServices = [
   "Complete SEO (ongoing)",
   "Technical SEO audit & fixes",
-  "Pages not indexed / Search Console help",
+  "Pages not indexed / Search Console",
   "On-page SEO & content",
   "Keyword research",
-  "Local SEO (Google Business Profile)",
-  "Link building",
-  "AI search visibility (AEO / GEO)",
+  "Local SEO & Google Business Profile (GMB)",
+  "AEO – answer engine optimisation",
+  "GEO – visibility in AI search",
+  "Link building / off-page SEO",
+  "E-commerce SEO",
+  "Migration or traffic-drop recovery",
   "Not sure yet",
 ];
 
-const budgets = ["Prefer to discuss", "Under $100 / month", "$100–300 / month", "$300–700 / month", "$700+ / month", "One-time project"];
-
 type Status = "idle" | "sending" | "sent" | "failed";
 
-/** "Hire an SEO expert" request form; the request is emailed to the site owner. */
-export function LeadForm() {
-  const [f, setF] = useState({ name: "", email: "", website: "", phone: "", service: seoServices[0], budget: budgets[0], message: "" });
+/**
+ * "Hire an SEO expert" request form; the request is emailed to the site owner.
+ * `stacked` puts every field on its own row, for the narrow column beside the page heading.
+ */
+export function LeadForm({ stacked = false }: { stacked?: boolean }) {
+  const [f, setF] = useState({ name: "", email: "", website: "", phone: "", service: seoServices[0], message: "" });
   const [honey, setHoney] = useState("");
   const [error, setError] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -31,6 +35,7 @@ export function LeadForm() {
     setF((c) => ({ ...c, [k]: e.target.value }));
 
   const subject = `SEO enquiry: ${f.service}${f.website ? ` – ${f.website}` : ""}`;
+  const grid = stacked ? "grid gap-4" : "grid gap-4 sm:grid-cols-2";
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -47,7 +52,6 @@ export function LeadForm() {
         website: f.website,
         "phone / WhatsApp": f.phone,
         service: f.service,
-        budget: f.budget,
         message: f.message,
       },
       honey,
@@ -69,8 +73,12 @@ export function LeadForm() {
   }
 
   return (
-    <form id="seo-form" onSubmit={submit} className="card space-y-4 p-5 sm:p-6" noValidate>
-      <div className="grid gap-4 sm:grid-cols-2">
+    <form id="seo-form" onSubmit={submit} className="card p-5 shadow-sm sm:p-6" noValidate>
+      <h2 className="text-lg font-bold text-ink">Request a free SEO review</h2>
+      <p className="mt-1 mb-4 text-sm text-muted">
+        Send your website and I’ll reply with the main issues I find and what I’d fix first. No cost, no obligation.
+      </p>
+      <div className={grid}>
         <div>
           <label htmlFor="l-name" className="field-label">
             Your name
@@ -91,59 +99,50 @@ export function LeadForm() {
         </div>
         <div>
           <label htmlFor="l-phone" className="field-label">
-            Phone / WhatsApp (optional)
+            Phone / WhatsApp <span className="font-normal text-muted">(optional)</span>
           </label>
           <input id="l-phone" type="tel" className="input" autoComplete="tel" value={f.phone} onChange={set("phone")} />
         </div>
-        <div>
-          <label htmlFor="l-service" className="field-label">
-            What do you need?
-          </label>
-          <select id="l-service" className="input" value={f.service} onChange={set("service")}>
-            {seoServices.map((s) => (
-              <option key={s}>{s}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="l-budget" className="field-label">
-            Budget (optional)
-          </label>
-          <select id="l-budget" className="input" value={f.budget} onChange={set("budget")}>
-            {budgets.map((s) => (
-              <option key={s}>{s}</option>
-            ))}
-          </select>
-        </div>
       </div>
-      <div>
-        <label htmlFor="l-msg" className="field-label">
-          Tell me about your website and goals (optional)
+      <div className="mt-4">
+        <label htmlFor="l-service" className="field-label">
+          What do you need?
         </label>
-        <textarea id="l-msg" rows={5} className="input py-3" value={f.message} onChange={set("message")} />
+        <select id="l-service" className="input" value={f.service} onChange={set("service")}>
+          {seoServices.map((s) => (
+            <option key={s}>{s}</option>
+          ))}
+        </select>
       </div>
+      <div className="mt-4">
+        <label htmlFor="l-msg" className="field-label">
+          Tell me about your website and goals <span className="font-normal text-muted">(optional)</span>
+        </label>
+        <textarea id="l-msg" rows={stacked ? 3 : 5} className="input py-3" value={f.message} onChange={set("message")} />
+      </div>
+      {/* Honeypot: hidden from people, filled in by spam bots. */}
       <input type="text" name="_honey" tabIndex={-1} autoComplete="off" value={honey} onChange={(e) => setHoney(e.target.value)} className="hidden" aria-hidden="true" />
       {error && (
-        <p role="alert" className="text-sm text-red-700">
+        <p role="alert" className="mt-4 text-sm text-red-700">
           {error}
         </p>
       )}
       {status === "failed" && (
-        <p role="alert" className="text-sm text-red-700">
+        <p role="alert" className="mt-4 text-sm text-red-700">
           Sorry, the form could not be sent right now.{" "}
           <a
             className="font-medium underline"
-            href={mailtoLink(subject, `Name: ${f.name}\nEmail: ${f.email}\nWebsite: ${f.website}\nPhone: ${f.phone}\nService: ${f.service}\nBudget: ${f.budget}\n\n${f.message}`)}
+            href={mailtoLink(subject, `Name: ${f.name}\nEmail: ${f.email}\nWebsite: ${f.website}\nPhone: ${f.phone}\nService: ${f.service}\n\n${f.message}`)}
           >
             Send it by email
           </a>{" "}
           or write to {site.email}.
         </p>
       )}
-      <button type="submit" className="btn btn-primary w-full sm:w-auto" disabled={status === "sending"}>
+      <button type="submit" className="btn btn-primary mt-5 w-full" disabled={status === "sending"}>
         {status === "sending" ? "Sending…" : "Send my request"}
       </button>
-      <p className="text-xs text-muted">Your details are sent only to me and used only to reply to your request.</p>
+      <p className="mt-3 text-xs text-muted">Your details are sent only to me and used only to reply to your request.</p>
     </form>
   );
 }
