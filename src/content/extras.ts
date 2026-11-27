@@ -11,7 +11,7 @@ export interface ToolExtra {
   faqs?: Faq[];
 }
 
-export const extrasUpdated = "2026-11-26";
+export const extrasUpdated = "2026-11-27";
 
 export const toolExtras: Record<string, ToolExtra> = {
   "avif-to-png": {
