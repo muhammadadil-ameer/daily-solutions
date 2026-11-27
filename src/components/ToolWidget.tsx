@@ -14,6 +14,7 @@ const ImageConverter = dynamic(() => import("./tools/ImageConverter"), { ssr: fa
 const ImageResizer = dynamic(() => import("./tools/ImageResizer"), { ssr: false, loading: Loading });
 const PdfTool = dynamic(() => import("./tools/PdfTool"), { ssr: false, loading: Loading });
 const MediaConverter = dynamic(() => import("./tools/MediaConverter"), { ssr: false, loading: Loading });
+const VideoCompressor = dynamic(() => import("./tools/VideoCompressor"), { ssr: false, loading: Loading });
 
 
 export function ToolWidget({ widget }: { widget: Widget }) {
@@ -26,6 +27,8 @@ export function ToolWidget({ widget }: { widget: Widget }) {
       return <PdfTool action={widget.action} targetKB={widget.targetKB} toolkit={widget.toolkit} />;
     case "media":
       return <MediaConverter from={widget.from} to={widget.to} />;
+    case "video-compress":
+      return <VideoCompressor targetMB={widget.targetMB} />;
     case "health":
       return <HealthCalculator calc={widget.calc} hub={widget.hub} />;
   }

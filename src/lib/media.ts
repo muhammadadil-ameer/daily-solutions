@@ -77,6 +77,38 @@ export function ffmpegArgs(input: string, output: string, to: MediaFormat, o: Co
   }
 }
 
+export type VideoHeight = "keep" | "1080" | "720" | "480" | "360";
+
+export interface CompressOptions {
+  /** Quality mode uses a CRF; size mode aims at a total bitrate worked out from the duration. */
+  mode: "quality" | "size";
+  quality: VideoQuality;
+  /** Total kbit/s for video when mode is "size". */
+  videoKbps: number;
+  audioKbps: number;
+  /** Output height; the width follows the aspect ratio. Never upscales (the caller checks). */
+  height: VideoHeight;
+}
+
+/**
+ * FFmpeg arguments for re-encoding a video smaller as MP4 (H.264 + AAC).
+ * Single pass: two-pass would be a little more accurate but doubles an already slow in-browser encode.
+ */
+export function compressVideoArgs(input: string, output: string, o: CompressOptions): string[] {
+  const rate =
+    o.mode === "size"
+      ? ["-b:v", `${o.videoKbps}k`, "-maxrate", `${o.videoKbps}k`, "-bufsize", `${o.videoKbps * 2}k`]
+      : ["-crf", crf[o.quality]];
+  return [
+    "-i", input,
+    ...(o.height === "keep" ? [] : ["-vf", `scale=-2:${o.height}`]),
+    "-c:v", "libx264", "-preset", "superfast", ...rate, "-pix_fmt", "yuv420p",
+    "-c:a", "aac", "-b:a", `${o.audioKbps}k`,
+    "-movflags", "+faststart",
+    output,
+  ];
+}
+
 export const mimeFor: Record<MediaFormat, string> = {
   mp3: "audio/mpeg", wav: "audio/wav", m4a: "audio/mp4", aac: "audio/aac", ogg: "audio/ogg", flac: "audio/flac",
   mp4: "video/mp4", mov: "video/quicktime", avi: "video/x-msvideo", webm: "video/webm", mkv: "video/x-matroska", gif: "image/gif",

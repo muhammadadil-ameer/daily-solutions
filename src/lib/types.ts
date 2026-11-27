@@ -51,6 +51,7 @@ export type ToolWidget =
     }
   | { type: "pdf"; action?: PdfAction; targetKB?: number; toolkit?: boolean }
   | { type: "media"; from?: MediaFormat; to?: MediaFormat }
+  | { type: "video-compress"; targetMB?: number }
   | { type: "health"; calc?: HealthCalc; hub?: boolean };
 
 export interface Faq {
