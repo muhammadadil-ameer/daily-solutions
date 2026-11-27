@@ -90,6 +90,13 @@ Gap backlog (from 2026-10-27 analysis; remove items once a page exists):
 
 ## Runs
 
+- 2026-11-27 (manual, owner request) — First high-RPM tool added after the competitor research: a video compressor
+  (/compress-video/) plus /compress-video-to-10mb/ (Discord) and /compress-video-to-25mb/ (Gmail). These reuse the
+  FFmpeg engine the media converters already load, so no new dependency. Quality mode uses CRF; target-size mode works
+  out a bitrate from the duration read in the browser, with 4% headroom, and an optional downscale (the biggest lever).
+  Output is MP4 H.264 + AAC 128k. Chosen because US/UK searches for "compress video", Discord's 10 MB and Gmail's 25 MB
+  limits are high-RPM, while the existing compress-image-to-XXkb pages mostly serve Indian government-form traffic.
+
 - 2026-11-27 (manual, owner request) — Checked the whole site for leftover vercel.app links: crawled all 88 live pages
   (links, canonical, og:url, JSON-LD) plus robots.txt and sitemap — zero vercel.app URLs; only mention left is naming
   Vercel as the host in the privacy policy, which is correct. dailysolutions.vercel.app still 308s to the live domain.
