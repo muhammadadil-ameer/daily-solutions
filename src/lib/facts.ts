@@ -23,6 +23,13 @@ export function toolFacts(tool: Tool): string[] {
     facts.push("Images up to 50 MB", "Set exact pixel sizes or a target size in KB");
   } else if (w.type === "video-compress") {
     facts.push("Videos up to 500 MB", "Set a target size in MB or pick a compression level");
+  } else if (w.type === "media-trim") {
+    facts.push(
+      w.kind === "video" ? "Videos up to 500 MB" : "Audio files up to 500 MB",
+      w.kind === "video"
+        ? "Lossless cut with no re-encoding, or an exact frame-accurate cut"
+        : "Cut without re-encoding, so there is no quality loss",
+    );
   } else if (w.type === "media") {
     facts.push("Audio and video files up to 500 MB", "One file at a time; no length limit");
   } else if (w.type === "pdf") {

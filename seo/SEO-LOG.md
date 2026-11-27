@@ -90,6 +90,17 @@ Gap backlog (from 2026-10-27 analysis; remove items once a page exists):
 
 ## Runs
 
+- 2026-11-27 (run, cont.) — High-RPM tools, batch 2: video + audio trimmer.
+  Built /trim-video/ ("Trim Video Online Free – Cut Video Without Losing Quality") and /mp3-cutter/
+  ("MP3 Cutter Online Free – Cut & Trim Audio, No Quality Loss"), both on one new MediaTrimmer widget
+  (FFmpeg already on the site, so no new dependency). Default cut is stream-copy: instant and lossless,
+  with an "Exact cut" re-encode offered for video only, where a frame-accurate start matters.
+  Audio is always copied – re-encoding an MP3 to trim it would lose quality for nothing.
+  Chosen over the bigger word<->pdf keywords because those cannot be done honestly client-side.
+  Sitemap 91 -> 93 URLs. Inbound internal links: /trim-video/ 14 pages, /mp3-cutter/ 18 pages.
+  Both pages: canonical on dailysolution.org, HowTo + WebApplication schema, featureList facts for AI
+  Overviews, meta descriptions 151 chars, no vercel.app links. Type-check and lint clean.
+
 - 2026-11-27 (manual, owner request) — First high-RPM tool added after the competitor research: a video compressor
   (/compress-video/) plus /compress-video-to-10mb/ (Discord) and /compress-video-to-25mb/ (Gmail). These reuse the
   FFmpeg engine the media converters already load, so no new dependency. Quality mode uses CRF; target-size mode works
