@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { DownloadIcon } from "@/components/Icons";
 import { track } from "@/lib/analytics";
 import { downloadBlob, extOf, formatBytes, MB, sanitizeBaseName } from "@/lib/files";
-import { ACCEPT_MEDIA, cancelFFmpeg, getFFmpeg, mediaKind, mimeFor, trimArgs } from "@/lib/media";
+import { cancelFFmpeg, getFFmpeg, mediaKind, mimeFor, trimArgs } from "@/lib/media";
 import type { MediaFormat } from "@/lib/types";
 import { Dropzone, ErrorMessage, Notice, Progress, Segmented, Stat } from "./ui";
 
@@ -32,9 +32,9 @@ function fromClock(value: string): number | null {
   return Number.isFinite(seconds) ? seconds : null;
 }
 
-function readDuration(file: File, kind: "video" | "audio"): Promise<number | null> {
+function readDuration(blob: Blob, kind: "video" | "audio"): Promise<number | null> {
   return new Promise((resolve) => {
-    const url = URL.createObjectURL(file);
+    const url = URL.createObjectURL(blob);
     const el = document.createElement(kind === "video" ? "video" : "audio");
     el.preload = "metadata";
     const done = (d: number | null) => {
@@ -60,7 +60,7 @@ export default function MediaTrimmer({ kind }: { kind: "video" | "audio" }) {
   const [stage, setStage] = useState<"idle" | "loading" | "working">("idle");
   const [progress, setProgress] = useState<number | null>(null);
   const [error, setError] = useState("");
-  const [result, setResult] = useState<{ blob: Blob; name: string } | null>(null);
+  const [result, setResult] = useState<{ blob: Blob; name: string; duration: number | null } | null>(null);
   const player = useRef<HTMLVideoElement & HTMLAudioElement>(null);
   const cancelled = useRef(false);
 
@@ -150,9 +150,13 @@ export default function MediaTrimmer({ kind }: { kind: "video" | "audio" }) {
       const data = (await ffmpeg.readFile(output)) as Uint8Array;
       if (!data.length) throw new Error("empty output");
       const type = mimeFor[outExt as MediaFormat] ?? (kind === "video" ? "video/mp4" : "audio/mpeg");
+      const blob = new Blob([data as BlobPart], { type });
+      // Measure what actually came out rather than reporting the span that was asked for: a lossless
+      // cut has to start at a keyframe, so the clip can be longer than the span between the handles.
       setResult({
-        blob: new Blob([data as BlobPart], { type }),
+        blob,
         name: `${sanitizeBaseName(file.name)}-trimmed.${outExt}`,
+        duration: await readDuration(blob, kind),
       });
       track("conversion_complete", { tool, mode });
     } catch {
@@ -188,7 +192,6 @@ export default function MediaTrimmer({ kind }: { kind: "video" | "audio" }) {
           }
         />
         <ErrorMessage>{error}</ErrorMessage>
-        <p className="sr-only">{ACCEPT_MEDIA}</p>
       </div>
     );
   }
@@ -349,10 +352,17 @@ export default function MediaTrimmer({ kind }: { kind: "video" | "audio" }) {
 
       {result && (
         <div className="space-y-4 rounded-2xl border border-line p-4">
+          {result.duration !== null && result.duration > span + 0.75 && (
+            <Notice>
+              This clip is {toClock(result.duration)} rather than {toClock(span)}, because a lossless cut has to
+              begin at the nearest keyframe before your start point. Switch to “Exact cut” if it has to start
+              exactly where you set it.
+            </Notice>
+          )}
           <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             <Stat label="Original" value={formatBytes(file.size)} />
             <Stat label="Trimmed" value={formatBytes(result.blob.size)} />
-            <Stat label="Length kept" value={toClock(span)} tone="good" />
+            <Stat label="Clip length" value={toClock(result.duration ?? span)} tone="good" />
           </dl>
           <button
             type="button"
