@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { categoryHref, getCategory, relatedTools, similarTools, toolHref, toolsIn } from "@/content";
+import { toolFacts } from "@/lib/facts";
 import { absoluteUrl, seoPath, site } from "@/lib/site";
 import type { Tool } from "@/lib/types";
 import { Breadcrumbs, categoryCrumb, FaqList, HealthDisclaimer, JsonLd, ToolGrid } from "./Blocks";
-import { ArrowRight } from "./Icons";
+import { ArrowRight, CheckIcon } from "./Icons";
 import { ToolWidget } from "./ToolWidget";
 
 const isBrowserTool = (t: Tool) => t.category !== "health";
@@ -21,6 +22,7 @@ export function ToolPage({ tool }: { tool: Tool }) {
   const inArticle = similar.slice(0, 8);
   const inSidebar = similar.slice(8);
   // "Image Tools" → "image tools", "PDF Tools" → "PDF tools" for use inside sentences.
+  const facts = toolFacts(tool);
   const catLower = category.name.replace(/^(\w+) Tools$/, (_, w: string) => `${w === "PDF" ? w : w.toLowerCase()} tools`);
 
   return (
@@ -53,7 +55,17 @@ export function ToolPage({ tool }: { tool: Tool }) {
 
         <div className="mt-6 grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px]">
           <article className="prose-tool min-w-0">
-            <h2>How to use the {tool.name}</h2>
+            {/* Short, concrete facts: these are what AI answers and search snippets quote. */}
+            <ul className="not-prose mb-8 grid gap-2 rounded-2xl border border-line bg-surface p-4 sm:grid-cols-2">
+              {facts.map((f) => (
+                <li key={f} className="flex items-start gap-2 text-sm text-muted">
+                  <CheckIcon width={16} height={16} className="mt-0.5 shrink-0 text-brand-600" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            <h2 id="how-to">How to use the {tool.name}</h2>
             <ol>
               {tool.howTo.map((s) => (
                 <li key={s}>{s}</li>
@@ -177,6 +189,26 @@ export function ToolPage({ tool }: { tool: Tool }) {
         </p>
       </div>
 
+      {/* The visible steps, marked up so search and AI answers can reuse them. */}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: `How to use the ${tool.name}`,
+          description: tool.metaDescription,
+          totalTime: "PT1M",
+          supply: [],
+          tool: [{ "@type": "HowToTool", name: tool.h1 }],
+          step: tool.howTo.map((text, i) => ({
+            "@type": "HowToStep",
+            position: i + 1,
+            name: text.replace(/[.:][\s\S]*$/, "").slice(0, 70),
+            text,
+            url: `${absoluteUrl(toolHref(tool))}#how-to`,
+          })),
+        }}
+      />
+
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -188,6 +220,7 @@ export function ToolPage({ tool }: { tool: Tool }) {
           operatingSystem: "Any (web browser)",
           browserRequirements: "Requires JavaScript",
           isAccessibleForFree: true,
+          featureList: facts,
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
           publisher: { "@id": `${site.url}/#organization` },
         }}
