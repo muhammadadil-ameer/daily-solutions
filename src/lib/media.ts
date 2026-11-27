@@ -146,3 +146,36 @@ export function cancelFFmpeg() {
   loading = null;
   current?.then((f) => f.terminate()).catch(() => {});
 }
+
+export interface TrimOptions {
+  /** Seconds from the start of the file. */
+  start: number;
+  end: number;
+  /**
+   * "copy" keeps the original streams, so the cut is instant and lossless, but a video cut
+   * lands on the nearest keyframe before the chosen start. "precise" re-encodes for an exact cut.
+   */
+  mode: "copy" | "precise";
+  kind: "video" | "audio";
+}
+
+/**
+ * FFmpeg arguments for cutting the chosen span out of a file.
+ * -ss before -i makes FFmpeg seek instead of decoding everything up to the start, so the work is
+ * proportional to the length kept rather than the length of the source.
+ */
+export function trimArgs(input: string, output: string, o: TrimOptions): string[] {
+  const duration = Math.max(0.05, o.end - o.start);
+  const span = ["-ss", o.start.toFixed(3), "-i", input, "-t", duration.toFixed(3)];
+  // Audio is always copied: MP3/AAC frames are short enough that a copied cut is already accurate,
+  // and re-encoding would throw away quality for nothing.
+  if (o.mode === "copy" || o.kind === "audio") {
+    return [...span, "-c", "copy", "-avoid_negative_ts", "make_zero", output];
+  }
+  return [
+    ...span,
+    "-c:v", "libx264", "-preset", "superfast", "-crf", "20", "-pix_fmt", "yuv420p",
+    "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart",
+    output,
+  ];
+}
