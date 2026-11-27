@@ -9,6 +9,7 @@ import { kbTools } from "./kb";
 import { gapImageTools } from "./gap-image";
 import { gapPdfTools } from "./gap-pdf";
 import { gapMediaTools } from "./gap-media";
+import { videoTools } from "./video";
 import { deviceExtras } from "./extras-devices";
 import { extrasUpdated, type ToolExtra, toolExtras } from "./extras";
 
@@ -24,6 +25,7 @@ const baseTools: Tool[] = [
   ...gapPdfTools,
   ...mediaTools,
   ...gapMediaTools,
+  ...videoTools,
   ...healthTools,
 ];
 
