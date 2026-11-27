@@ -9,7 +9,8 @@ import { kbTools } from "./kb";
 import { gapImageTools } from "./gap-image";
 import { gapPdfTools } from "./gap-pdf";
 import { gapMediaTools } from "./gap-media";
-import { extrasUpdated, toolExtras } from "./extras";
+import { deviceExtras } from "./extras-devices";
+import { extrasUpdated, type ToolExtra, toolExtras } from "./extras";
 
 export { categories, getCategory };
 
@@ -28,13 +29,13 @@ const baseTools: Tool[] = [
 
 /** Applies content/extras.ts (extra sections, FAQs, better meta descriptions) on top of the base content. */
 export const tools: Tool[] = baseTools.map((t) => {
-  const x = toolExtras[t.slug];
-  if (!x) return t;
+  const extras = [toolExtras[t.slug], deviceExtras[t.slug]].filter(Boolean) as ToolExtra[];
+  if (extras.length === 0) return t;
   return {
     ...t,
-    metaDescription: x.metaDescription ?? t.metaDescription,
-    sections: [...t.sections, ...(x.sections ?? [])],
-    faqs: [...t.faqs, ...(x.faqs ?? [])],
+    metaDescription: extras.find((x) => x.metaDescription)?.metaDescription ?? t.metaDescription,
+    sections: [...t.sections, ...extras.flatMap((x) => x.sections ?? [])],
+    faqs: [...t.faqs, ...extras.flatMap((x) => x.faqs ?? [])],
     updated: extrasUpdated,
   };
 });

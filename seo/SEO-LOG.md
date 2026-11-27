@@ -90,6 +90,20 @@ Gap backlog (from 2026-10-27 analysis; remove items once a page exists):
 
 ## Runs
 
+- 2026-11-27 (manual, owner request) — Checked the whole site for leftover vercel.app links: crawled all 88 live pages
+  (links, canonical, og:url, JSON-LD) plus robots.txt and sitemap — zero vercel.app URLs; only mention left is naming
+  Vercel as the host in the privacy policy, which is correct. dailysolutions.vercel.app still 308s to the live domain.
+  GSC that morning: 5 indexed / 83 not indexed, duplicate-canonical validation "Started".
+  Competitor research for US/UK (high-RPM) traffic: freeconvert.com/heic-to-jpg = 1,663 words, HowTo schema, ~190
+  internal links, and "What is a X file / How to open a X file" sections; iloveimg's equivalent ranks on 54 words and no
+  schema purely on authority (DR 80), so the FreeConvert model is the one a new site can copy. US SERP for "heic to jpg"
+  has an AI Overview built from sub-questions ("Convert on Mac", "Convert on Windows", "stop saving future photos as
+  HEIC") and it quotes concrete specs ("files up to 1GB", "batch up to 200", "without uploading").
+  Shipped from that: HowTo schema on every tool page (built from the howTo steps already shown), a visible "at a glance"
+  facts block + schema featureList with the real enforced limits (images 50 MB, PDFs 100 MB, media 500 MB), /llms.txt
+  listing all 76 tools and how they work, robots.txt naming the AI crawlers explicitly, and Mac/Windows/iPhone sections
+  plus "What is a .X file" answers on heic-to-jpg, heic-to-png, webp-to-jpg and mov-to-mp4.
+
 - 2026-11-26 (manual, owner request, run 2) — Tested every tool on the live site in Chrome with real files (outputs checked by
   file signature, page counts via pdf-lib): 18 image converters (+ all 7 output formats), 12 resize/compress pages (sizes and
   dimensions hit their targets), 19 PDF pages, 18 media pages (all 12 output formats), 9 health calculators (math checked).
