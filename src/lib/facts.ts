@@ -21,6 +21,8 @@ export function toolFacts(tool: Tool): string[] {
     facts.push("Images up to 50 MB each", "Convert many images at once and download them as a ZIP");
   } else if (w.type === "image-resize") {
     facts.push("Images up to 50 MB", "Set exact pixel sizes or a target size in KB");
+  } else if (w.type === "video-compress") {
+    facts.push("Videos up to 500 MB", "Set a target size in MB or pick a compression level");
   } else if (w.type === "media") {
     facts.push("Audio and video files up to 500 MB", "One file at a time; no length limit");
   } else if (w.type === "pdf") {
