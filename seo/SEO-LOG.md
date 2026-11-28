@@ -90,6 +90,27 @@ Gap backlog (from 2026-10-27 analysis; remove items once a page exists):
 
 ## Runs
 
+- 2026-11-28 — Diagnosed the "no traffic" question against Search Console, then wrote content from the answer.
+  Findings (29 days): 690 impressions, 5 clicks, average position 37, 151 queries. Not an indexing bug —
+  the redirect fix is live (dailysolutions.vercel.app now 308s to dailysolution.org) and Google's own live
+  test returns "URL is available to Google". Sitemap: Success, 87 discovered. External links: 0 — that is
+  the binding constraint, not anything on the site.
+  Also found that ~75% of impressions can never convert: /bmr-calculator/ takes 339 of them (49% of the site's
+  total) on "mifflin st jeor equation ..." formula lookups at positions 2-9, which are answered in the snippet;
+  /resize-image-500x500/ matches arithmetic queries like "1600*5000"; /compress-jpg/ sits at position 79-99.
+  Countries: United States is 332 impressions (48%) at position 27.6 and every one of the 5 clicks. India is
+  122 impressions at position 78.7 - the low-RPM kb-compression intent, and not winnable. So the content below
+  targets US intent only.
+  Shipped: content written against the site's own queries for mov-to-mp3, mov-to-gif, mkv-to-mp4, m4a-to-wav
+  ("mp4a"), jpg-to-webp (bulk), aac-to-mp3, compress-jpg (exact KB) and heic-to-webp, in src/content/extras-queries.ts;
+  new /resize-image-512x512/ (GSC already ranks the site 8th for "512x512 converter" with no such page, and the
+  intent - app icons, Discord, Stable Diffusion - is US/developer rather than form-upload).
+  Requested indexing for all 5 new tool pages; no quota error.
+  Internal linking measured, not assumed: homepage links to 93 pages, /all-tools/ to 93, min inbound 8,
+  median 19, max 95. Linking is NOT the reason 34 pages sit at "Discovered - currently not indexed", so no
+  all-to-all linking was added - it would dilute equity for no gain.
+  Sitemap 93 -> 94 URLs.
+
 - 2026-11-27 (run, cont.) — High-RPM tools, batch 2: video + audio trimmer.
   Built /trim-video/ ("Trim Video Online Free – Cut Video Without Losing Quality") and /mp3-cutter/
   ("MP3 Cutter Online Free – Cut & Trim Audio, No Quality Loss"), both on one new MediaTrimmer widget
