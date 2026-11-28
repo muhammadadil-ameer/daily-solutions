@@ -12,6 +12,7 @@ import { gapMediaTools } from "./gap-media";
 import { trimTools } from "./trim";
 import { videoTools } from "./video";
 import { deviceExtras } from "./extras-devices";
+import { queryExtras } from "./extras-queries";
 import { extrasUpdated, type ToolExtra, toolExtras } from "./extras";
 
 export { categories, getCategory };
@@ -33,7 +34,7 @@ const baseTools: Tool[] = [
 
 /** Applies content/extras.ts (extra sections, FAQs, better meta descriptions) on top of the base content. */
 export const tools: Tool[] = baseTools.map((t) => {
-  const extras = [toolExtras[t.slug], deviceExtras[t.slug]].filter(Boolean) as ToolExtra[];
+  const extras = [toolExtras[t.slug], deviceExtras[t.slug], queryExtras[t.slug]].filter(Boolean) as ToolExtra[];
   if (extras.length === 0) return t;
   return {
     ...t,
