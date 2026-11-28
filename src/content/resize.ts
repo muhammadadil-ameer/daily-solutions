@@ -55,7 +55,7 @@ function squarePage(size: number, uses: string[], extra: string, metaUse: string
       { q: "Which format should I download?", a: "JPG for photos, PNG for logos or images with transparency, WebP for websites." },
       { q: "Is my image uploaded?", a: "No. Resizing happens in your browser and the image stays on your device." },
     ],
-    related: ["image-resizer", "resize-image-300x300", "resize-image-500x500", "resize-image-1080x1080", "compress-image", "image-converter"].filter(
+    related: ["image-resizer", "resize-image-300x300", "resize-image-500x500", "resize-image-512x512", "resize-image-1080x1080", "compress-image", "image-converter"].filter(
       (s) => s !== `resize-image-${size}x${size}`,
     ),
     keywords: ["resize", "square", `${size}x${size}`, "pixels", "dimensions", `${size}x${size} image converter`, `${kb} kb`],
@@ -377,6 +377,18 @@ export const resizeTools: Tool[] = [
     ["E-commerce product images", "Blog post thumbnails", "Marketplace listing photos", "Medium-size profile photos"],
     "500×500 gives a sharp square image while keeping file size small.",
     "product photos and blog thumbnails",
+    100,
+  ),
+  squarePage(
+    512,
+    [
+      "Android app icons and PWA manifest icons",
+      "Discord server icons and custom emoji",
+      "Game textures and Steam community assets",
+      "Input images for Stable Diffusion and other image models",
+    ],
+    "512×512 is the standard icon and texture size, and a power of two, which is why app stores, game engines and image models all ask for it.",
+    "app icons, Discord and game assets",
     100,
   ),
   squarePage(
